@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Split CSV by Columns Online | Choose Columns per File</title>
+<meta name="description" content="Split a wide CSV or TSV into smaller files by column count. Choose columns per part, preview the results, and download one part or a ZIP of all parts.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/split-csv-by-columns.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Split CSV by Columns Online | Choose Columns per File">
+<meta property="og:description" content="Split a wide CSV or TSV into smaller files by column count. Choose columns per part, preview the results, and download one part or a ZIP of all parts.">
+<meta property="og:url" content="https://romitcsv.com/split-csv-by-columns.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Split CSV by Columns Online | Choose Columns per File">
+<meta name="twitter:description" content="Split a wide CSV or TSV into smaller files by column count. Choose columns per part, preview the results, and download one part or a ZIP of all parts.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Split CSV by Columns","url":"https://romitcsv.com/split-csv-by-columns.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Split a wide CSV or TSV into column-based parts, preview each output, and download one part or a ZIP of all parts."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-35">
+<link rel="stylesheet" href="csv-merge-split-tools.css?v=split-tools-2">
+</head>
+<body class="dark csv-merger-page csv-column-split-page" data-split-mode="columns">
+<header class="site-header viewer-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="csv-merger.html">CSV Merger</a><a href="csv-combiner.html">CSV Combiner</a><a href="csv-joiner.html">CSV Joiner</a><a href="split-csv-by-rows.html">Split by Rows</a><a href="split-csv-by-columns.html" class="active" aria-current="page">Split by Columns</a><a href="tool.html">All Tools</a></nav>
+    <div class="header-actions"><button class="theme-switch" id="splitTheme" type="button" aria-label="Toggle theme" aria-pressed="true"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="splitMenu" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-merger-page">
+  <section class="editor-hero"><div class="editor-hero-inner"><div><span class="viewer-pill">Free Online CSV Column Splitter</span><h1>Split CSV Files by Column Count</h1><p>Break a wide CSV or TSV into narrower files by choosing how many columns to include in each part. Each output keeps the same rows, in order, with its matching headings.</p><p id="splitStatus" class="merger-status" role="status" aria-live="polite"></p></div><div class="editor-upload-card" id="splitUploadCard"><div class="editor-upload" id="splitDropzone"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop one CSV or TSV file here</strong><span>or</span><input id="splitFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="splitBrowse" type="button">Browse CSV File</button><small>One file · Up to 50 MB</small></div></div></div></section>
+  <section class="editor-content"><div id="splitWorkspace" class="merger-workspace" hidden></div></section>
+  <article class="tool-seo-content viewer-seo-content merger-content split-guide" aria-labelledby="split-guide-title">
+    <h2 id="split-guide-title">Split a Wide CSV into Column-Based Files</h2>
+    <p>A wide spreadsheet export can contain more fields than a receiving system, report, or screen can conveniently handle. This CSV column splitter divides a file from left to right according to the number of columns you set. Each output includes a continuous group of neighboring columns and retains the source rows in their original order.</p>
+    <p>For example, a file with 23 columns split into groups of 10 creates three parts containing columns 1–10, 11–20, and 21–23. The last file is shorter when the column count does not divide evenly.</p>
+    <h2>Choose how many columns each part contains</h2>
+    <p>Set the maximum number of columns per part. A smaller value creates more, narrower files; a larger value creates fewer, wider files. The first part starts with the leftmost source columns, and each following part continues from the next column. No columns are skipped or reordered.</p>
+    <p>The heading row is split along with the data. Each output contains the headings that belong to its columns and all source data rows. This means a part is a vertical slice of the original table rather than a group of records.</p>
+    <h2>Preview and download the column groups</h2>
+    <ol><li>Choose or drop one CSV, TSV, or supported delimited text file up to 50 MB.</li><li>Enter the maximum columns to include in each output.</li><li>Select <strong>Split CSV</strong> and use the part selector or arrows to inspect each column group.</li><li>Download the selected file, or download all groups together in a ZIP archive.</li></ol>
+    <p>The preview displays the selected columns and up to 100 data rows. Downloaded parts contain all source rows, including those beyond the preview. The generated filenames identify the part number and preserve the left-to-right order.</p>
+    <h2>How the output differs from a row split</h2>
+    <p>A row split divides records into groups while retaining every column in each part. A column split keeps the full set of records but divides the fields across files. Use this tool when you need narrower files; use the <a href="split-csv-by-rows.html">CSV row splitter</a> when you need fewer records per file.</p>
+    <p>The column splitter does not filter, sort, or remove data. It preserves the order of columns within each group and the order of records down the file. Quoted commas, quotation marks, and line breaks remain inside their original fields. CSV, TSV, and supported delimited TXT files are accepted; output parts are comma-separated CSV.</p>
+    <p>Files are processed in your browser and are not sent to the RomitCSV server. The source file remains unchanged. If a file contains an unclosed quoted field, the tool reports the formatting issue instead of creating a partial split.</p>
+    <section class="faq tool-seo-faq" aria-labelledby="split-faq-title"><p class="faq-kicker">CSV COLUMN SPLITTER FAQ</p><h2 id="split-faq-title">Questions About Splitting CSV by Columns</h2>
+      <details><summary>Does splitting by columns remove any rows?</summary><p>No. Every part contains all source data rows in the same order. Only the columns are divided among the files.</p></details>
+      <details><summary>Are the column headings included?</summary><p>Yes. Each part includes the headings for the columns in that group.</p></details>
+      <details><summary>What happens when the column count does not divide evenly?</summary><p>The last part contains the remaining columns and can be narrower than the others.</p></details>
+      <details><summary>Does the tool keep the original column order?</summary><p>Yes. It groups neighboring columns from left to right and does not reorder them.</p></details>
+      <details><summary>Can I save all column parts at once?</summary><p>Yes. Download all parts as one ZIP archive, or save the currently selected part by itself.</p></details>
+      <details><summary>Can I split TSV files?</summary><p>Yes. TSV and supported delimited TXT files can be loaded. The output is CSV.</p></details>
+      <details><summary>Is there a file size limit?</summary><p>Each input can be up to 50 MB. A maximum of 10,000 output parts is supported.</p></details>
+      <details><summary>Are my files uploaded?</summary><p>No. The split runs in your browser, and the original file is not modified.</p></details>
+    </section>
+    <h2>Review the final column group</h2><p>Check the last part before using the files elsewhere. It may contain fewer columns, and some workflows may need the fields to be combined again later. When the destination limit is based on record count rather than table width, use the <a href="split-csv-by-rows.html">row-based CSV splitter</a>.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-merger.html">CSV Merger</a><a href="csv-combiner.html">CSV Combiner</a><a href="csv-joiner.html">CSV Joiner</a><a href="tool.html">All CSV tools</a></section><section class="footer-column"><h2>SPLIT CSV</h2><a href="split-csv-by-rows.html">Split by rows</a><a href="split-csv-by-columns.html">Split by columns</a><a href="csv-splitter.html">CSV Splitter</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="tool.html">All tools</a><a href="index.html#faq">Frequently asked questions</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="split-csv-tools.js?v=split-tools-2"></script>
+</body>
+</html>

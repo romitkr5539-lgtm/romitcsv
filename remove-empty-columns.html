@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remove Empty Columns from CSV Online</title>
+<meta name="description" content="Remove CSV columns that are empty in every data row. Paste or open CSV, TSV, or TXT data, preview the column counts, and download a cleaned CSV in your browser.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/remove-empty-columns.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Remove Empty Columns from CSV Online">
+<meta property="og:description" content="Remove CSV columns that are empty in every data row. Paste or open CSV, TSV, or TXT data, preview the column counts, and download a cleaned CSV in your browser.">
+<meta property="og:url" content="https://romitcsv.com/remove-empty-columns.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Remove Empty Columns from CSV Online">
+<meta name="twitter:description" content="Remove CSV columns that are empty in every data row. Paste or open CSV, TSV, or TXT data, preview the column counts, and download a cleaned CSV in your browser.">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Remove Empty Columns from CSV Online","url":"https://romitcsv.com/remove-empty-columns.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Remove CSV columns that are empty in every data row. Paste or open CSV, TSV, or TXT data, preview the column counts, and download a cleaned CSV in your browser."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-14">
+
+<script src="nav.js?v=romitjson-theme-2" defer></script>
+</head>
+<body class="dark" data-cleaning-tool="remove-empty-columns">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="emptyColumnsNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Viewer</strong><small>Search and browse CSV files</small></span></a></li>
+        <li role="none"><a href="online-csv-reader.html" role="menuitem"><span class="ndm-icon ndm-teal">⌕</span><span><strong>Online CSV Reader</strong><small>Inspect raw CSV text</small></span></a></li><li role="none"><a href="large-csv-viewer.html" role="menuitem"><span class="ndm-icon ndm-cyan">▤</span><span><strong>Large CSV Viewer</strong><small>Search large CSV files</small></span></a></li><li role="none"><a href="csv-preview-tool.html" role="menuitem"><span class="ndm-icon ndm-green">◫</span><span><strong>CSV Preview Tool</strong><small>Preview the first 25 rows</small></span></a></li><li role="none"><a href="csv-column-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">▥</span><span><strong>CSV Column Viewer</strong><small>Search and export one column</small></span></a></li><li role="none"><a href="csv-row-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">▥</span><span><strong>CSV Row Viewer</strong><small>Find and inspect a record</small></span></a></li><li role="none"><a href="remove-duplicate-rows.html" role="menuitem"><span class="ndm-icon ndm-green">▥</span><span><strong>Remove Duplicate Rows</strong><small>Remove exact duplicate records</small></span></a></li><li role="none"><a href="remove-empty-rows.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌫</span><span><strong>Remove Empty Rows</strong><small>Remove rows with no values</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="remove-empty-columns.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-green">▥</span><span><strong>Remove Empty Columns</strong><small>Drop columns with no data</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="emptyColumnsTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="emptyColumnsMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+<main class="remove-empty-columns-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV Empty Column Remover</span>
+        <h1>Remove Empty Columns from CSV</h1>
+        <p>Remove columns that are blank in every data row. Keep populated fields and download a clean CSV copy.<br>Your file stays in your browser.</p>
+      </div>
+      <div class="editor-upload-card">
+        <div class="editor-upload" id="csvDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true"><span>CSV</span></div>
+          <strong>Drop a CSV, TSV, or text file here</strong>
+          <span>or</span>
+          <input id="csvFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden>
+          <button class="viewer-primary" id="csvBrowse" type="button">Browse CSV File</button>
+          <small>CSV, TSV, or TXT · Up to 50 MB</small>
+          <div id="cleaningStatus" class="tool-status" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="editor-content">
+    <div class="empty-columns-workspace">
+      <div class="empty-columns-tool-card">
+        <div class="empty-columns-input-panel">
+          <div class="empty-columns-input-heading"><div><span>CSV DATA</span><h2>Paste or review your data</h2></div><span class="empty-columns-badge">Remove fully blank columns</span></div>
+          <label class="empty-columns-label" for="csvInput">CSV, TSV, or delimited text</label>
+          <textarea id="csvInput" spellcheck="false" placeholder="ID,Name,Notes&#10;1,Ada Lovelace,&#10;2,Grace Hopper, " aria-describedby="empty-columns-help"></textarea>
+          <p id="empty-columns-help" class="empty-columns-help">A file selected above appears here. You can also paste data directly before running the tool.</p>
+        </div>
+        <aside class="empty-columns-rule-card" aria-label="Empty-column rule">
+          <span>WHAT GETS REMOVED</span>
+          <strong>Only columns with no values</strong>
+          <p>A column is removed only when every data cell below its heading is empty or whitespace. One populated value keeps the column.</p>
+          <p>The first row supplies the headings. A removed column also removes its heading.</p>
+        </aside>
+        <div class="empty-columns-actions"><button class="viewer-primary" id="runTool" type="button">Remove Empty Columns</button><button class="viewer-download" id="downloadResult" type="button" disabled>Download Cleaned CSV</button><button class="viewer-clear" id="clearTool" type="button">Clear</button></div>
+        <section id="cleaningOutput" class="empty-columns-output" hidden aria-live="polite">
+          <div class="empty-columns-output-heading"><div><span>RESULT</span><h2>Cleaned CSV preview</h2></div><p id="cleaningSummary" class="empty-columns-summary"></p></div>
+          <pre id="cleaningPreview"></pre>
+          <p class="empty-columns-preview-note">Long previews are shortened for display. Download CSV contains the complete result.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <article class="tool-seo-content viewer-seo-content empty-columns-content" aria-labelledby="empty-guide-title">
+    <h2 id="empty-guide-title">Remove Empty Columns from a CSV File</h2>
+    <p>CSV exports often include fields that were part of an original form or report but were never filled in. Those empty columns add width to a spreadsheet, make it harder to scan, and can complicate imports into another system. This online CSV column cleaner removes a column only when every data cell beneath its first-row heading is empty or whitespace. Open a file or paste delimited data, review the result, and save a separate cleaned CSV.</p>
+    <p>A column with even one value stays in the result. The tool checks whole columns across the data records, so it does not remove individual blank cells or delete records with missing information.</p>
+
+    <h2>What Counts as an Empty Column?</h2>
+    <p>The first parsed row is used as the heading row. For each heading, the tool looks down that column at the remaining records. Empty strings and cells containing only whitespace count as blank. If no data row has a non-whitespace value in that position, the column and its heading are removed.</p>
+    <div class="tool-seo-table-wrap"><table class="tool-seo-table"><thead><tr><th scope="col">Column example</th><th scope="col">Result</th><th scope="col">Reason</th></tr></thead><tbody>
+      <tr><td><code>Notes</code><br><code></code><br><code> </code></td><td>Removed</td><td>No data cell contains a value.</td></tr>
+      <tr><td><code>Phone</code><br><code></code><br><code>555-0182</code></td><td>Kept</td><td>One populated cell is enough to keep the whole column.</td></tr>
+      <tr><td><code>Status</code><br><code>Pending</code><br><code></code></td><td>Kept</td><td>The column contains a value, even though another record is blank.</td></tr>
+      <tr><td><code>Legacy field</code> with no data below it</td><td>Removed</td><td>A heading by itself does not make the column populated.</td></tr>
+    </tbody></table></div>
+    <p>This is useful for cleaning wide exports before sharing or importing them. For example, if a survey export has optional fields that nobody answered, removing those fully blank fields can make the remaining answers easier to review. A field that is blank for some people but filled for at least one person is retained.</p>
+
+    <h2>How to Remove Blank Columns from CSV or TSV</h2>
+    <ol>
+      <li>Choose <strong>Browse CSV File</strong> or drop a CSV, TSV, or plain-text file into the upload area. You can also paste delimited text into the input box.</li>
+      <li>Check the first row. The tool treats it as the column headings, so a file without headings will have its first data row treated as headings.</li>
+      <li>Select <strong>Remove Empty Columns</strong>. Review the before-and-after row and column counts and the result preview.</li>
+      <li>Select <strong>Download Cleaned CSV</strong> to save the complete result as a new CSV file.</li>
+    </ol>
+    <p>The tool does not ask you to choose columns manually. It applies one consistent rule to every column: if all data cells below its heading are blank or whitespace, that column is dropped.</p>
+
+    <h2>How the Tool Handles Headings and Records</h2>
+    <p>The first parsed record determines the column positions. When an empty column is removed, its heading is removed with it, keeping the remaining headings aligned with their data. If the first record is actually data rather than headings, add a proper header before using the tool so that record is not treated as a heading.</p>
+    <p>Whitespace-only cells count as empty for deciding whether to keep a column. Values in columns that remain are otherwise left as they were; the tool does not trim text, change capitalization, or fill missing cells. Partially blank columns stay intact whenever at least one data cell contains a value.</p>
+    <p>Completely blank physical lines are skipped during parsing. A record made from delimiters, such as <code>,,</code>, is still a parsed data row. Since all of its cells are blank, it does not make any column non-empty. Common comma, tab, semicolon, and pipe separators are detected, and quoted fields are parsed together.</p>
+
+    <h2>Preview and Download the Result</h2>
+    <p>After processing, the summary shows the number of data rows and columns before and after cleanup. The on-page preview is shortened at about 7,000 characters for large results. That display limit does not affect the downloaded file: <strong>Download Cleaned CSV</strong> saves the complete output.</p>
+    <p>The result is a separate comma-separated <code>.csv</code> file, even if the source was a TSV or TXT file. CSV stores text values, not spreadsheet styling, formulas, or multiple worksheets. Your original file is not overwritten.</p>
+
+    <section class="faq tool-seo-faq" aria-labelledby="empty-faq-title">
+      <label for="empty-faq-title">REMOVE EMPTY COLUMNS FAQ</label>
+      <h2 id="empty-faq-title">Questions About Removing Blank CSV Columns</h2>
+      <details><summary>When does a CSV column count as empty?</summary><p>A column is empty when every data cell below its first-row heading is blank or contains whitespace only. The heading is removed along with that column.</p></details>
+      <details><summary>Will the tool remove a column if only some cells are blank?</summary><p>No. If even one data row has a non-whitespace value in the column, the whole column is kept. Individual blank cells are not changed.</p></details>
+      <details><summary>Does it preserve my column headings?</summary><p>It preserves headings for columns that remain. When a column is removed, its heading is removed too so the remaining headings stay aligned with their data.</p></details>
+      <details><summary>Does the tool remove rows with missing values?</summary><p>No. This page removes fully empty columns only. It keeps rows and partially populated columns. Use a missing-values checker if you need to find incomplete records.</p></details>
+      <details><summary>Can I clean TSV files or paste data?</summary><p>Yes. You can open CSV, TSV, or TXT files up to 50 MB, or paste delimited data. The downloaded result is a CSV file.</p></details>
+      <details><summary>Why did a blank line not appear in the row count?</summary><p>Completely empty physical lines are skipped while parsing. A delimiter-only record such as <code>,,</code> is counted as a data row, but it does not keep any columns.</p></details>
+      <details><summary>Does the preview show the entire output?</summary><p>Long previews are shortened at about 7,000 characters. Download the cleaned CSV to get the complete result.</p></details>
+      <details><summary>Are my CSV files uploaded?</summary><p>No. This tool reads and processes the file in your browser. It does not send the file contents to a server.</p></details>
+    </section>
+
+    <h2>File Support and Privacy</h2>
+    <p>Use a CSV, TSV, or plain-text delimited file up to 50 MB, or paste data directly. Processing happens in your browser, so the file contents are not uploaded. Very large files can take longer depending on your device and available memory.</p>
+
+    <h2>Related CSV Cleanup Tools</h2>
+    <p>Use <a href="remove-empty-rows.html">Remove Empty Rows</a> when records are blank across every field, or visit the <a href="csv-cleaner.html">CSV Cleaner</a> for several cleanup actions. You can also browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-viewer.html">CSV Viewer</a><a href="online-csv-reader.html">Online CSV Reader</a><a href="large-csv-viewer.html">Large CSV Viewer</a><a href="csv-preview-tool.html">CSV Preview Tool</a><a href="csv-column-viewer.html">CSV Column Viewer</a><a href="csv-row-viewer.html">CSV Row Viewer</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="remove-duplicate-rows.html">Remove Duplicate Rows</a><a href="remove-empty-rows.html">Remove Empty Rows</a><a href="remove-empty-columns.html" aria-current="page">Remove Empty Columns</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">CSV Cleaner</a><a href="remove-empty-columns.html" aria-current="page">Remove Empty Columns</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+<script src="csv-cleaning-tools.js?v=2"></script>
+<script>
+(function(){
+  var nav=document.getElementById("emptyColumnsNav");
+  var menu=document.getElementById("emptyColumnsMenu");
+  var theme=document.getElementById("emptyColumnsTheme");
+  var dark=localStorage.getItem("romitcsv.theme.v2")!=="light";
+  document.body.classList.toggle("dark",dark);
+  theme.setAttribute("aria-pressed",String(dark));
+  theme.addEventListener("click",function(){
+    var nextDark=!document.body.classList.contains("dark");
+    document.body.classList.toggle("dark",nextDark);
+    theme.setAttribute("aria-pressed",String(nextDark));
+    localStorage.setItem("romitcsv.theme.v2",nextDark?"dark":"light");
+  });
+  menu.addEventListener("click",function(){
+    var open=nav.classList.toggle("open");
+    menu.setAttribute("aria-expanded",String(open));
+  });
+})();
+</script>
+</body>
+</html>
+

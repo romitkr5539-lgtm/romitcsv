@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Read CSV and TSV files as decoded plain text. Inspect separators, quotes, and line breaks, then copy or download the text. Files up to 50 MB are processed in your browser."><meta name="author" content="RomitCSV"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>Online CSV Reader – Read CSV as Plain Text</title><meta property="og:type" content="website"><meta property="og:site_name" content="RomitCSV"><meta property="og:title" content="Online CSV Reader: Read CSV as Plain Text"><meta property="og:description" content="Read CSV and TSV files as decoded plain text. Inspect separators, quotes, and line breaks, then copy or download the text. Files up to 50 MB are processed in your browser."><meta property="og:url" content="https://romitcsv.com/online-csv-reader.html"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Online CSV Reader: Read CSV as Plain Text"><meta name="twitter:description" content="Read CSV and TSV files as decoded plain text. Inspect separators, quotes, and line breaks, then copy or download the text. Files up to 50 MB are processed in your browser."><meta name="theme-color" content="#10b995"><link rel="canonical" href="https://romitcsv.com/online-csv-reader.html">
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-12">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://romitcsv.com/online-csv-reader.html#webpage","url":"https://romitcsv.com/online-csv-reader.html","name":"Online CSV Reader | Read CSV as Plain Text","description":"Read CSV and TSV files as decoded plain text. Inspect separators, quotes, and line breaks, then copy or download the text. Files up to 50 MB are processed in your browser.","inLanguage":"en"},{"@type":"WebApplication","@id":"https://romitcsv.com/online-csv-reader.html#tool","name":"RomitCSV Online CSV Reader","url":"https://romitcsv.com/online-csv-reader.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and a modern web browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Read CSV and TSV files as decoded plain text. Inspect separators, quotes, and line breaks, then copy or download the text. Files up to 50 MB are processed in your browser."}]}</script>
+</head><body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="readerNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Viewer</strong><small>Search and browse CSV files</small></span></a></li>
+        <li role="none"><a href="online-csv-reader.html" class="active" role="menuitem"><span class="ndm-icon ndm-teal">⌕</span><span><strong>Online CSV Reader</strong><small>Inspect raw CSV text</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="readerTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="readerMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+<main id="specialTool" class="csv-editor-page csv-viewer-page reader-tool-page" data-kind="reader"><section class="editor-hero"><div class="editor-hero-inner"><div><span class="viewer-pill">Free Online CSV Reader</span><h1>Online CSV Reader</h1><p>Read the decoded text of a CSV or TSV file without converting it into a table. Inspect separators and line breaks, then copy or download a text copy. Your file is read in your browser.</p></div><div class="editor-upload-card" id="specialUpload"><div class="editor-upload" id="specialDropzone"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV or TSV file here to read</strong><span>or</span><input id="specialFile" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values" hidden><button class="viewer-primary" id="specialBrowse" type="button">Browse CSV File</button><small>Supports CSV, TSV · Max file size: 50 MB</small><div id="specialStatus" class="tool-status" role="status" aria-live="polite"></div></div></div></div></section><section class="editor-content"><div id="toolWorkspace" class="special-workspace" hidden></div></section>
+<article class="tool-seo-content viewer-seo-content" aria-labelledby="special-guide-title">
+  <h2 id="special-guide-title">Read CSV and TSV Files as Plain Text</h2>
+  <p>The Online CSV Reader is for seeing the file’s text directly. Open a CSV or TSV file to inspect its separators, quotation marks, and line breaks without turning the content into table columns. This view can help when an export looks unusual, an import is failing, or you want to check exactly how a record is written.</p>
+  <p>Unlike a table viewer, this page does not interpret the first line as headings or rearrange values into cells. It also does not validate or repair the file. The text stays read-only while you inspect it.</p>
+
+  <h2>What to Look for in the Raw Text</h2>
+  <p>In a CSV, commas commonly separate fields; in a TSV, tabs do. A quoted field can contain a comma or a line break without that character acting as a field or record separator. For example, <code>"Portland, Oregon"</code> is one value when the comma is inside the quotation marks. The Reader leaves these characters visible, which can make a delimiter or quoting issue easier to spot.</p>
+  <p>Line breaks in the text do not always equal the number of CSV records. A quoted value may span multiple physical lines, and the file’s final line break can affect the displayed line count. The summary shows the decoded text’s line count and the selected file’s byte size; use the line count as a text detail, not as a guaranteed record count.</p>
+
+  <h2>Open, Copy, or Download the Text</h2>
+  <ol>
+    <li>Choose <strong>Browse CSV File</strong> or drop a CSV or TSV file into the upload area. Files up to 50 MB are accepted.</li>
+    <li>Read the contents in the plain-text panel. It is read-only, and long lines can be scrolled horizontally.</li>
+    <li>Choose <strong>Copy file text</strong> to copy the decoded contents, or <strong>Download text copy</strong> to save them under the selected file’s name.</li>
+  </ol>
+  <p>The copy and download contain the text the browser decoded from the file. The download is written as UTF-8 text, so a source file saved in a different character encoding may not be reproduced byte-for-byte. If preserving the original file exactly matters, keep the original file and use this page only to inspect it.</p>
+
+  <h2>Choose a Table Viewer When You Need Structured Data</h2>
+  <p>If you want to scan records in columns, search for a value, or sort by a heading, use the <a href="csv-viewer.html">CSV Viewer</a>. To see a small sample of rows before working with a larger export, use the <a href="csv-preview-tool.html">CSV Preview Tool</a>. The Online CSV Reader is the better fit when you need to inspect the original separators, quotes, and line breaks as text.</p>
+
+  <h2>File Size and Privacy</h2>
+  <p>CSV and TSV uploads are limited to 50 MB. The Reader loads the selected file as text in your browser, so larger files may take longer to open and require more available memory. The file contents are not sent to a server by this tool.</p>
+
+  <section class="faq tool-seo-faq" aria-labelledby="reader-faq-title">
+    <label for="reader-faq-title">ONLINE CSV READER FAQ</label>
+    <h2 id="reader-faq-title">Questions About Reading CSV as Text</h2>
+    <details><summary>Does the Online CSV Reader show my file as a table?</summary><p>No. It displays the decoded text with separators and line breaks visible. For rows and columns, use the <a href="csv-viewer.html">CSV Viewer</a>.</p></details>
+    <details><summary>Can I open a TSV file?</summary><p>Yes. The Reader accepts CSV and TSV files up to 50 MB and displays either one as plain text.</p></details>
+    <details><summary>Why does the line count differ from the number of records?</summary><p>The count is based on physical lines in the decoded text. A quoted field can contain a line break, so one CSV record may span more than one displayed line.</p></details>
+    <details><summary>Can I change or fix the file in the Reader?</summary><p>No. The text panel is read-only, and this page does not validate, repair, or reformat the data. Use the <a href="csv-editor.html">CSV Editor</a> to change cell values.</p></details>
+    <details><summary>Will the text download preserve the original encoding?</summary><p>Not necessarily. The browser decodes the file as text, and the download is saved as UTF-8. If the original uses another encoding, some characters may differ.</p></details>
+    <details><summary>Can I copy the contents or download a text copy?</summary><p>Yes. Use <strong>Copy file text</strong> for the clipboard or <strong>Download text copy</strong> to save the decoded text under the selected file’s name.</p></details>
+    <details><summary>Is my file uploaded?</summary><p>No. The Reader processes the selected file in your browser and does not send its contents to a server.</p></details>
+  </section>
+</article>
+
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script><script src="csv-special-tools.js?v=5"></script><script>
+(function(){
+  var nav=document.getElementById("readerNav");
+  var menu=document.getElementById("readerMenu");
+  var theme=document.getElementById("readerTheme");
+  var dark=localStorage.getItem("romitcsv.theme.v2")!=="light";
+  document.body.classList.toggle("dark",dark);
+  theme.setAttribute("aria-pressed",String(dark));
+  theme.addEventListener("click",function(){
+    var nextDark=!document.body.classList.contains("dark");
+    document.body.classList.toggle("dark",nextDark);
+    theme.setAttribute("aria-pressed",String(nextDark));
+    localStorage.setItem("romitcsv.theme.v2",nextDark?"dark":"light");
+  });
+  menu.addEventListener("click",function(){
+    var isOpen=nav.classList.toggle("open");
+    menu.setAttribute("aria-expanded",String(isOpen));
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-viewer.html">CSV Viewer</a><a href="online-csv-reader.html">Online CSV Reader</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer></body></html>
+
+

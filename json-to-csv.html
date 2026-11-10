@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert JSON objects or arrays to CSV online. Paste JSON or upload a file, preview the rows, then copy or download your CSV.">
+<title>JSON to CSV Converter - Convert JSON Online | RomitCSV</title>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-8">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="jsonCsvNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" class="active" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="jsonCsvTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="jsonCsvMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="json-to-csv-page json-csv-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online JSON to CSV Converter</span>
+        <h1>Convert JSON to CSV</h1>
+        <p>Turn an object or array of objects into spreadsheet-ready CSV. Upload a JSON file or paste JSON text to start.</p>
+      </div>
+      <div class="editor-upload-card" id="jsonCsvUploadCard">
+        <div class="editor-upload" id="jsonCsvDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop a JSON file here to convert</strong>
+          <span>or</span>
+          <input id="jsonCsvFile" type="file" accept=".json,application/json" hidden>
+          <button class="viewer-primary" id="jsonCsvBrowse" type="button">Browse JSON File</button>
+          <small>JSON file · Up to 50 MB</small>
+          <div id="jsonCsvStatus" class="tool-status" role="status"></div>
+        </div>
+        <div class="json-csv-paste-card">
+          <div><span class="json-csv-paste-kicker">PASTE INPUT</span><h2>Have JSON text?</h2><p>Paste a single object or an array of objects.</p></div>
+          <textarea id="jsonCsvPasteInput" rows="5" spellcheck="false" placeholder='[{"name":"Ada","city":"London"}]' aria-label="Paste JSON text"></textarea>
+          <button class="viewer-edit" id="jsonCsvPasteConvert" type="button">Convert pasted JSON</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content" id="jsonCsvWorkspaceSection" hidden>
+    <div id="jsonCsvWorkspace" class="json-csv-workspace" hidden></div>
+  </section>
+  <article class="viewer-seo-content json-csv-seo-content" aria-labelledby="jsonCsvGuideTitle">
+    <span class="json-csv-paste-kicker">JSON CONVERSION GUIDE</span>
+    <h2 id="jsonCsvGuideTitle">Convert JSON data to CSV</h2>
+    <p>JSON is useful for applications and APIs because it can represent structured records. CSV is often easier to open in spreadsheet software, import into a database, or share with someone who needs a simple table. This free JSON to CSV converter turns a JSON object or a list of objects into rows and columns, with a preview before you copy or download the result.</p>
+
+    <h2>How the JSON to CSV converter works</h2>
+    <p>Start with a JSON file or paste JSON text into the input box. The converter reads the data in your browser, checks that it contains a supported object structure, and builds a table from the object properties. Review the preview, choose whether to include a header row and how to handle null or nested values, then select <strong>Convert</strong>. You can copy the resulting CSV or save it as a <code>.csv</code> file.</p>
+    <ol>
+      <li>Upload a <code>.json</code> file or paste valid JSON.</li>
+      <li>Review the detected fields and adjust the conversion options.</li>
+      <li>Select <strong>Convert</strong> to refresh the preview, then copy or download the CSV.</li>
+    </ol>
+
+    <h2>Supported JSON structure</h2>
+    <p>The converter accepts either one JSON object or an array of JSON objects. An array is the usual choice when converting a collection of records: each object becomes a CSV row, and its properties become columns. For example, an array of people with <code>name</code>, <code>email</code>, and <code>city</code> properties becomes a table with those fields.</p>
+    <p>Objects in the same array do not need identical properties. The converter collects field names in the order they first appear and leaves a cell empty when a record has no value for a field. Arrays of numbers or strings, nested arrays as top-level records, and empty arrays are not supported as rows because they do not provide a consistent set of named columns.</p>
+
+    <h2>Headers, null values, and nested data</h2>
+    <p>The <strong>Include header row</strong> option adds the field names as the first CSV row. This is useful for spreadsheets and imports that expect column labels. Turn it off when the destination expects data rows only.</p>
+    <p>By default, a JSON <code>null</code> becomes an empty CSV cell. You can turn off <strong>Empty cells for null values</strong> to write the word <code>null</code> instead. Primitive values such as numbers and booleans are written as text, as CSV does not preserve JSON data types. If an object contains arrays or nested objects, <strong>Serialize nested values as JSON</strong> keeps that cell as a JSON string. Disable it only if you want the browser's basic text representation of nested values.</p>
+
+    <h2>CSV escaping and preview</h2>
+    <p>Commas, quote marks, and line breaks inside a value need special handling in CSV. The converter wraps such values in double quotes and doubles any quote marks inside them, so they remain part of one cell when opened by a CSV-aware app. The preview shows up to ten data records to keep large files manageable; downloading still includes the complete converted output.</p>
+    <p>CSV is a flat format, so it cannot retain every feature of JSON. Nested information is kept as text when JSON serialization is enabled, while object relationships, data types, and deeper structure are not converted into separate tables automatically. If your destination needs those details, keep the original JSON or transform the structure before exporting.</p>
+
+    <h2>Frequently asked questions</h2>
+    <details><summary>Can I convert JSON to CSV without uploading a file?</summary><p>Yes. Paste a JSON object or array of objects into the paste box and choose <strong>Convert pasted JSON</strong>. You can also edit the JSON in the workbench after it loads.</p></details>
+    <details><summary>What JSON input does this converter accept?</summary><p>It accepts one object or a non-empty array where every item is an object. Arrays of primitive values and arrays of arrays do not provide named fields for CSV columns and are not accepted.</p></details>
+    <details><summary>How are different object properties handled?</summary><p>Fields are combined across records in first-seen order. If a record does not contain one of those fields, its CSV cell is left empty.</p></details>
+    <details><summary>Does the CSV keep numbers and booleans as their original types?</summary><p>No. CSV stores cell values as text. Spreadsheet programs may infer types when opening the file, but that behavior depends on the program.</p></details>
+    <details><summary>How are commas and quotation marks handled?</summary><p>Values containing commas, quotes, or line breaks are enclosed in quotes, and embedded quotes are doubled according to common CSV escaping rules.</p></details>
+    <details><summary>Will the preview show every converted row?</summary><p>The preview displays up to ten data records. Use Download CSV to save the complete converted result.</p></details>
+    <details><summary>Is my JSON sent to a server?</summary><p>This page reads and converts the selected or pasted data in your browser. The tool's conversion code does not upload the JSON to a conversion service.</p></details>
+    <details><summary>What if the JSON is invalid or deeply nested?</summary><p>The converter reports a parse or structure error for invalid input. Nested objects and arrays inside a record can be serialized into a JSON string, but they are not expanded into additional CSV columns automatically.</p></details>
+
+    <h2>Continue working with your data</h2>
+    <p>Need the reverse conversion? Try the <a href="csv-to-json.html">CSV to JSON converter</a>. To inspect a CSV as a browsable grid, open the <a href="csv-table-viewer.html">CSV Table Viewer</a>.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="json-to-csv.js?v=romitjson-theme-3"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>

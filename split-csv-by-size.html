@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Split CSV Files by Size Online | Set a Target Limit</title>
+<meta name="description" content="Split a CSV or TSV into smaller files by a target size in KB. Keep records intact, preview each part, and download individual files or a ZIP.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/split-csv-by-size.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Split CSV Files by Size Online | Set a Target Limit">
+<meta property="og:description" content="Split a CSV or TSV into smaller files by a target size in KB. Keep records intact, preview each part, and download individual files or a ZIP.">
+<meta property="og:url" content="https://romitcsv.com/split-csv-by-size.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Split CSV Files by Size Online | Set a Target Limit">
+<meta name="twitter:description" content="Split a CSV or TSV into smaller files by a target size in KB. Keep records intact, preview each part, and download individual files or a ZIP.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Split CSV by File Size","url":"https://romitcsv.com/split-csv-by-size.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Split a CSV or TSV into smaller files by target size while keeping each record intact and repeating headings in every part."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-35">
+<link rel="stylesheet" href="csv-merge-split-tools.css?v=batch-tools-4">
+</head>
+<body class="dark csv-merger-page csv-batch-page" data-batch-mode="size">
+<header class="site-header viewer-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="csv-merger.html">CSV Merger</a><a href="csv-combiner.html">CSV Combiner</a><a href="csv-joiner.html">CSV Joiner</a><a href="split-csv-by-rows.html">Split by Rows</a><a href="split-csv-by-size.html" class="active" aria-current="page">Split by Size</a><a href="split-csv-by-columns.html">Split by Columns</a><a href="tool.html">All Tools</a></nav>
+    <div class="header-actions"><button class="theme-switch" id="batchTheme" type="button" aria-label="Toggle theme" aria-pressed="true"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="batchMenu" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-merger-page">
+  <section class="editor-hero"><div class="editor-hero-inner"><div><span class="viewer-pill">Free Online CSV Size Splitter</span><h1>Split CSV Files by Target Size</h1><p>Set a maximum part size in kilobytes and split a CSV or TSV into sequential files. Records stay intact, and every part includes the original column headings.</p><p id="batchStatus" class="merger-status" role="status" aria-live="polite"></p></div><div class="editor-upload-card" id="batchUploadCard"><div class="editor-upload" id="batchDropzone"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop one CSV or TSV file here</strong><span>or</span><input id="batchFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="batchBrowse" type="button">Browse CSV File</button><small>One file · Up to 50 MB</small></div></div></div></section>
+  <section class="editor-content"><div id="batchWorkspace" class="merger-workspace" hidden></div></section>
+  <article class="tool-seo-content viewer-seo-content merger-content batch-guide" aria-labelledby="batch-guide-title">
+    <h2 id="batch-guide-title">Split a CSV into Parts by File Size</h2>
+    <p>Some upload forms and data systems limit the size of each file you can send. This CSV size splitter breaks one file into smaller, sequential parts using a target size in kilobytes. It keeps each data record together and repeats the heading row at the start of every part, so the files remain recognizable on their own.</p>
+    <h2>Set the target size in KB</h2>
+    <p>Enter the maximum target size for each part. The tool measures the generated CSV text in bytes and groups complete records until adding another row would pass the target. It then starts the next part with the original header and continues with the next record.</p>
+    <p>A target is a best effort when a single row or the repeated header is larger than the limit. The splitter will not break a record across files, so an oversized row stays intact in its own part and may make that file exceed the requested size. UTF-8 characters, quoting, and delimiters also affect the final byte count.</p>
+    <h2>Preview and download the size-based parts</h2>
+    <ol><li>Choose or drop one CSV, TSV, or supported delimited text file up to 50 MB.</li><li>Set the desired maximum part size in KB.</li><li>Select <strong>Split by File Size</strong> and review the part sizes and table preview.</li><li>Download one part or save all parts together as a ZIP archive.</li></ol>
+    <p>Parts remain in source order and use numbered filenames. Each downloaded file includes all its rows and a header. The preview displays a page of data from the selected part; it does not limit the downloaded content.</p>
+    <h2>What is preserved when a file is split</h2>
+    <p>Rows are not sorted, filtered, or deduplicated. Every source data record appears once, in its original order. Quoted commas, quotation marks, and line breaks stay inside their fields. TSV and supported delimited TXT input is converted to comma-separated CSV output.</p>
+    <p>The source file is left unchanged. Processing happens in your browser; file contents are not sent to the RomitCSV server. The splitter supports up to 10,000 output parts. If your target would create more, increase the size limit.</p>
+    <section class="faq tool-seo-faq" aria-labelledby="batch-faq-title"><p class="faq-kicker">CSV SIZE SPLITTER FAQ</p><h2 id="batch-faq-title">Questions About Splitting CSV by File Size</h2>
+      <details><summary>Will every part stay under my target size?</summary><p>Usually, but not if a single record or the repeated header is larger than the target. Records are kept whole, so an oversized row can make a part exceed the limit.</p></details>
+      <details><summary>Are rows broken apart to meet the size?</summary><p>No. A full row stays together in one output file.</p></details>
+      <details><summary>Does each part include the column headings?</summary><p>Yes. The source header is repeated in every part.</p></details>
+      <details><summary>What does KB mean here?</summary><p>The size field is entered in kilobytes, with 1 KB treated as 1,024 bytes for the target calculation.</p></details>
+      <details><summary>Will the parts keep their original order?</summary><p>Yes. Records are written sequentially, and each numbered part follows the previous one.</p></details>
+      <details><summary>Can I download all the parts at once?</summary><p>Yes. Select the ZIP option to save every part in one archive, or download the part currently selected.</p></details>
+      <details><summary>Can I split TSV files by size?</summary><p>Yes. TSV and supported delimited text files are accepted; the output files use CSV formatting.</p></details>
+      <details><summary>Are my files uploaded?</summary><p>No. The file is processed in your browser and remains unchanged on your device.</p></details>
+    </section>
+    <h2>Check each part against the destination limit</h2><p>Review the displayed sizes before uploading the parts to another service. If one part is over the target because it contains a long record or heading, raise the target size or check that service’s exact file-size rule. If you want a fixed number of records per output instead, use the <a href="split-csv-by-rows.html">CSV row splitter</a>.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-merger.html">CSV Merger</a><a href="csv-combiner.html">CSV Combiner</a><a href="csv-joiner.html">CSV Joiner</a><a href="tool.html">All CSV tools</a></section><section class="footer-column"><h2>SPLIT CSV</h2><a href="split-csv-by-rows.html">Split by rows</a><a href="split-csv-by-size.html">Split by file size</a><a href="split-csv-by-columns.html">Split by columns</a><a href="csv-splitter.html">CSV Splitter</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="tool.html">All tools</a><a href="index.html#faq">Frequently asked questions</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="csv-batch-tools.js?v=batch-tools-3"></script>
+</body>
+</html>
