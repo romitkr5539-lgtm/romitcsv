@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Append CSV Files Online | Stack Rows with the Same Columns</title>
+<meta name="description" content="Append CSV or TSV files with identical headings and column order into one file. Keep one header, preview the stacked rows, and download a new CSV.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/append-csv-files.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Append CSV Files Online | Stack Rows with the Same Columns">
+<meta property="og:description" content="Append CSV or TSV files with identical headings and column order into one file. Keep one header, preview the stacked rows, and download a new CSV.">
+<meta property="og:url" content="https://romitcsv.com/append-csv-files.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Append CSV Files Online | Stack Rows with the Same Columns">
+<meta name="twitter:description" content="Append CSV or TSV files with identical headings and column order into one file. Keep one header, preview the stacked rows, and download a new CSV.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Append CSV Files","url":"https://romitcsv.com/append-csv-files.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Append records from CSV files with identical header rows, keeping the shared header only once."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-35">
+<link rel="stylesheet" href="csv-merge-split-tools.css?v=batch-tools-4">
+</head>
+<body class="dark csv-merger-page csv-batch-page" data-batch-mode="append">
+<header class="site-header viewer-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="csv-merger.html">CSV Merger</a><a href="csv-combiner.html">CSV Combiner</a><a href="csv-joiner.html">CSV Joiner</a><a href="merge-multiple-csv-files.html">Merge Multiple Files</a><a href="append-csv-files.html" class="active" aria-current="page">Append Files</a><a href="tool.html">All Tools</a></nav>
+    <div class="header-actions"><button class="theme-switch" id="batchTheme" type="button" aria-label="Toggle theme" aria-pressed="true"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="batchMenu" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-merger-page">
+  <section class="editor-hero"><div class="editor-hero-inner"><div><span class="viewer-pill">Free Online CSV Appender</span><h1>Append CSV Files with Matching Columns</h1><p>Stack the data rows from multiple CSV or TSV files into one table. This tool keeps a single header and checks that every file has the same columns in the same order.</p><p id="batchStatus" class="merger-status" role="status" aria-live="polite"></p></div><div class="editor-upload-card" id="batchUploadCard"><div class="editor-upload" id="batchDropzone"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop two or more CSV or TSV files here</strong><span>or</span><input id="batchFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" multiple hidden><button class="viewer-primary" id="batchBrowse" type="button">Browse CSV Files</button><small>Select several files · Up to 50 MB each</small></div></div></div></section>
+  <section class="editor-content"><div id="batchWorkspace" class="merger-workspace" hidden></div></section>
+  <article class="tool-seo-content viewer-seo-content merger-content batch-guide" aria-labelledby="batch-guide-title">
+    <h2 id="batch-guide-title">Append CSV Files by Stacking Their Rows</h2>
+    <p>Appending is a straightforward way to combine exports that use one consistent table layout. It places the data rows from each file below the previous file’s rows and keeps the first file’s column headings once at the top. Use it for recurring reports, weekly extracts, or batches of records with the same fields.</p>
+    <p>For example, if two monthly files each contain <code>Date,Order ID,Amount</code>, appending them creates one table with the same three columns and all records stacked together. The second file’s heading row is not copied as a data record.</p>
+    <h2>Inputs must have the same headings and order</h2>
+    <p>Every selected file must have exactly the same heading text in the same sequence. Capitalization, spacing, and column order all matter. <code>Customer ID</code> is different from <code>customer id</code>, and <code>Name,Email</code> is not the same layout as <code>Email,Name</code>. If a file fails this check, the appender reports which source does not match so you can correct or replace it.</p>
+    <p>Appending does not try to align columns or guess which differently named fields are equivalent. If your files use different column positions or have additional headings, use the <a href="merge-multiple-csv-files.html">multiple CSV merger</a>, which matches fields by heading.</p>
+    <h2>Choose the source order and append</h2>
+    <ol><li>Select or drop at least two CSV, TSV, or supported delimited TXT files, up to 50 MB each.</li><li>Review their order. Records are appended in the order shown.</li><li>Add another file or remove a source before processing if needed.</li><li>Select <strong>Append CSV Files</strong>. If the headings match, preview the stacked table and download the new CSV.</li></ol>
+    <p>The result preview is paginated, while the download includes all appended records. Values containing commas, line breaks, or quotation marks remain within their fields. TSV and supported delimited text files are converted to comma-separated CSV output.</p>
+    <h2>What appending does not change</h2>
+    <p>Rows are not sorted, filtered, or deduplicated. Duplicate records remain, and each source contributes its data rows in its listed order. The output contains one heading row from the first source and then the records from every file. The original files are left unchanged.</p>
+    <p>Files are read and processed in your browser. Their contents are not sent to the RomitCSV server. For a key-based match between two datasets, use the <a href="csv-joiner.html">CSV Joiner</a> instead of appending.</p>
+    <section class="faq tool-seo-faq" aria-labelledby="batch-faq-title"><p class="faq-kicker">APPEND CSV FAQ</p><h2 id="batch-faq-title">Questions About Appending CSV Files</h2>
+      <details><summary>How is appending different from merging?</summary><p>Appending stacks rows and requires identical headings in the same order. Merging aligns fields by heading and can accommodate different column orders or additional columns.</p></details>
+      <details><summary>Are headings repeated between files?</summary><p>No. The output keeps the first file’s header once. The later header rows are not added as data.</p></details>
+      <details><summary>What if two files have different column orders?</summary><p>The appender stops and identifies the mismatch. Reorder the columns or use the multiple-file merger to match by heading.</p></details>
+      <details><summary>Does appending remove duplicates?</summary><p>No. Duplicate rows are preserved exactly as records in the source files.</p></details>
+      <details><summary>Does file order affect the result?</summary><p>Yes. The source list order determines which file’s records appear first.</p></details>
+      <details><summary>Can I append TSV files?</summary><p>Yes. CSV, TSV, and supported delimited TXT files can be appended if their headings match exactly.</p></details>
+      <details><summary>Can I add or remove files before appending?</summary><p>Yes. Add more sources or remove listed files before running the append.</p></details>
+      <details><summary>Are my files uploaded?</summary><p>No. They are processed in your browser, and the originals are not modified.</p></details>
+    </section>
+    <h2>Check the combined row count before exporting</h2><p>Before importing the appended file into a database or spreadsheet, review the heading row and source order. Compare the result row count with the totals in the source files, and remember that repeated records remain unless you remove them in a separate cleanup step.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-merger.html">CSV Merger</a><a href="csv-combiner.html">CSV Combiner</a><a href="csv-joiner.html">CSV Joiner</a><a href="tool.html">All CSV tools</a></section><section class="footer-column"><h2>MERGE &amp; APPEND</h2><a href="merge-multiple-csv-files.html">Merge multiple files</a><a href="append-csv-files.html">Append CSV files</a><a href="csv-merger.html">CSV Merger</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="tool.html">All tools</a><a href="index.html#faq">Frequently asked questions</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="csv-batch-tools.js?v=batch-tools-3"></script>
+</body>
+</html>

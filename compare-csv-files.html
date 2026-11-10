@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compare Two CSV Files Online | RomitCSV</title>
+<meta name="description" content="Compare CSV files without relying on row order. Find rows that occur only in either file, account for duplicate rows, and download both result lists.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/compare-csv-files.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Compare Two CSV Files Online">
+<meta property="og:description" content="Find rows that occur only in either CSV file, even when row order differs. Review and download both result lists.">
+<meta property="og:url" content="https://romitcsv.com/compare-csv-files.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Compare Two CSV Files Online","url":"https://romitcsv.com/compare-csv-files.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compare CSV files without relying on row order. Find rows that occur only in either file, account for duplicate rows, and download both result lists."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-merge-split-tools.css?v=2">
+</head>
+<body class="dark" data-merge-split-tool="compare-csv-files">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-ms-page">
+  <section class="csv-ms-hero">
+    <span class="eyebrow">Free CSV file tool</span>
+    <h1>Compare Two CSV Files</h1>
+    <p>Compare two CSV files row by row and download the records found only in each file.</p>
+  </section>
+  <section class="csv-ms-panel" aria-label="CSV tool">
+    <label for="csvFiles">Choose CSV or TSV file(s)
+      <input id="csvFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" multiple>
+    </label>
+    <div id="msOptions"><p>Select two or more files for this operation.</p></div>
+    <div class="csv-ms-actions">
+      <button class="viewer-primary" id="runMsTool" type="button">Run Tool</button>
+      <button class="viewer-download" id="clearMsTool" type="button">Clear</button>
+    </div>
+    <p id="msStatus" role="status" aria-live="polite"></p>
+    <section id="msOutput" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p id="msSummary"></p>
+      <div id="msDownloads"></div>
+      <div id="msPreviewTables"></div>
+      <h3>Preview</h3>
+      <pre id="msPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-ms-guide">
+    <span class="dev-guide-kicker">Comparison guide</span>
+    <h2>Compare CSV records without relying on row order</h2>
+    <p>This tool compares complete data rows in two files and reports which rows occur only in the first file and which occur only in the second. It accounts for repeated rows: if a row appears three times in one file and twice in the other, one occurrence is reported as an extra. Header rows are retained in the result files but are not part of the record matching.</p>
+    <h2>How to compare two files</h2>
+    <ol><li>Choose exactly two CSV or TSV files.</li><li>Select <strong>Run Tool</strong> to compare their data rows.</li><li>Review the counts, then download the two result files: one for rows unique to each input.</li></ol>
+    <h2>Make sure the files are comparable</h2>
+    <p>Rows are matched by their parsed cell values and column order. Files with different column orders can report equivalent records as different, so align columns first when needed. The comparison does not identify records by a chosen ID column or normalize capitalization and whitespace.</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Does row order affect the result?</summary><p>No. Complete rows are counted by their values, so the same rows can appear in a different order.</p></details>
+    <details><summary>Are duplicate rows handled?</summary><p>Yes. Repeated rows are counted, and only the unmatched number of occurrences appears in the corresponding output.</p></details>
+    <details><summary>Does it compare columns by their names?</summary><p>No. Matching uses the full sequence of cell values in each row. Put the columns in the same order before comparing files.</p></details>
+    <p>Processing runs locally in your browser. Explore <a href="tool.html">all CSV tools</a>, including <a href="csv-diff-checker.html">CSV Diff Checker</a> for comparing cells by row position.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-merge-split-tools.js"></script>
+</body>
+</html>

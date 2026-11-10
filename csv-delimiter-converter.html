@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Delimiter Converter | RomitCSV</title>
+<meta name="description" content="Convert CSV delimiter to tab, semicolon, or pipe">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-delimiter-converter.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Delimiter Converter">
+<meta property="og:description" content="Convert CSV delimiter to tab, semicolon, or pipe">
+<meta property="og:url" content="https://romitcsv.com/csv-delimiter-converter.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Delimiter Converter","url":"https://romitcsv.com/csv-delimiter-converter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert CSV delimiter to tab, semicolon, or pipe"}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-advanced-tools.css?v=2">
+</head>
+<body class="dark" data-advanced-tool="csv-delimiter-converter">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-viewer.html">CSV Viewer</a><a href="csv-to-json.html">CSV to JSON</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-adv-page">
+  <section class="csv-adv-hero">
+    <span class="eyebrow">Free advanced CSV tool</span>
+    <h1>CSV Delimiter Converter</h1>
+    <p>Change a CSV file from its detected delimiter to comma, tab, semicolon, or pipe-separated output. Preview the converted rows and download the new file.</p>
+  </section>
+  <section class="csv-adv-panel" aria-label="Advanced CSV tool">
+    <label for="advancedFiles">Choose a CSV or TSV file
+      <input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div id="advOptions"></div>
+    <div class="csv-adv-actions">
+      <button class="viewer-primary" id="runAdvanced" type="button">Run Tool</button>
+      <button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button>
+      <button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button>
+      <button class="viewer-download" id="clearAdvanced" type="button">Clear</button>
+    </div>
+    <p id="advStatus" role="status" aria-live="polite"></p>
+    <section id="advOutput" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p id="advSummary"></p>
+      <div id="advVisual" hidden></div>
+      <pre id="advPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-adv-guide"><span class="dev-guide-kicker">Tool guide</span><h2>CSV Delimiter Converter: what it does</h2><p>The converter parses common comma, tab, semicolon, and pipe input, then writes the same cell values using the delimiter you choose. Fields containing delimiters, quotes, or line breaks are quoted and escaped.</p><h2>How to use it</h2><p>Choose a CSV or delimited text file, select an output separator, and run the converter. Use tab output for TSV files or match the separator expected by the application receiving the data.</p><h2>What to check in the result</h2><p>Automatic input detection works best when the first populated row has a consistent delimiter. If the input uses unusual quoting or inconsistent separators, verify the preview before using the download.</p><h2>Frequently asked questions</h2><details><summary>Does it change the cell values?</summary><p>No. It changes the separator and preserves parsed cell contents.</p></details><details><summary>Will embedded commas remain part of a cell?</summary><p>Yes. Fields are quoted when needed to protect delimiters and line breaks.</p></details><details><summary>Can I convert to TSV?</summary><p>Yes. Choose Tab as the output delimiter.</p></details><p>Explore <a href="tool.html">all CSV tools</a> for related file cleanup, comparison, and conversion tasks.</p></article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-advanced-tools.js"></script>
+</body>
+</html>

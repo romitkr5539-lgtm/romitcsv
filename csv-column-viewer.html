@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="View one CSV or TSV column at a time, search its values, and copy or download the full column with its heading. Files are processed in your browser.">
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV Column Viewer Online | Search and Export a Column</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Column Viewer Online | Search and Export a Column">
+<meta property="og:description" content="View one CSV or TSV column at a time, search its values, and copy or download the full column with its heading. Files are processed in your browser.">
+<meta property="og:url" content="https://romitcsv.com/csv-column-viewer.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSV Column Viewer Online | Search and Export a Column">
+<meta name="twitter:description" content="View one CSV or TSV column at a time, search its values, and copy or download the full column with its heading. Files are processed in your browser.">
+<meta name="theme-color" content="#10b995">
+<link rel="canonical" href="https://romitcsv.com/csv-column-viewer.html">
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-14">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://romitcsv.com/csv-column-viewer.html#webpage","url":"https://romitcsv.com/csv-column-viewer.html","name":"CSV Column Viewer Online | Search and Export a Column","description":"View one CSV or TSV column at a time, search its values, and copy or download the full column with its heading. Files are processed in your browser.","inLanguage":"en"},{"@type":"WebApplication","@id":"https://romitcsv.com/csv-column-viewer.html#tool","name":"RomitCSV CSV Column Viewer","url":"https://romitcsv.com/csv-column-viewer.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and a modern web browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"View one CSV or TSV column at a time, search its values, and copy or download the full column with its heading. Files are processed in your browser."}]}
+</script>
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="columnNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Viewer</strong><small>Search and browse CSV files</small></span></a></li>
+        <li role="none"><a href="online-csv-reader.html" role="menuitem"><span class="ndm-icon ndm-teal">⌕</span><span><strong>Online CSV Reader</strong><small>Inspect raw CSV text</small></span></a></li><li role="none"><a href="large-csv-viewer.html" role="menuitem"><span class="ndm-icon ndm-cyan">▤</span><span><strong>Large CSV Viewer</strong><small>Search large CSV files</small></span></a></li><li role="none"><a href="csv-preview-tool.html" role="menuitem"><span class="ndm-icon ndm-green">◫</span><span><strong>CSV Preview Tool</strong><small>Preview the first 25 rows</small></span></a></li><li role="none"><a href="csv-column-viewer.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-green">▥</span><span><strong>CSV Column Viewer</strong><small>Search and export one column</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="columnTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="columnMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+<main id="specialTool" class="csv-editor-page csv-column-viewer-page" data-kind="column">
+<section class="editor-hero"><div class="editor-hero-inner"><div><span class="viewer-pill">Free Online CSV Column Viewer</span><h1>View One CSV Column at a Time</h1><p>Choose a column to inspect on its own. Filter its values, then copy or download the column. Your file stays in your browser.</p></div>
+<div class="editor-upload-card" id="specialUpload"><div class="editor-upload" id="specialDropzone"><div class="viewer-upload-icon" aria-hidden="true"><span>CSV</span></div><strong>Drop a CSV or TSV file here</strong><span>or</span><input id="specialFile" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values" hidden><button class="viewer-primary" id="specialBrowse" type="button">Browse CSV File</button><small>CSV, TSV · Maximum file size: 50 MB</small><div id="specialStatus" class="tool-status" role="status" aria-live="polite"></div></div></div>
+</div></section>
+<section class="editor-content"><div id="toolWorkspace" class="special-workspace" hidden></div></section>
+<article class="tool-seo-content viewer-seo-content" aria-labelledby="special-guide-title">
+  <h2 id="special-guide-title">View and Search One CSV Column at a Time</h2>
+  <p>When you only need one field from a wide export, scanning every column can get in the way. The CSV Column Viewer lets you choose a heading and inspect its values on their own. This is useful for checking a list of email addresses, product codes, names, or other values without the rest of each record filling the screen.</p>
+
+  <h2>Choose a Column and Filter Its Values</h2>
+  <p>Open a CSV or TSV file, then choose a heading from the column menu. The first row is used for the headings; a blank heading is shown as “Column 1,” “Column 2,” and so on. Type in the search box to find a value in the selected column. Search is case-insensitive and matches partial text, so a search for <code>sam</code> can find a value such as <code>Sample Item</code>.</p>
+  <p>The results show the data-row number from the original file and the value in your chosen column. Up to 50 matching values appear on each page. The count shows how many values match the current search; use the arrows to browse additional results. Choosing a different column or changing the search starts at the first page again.</p>
+
+  <h2>Copy or Download the Selected Column</h2>
+  <p><strong>Copy values</strong> copies the selected heading followed by every value in that column as newline-separated text. <strong>Download column CSV</strong> creates a one-column CSV with the heading and all of the column’s values. Both actions include the full column, even when a search is active; the search narrows the on-screen list but does not limit the copied or downloaded data.</p>
+  <p>The download is a separate CSV file. It does not modify the source file or include the other columns. Empty cells remain empty, and values that need CSV quoting are written as quoted fields.</p>
+
+  <h2>Supported Files and Privacy</h2>
+  <p>CSV and TSV files up to 50 MB are accepted. The viewer detects a common separator—comma, semicolon, tab, or pipe—from the first non-empty line. It reads the file in your browser and prepares the copied or downloaded column on your device; the file contents are not sent to a server by this tool. CSV and TSV contain text values, not spreadsheet formulas or workbook formatting.</p>
+  <p>If you need to see every field in a selected record, use the <a href="csv-row-viewer.html">CSV Row Viewer</a>. To search or sort the full table, open the <a href="csv-table-viewer.html">CSV Table Viewer</a>.</p>
+
+  <section class="faq tool-seo-faq" aria-labelledby="column-faq-title">
+    <label for="column-faq-title">CSV COLUMN VIEWER FAQ</label>
+    <h2 id="column-faq-title">Questions About Viewing a CSV Column</h2>
+    <details><summary>Can I search the whole CSV from this page?</summary><p>The search field checks the currently selected column only. Choose another heading to search a different column, or use the <a href="csv-table-viewer.html">CSV Table Viewer</a> to browse the full table.</p></details>
+    <details><summary>Does Copy or Download include only search results?</summary><p>No. Search filters the values shown on screen. Copy and Download include the selected column’s heading and all of its values.</p></details>
+    <details><summary>Does the downloaded file include the other columns?</summary><p>No. Download column CSV contains just the selected heading and its values, as a one-column CSV.</p></details>
+    <details><summary>Why do I see Column 1 instead of a heading?</summary><p>The first row is treated as the header. If a header cell is empty, the viewer supplies a label such as Column 1. If your file has no header row, its first data row is treated as headings.</p></details>
+    <details><summary>How many values appear on a page?</summary><p>The viewer shows up to 50 matching values per page. Use the arrows to move through the rest of the matches.</p></details>
+    <details><summary>Are CSV and TSV files uploaded?</summary><p>No. The selected file is read in your browser and is not sent to a server by this tool. Files can be up to 50 MB.</p></details>
+  </section>
+</article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script><script src="csv-special-tools.js?v=7"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-viewer.html">CSV Viewer</a><a href="online-csv-reader.html">Online CSV Reader</a><a href="large-csv-viewer.html">Large CSV Viewer</a><a href="csv-preview-tool.html" aria-current="page">CSV Preview Tool</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var nav=document.getElementById("columnNav");
+  var menu=document.getElementById("columnMenu");
+  var theme=document.getElementById("columnTheme");
+  var dark=localStorage.getItem("romitcsv.theme.v2")!=="light";
+  document.body.classList.toggle("dark",dark);
+  theme.setAttribute("aria-pressed",String(dark));
+  theme.addEventListener("click",function(){
+    var nextDark=!document.body.classList.contains("dark");
+    document.body.classList.toggle("dark",nextDark);
+    theme.setAttribute("aria-pressed",String(nextDark));
+    localStorage.setItem("romitcsv.theme.v2",nextDark?"dark":"light");
+  });
+  menu.addEventListener("click",function(){
+    var open=nav.classList.toggle("open");
+    menu.setAttribute("aria-expanded",String(open));
+  });
+})();
+</script>
+</body></html>
+
+
+
+

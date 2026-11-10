@@ -1,0 +1,41 @@
+.csv-adv-page{max-width:1100px;margin:0 auto;padding:42px 24px 72px}
+.csv-adv-hero{max-width:790px;margin:0 auto 26px;text-align:center}
+.csv-adv-hero .eyebrow{display:inline-flex;padding:7px 12px;border:1px solid rgba(16,185,149,.25);border-radius:999px;color:#0b9679;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.csv-adv-hero h1{margin:14px 0 10px;font-size:clamp(32px,5vw,48px);line-height:1.08}
+.csv-adv-hero p{max-width:690px;margin:0 auto;color:#5d6b7d;font-size:17px;line-height:1.65}
+.csv-adv-panel{max-width:920px;margin:0 auto 34px;padding:24px;border:1px solid #dce4ec;border-radius:20px;background:#fff;box-shadow:0 14px 40px rgba(14,34,55,.07)}
+.csv-adv-panel label{display:block;font-size:14px;font-weight:700}
+.csv-adv-panel input[type=file],.csv-adv-panel input[type=text],.csv-adv-panel input[type=number],.csv-adv-panel select,.csv-adv-panel textarea{display:block;width:100%;margin-top:8px;padding:12px 14px;border:1px solid #cfd8e3;border-radius:10px;background:#fff;color:#17212e;font:inherit}
+.csv-adv-panel textarea{resize:vertical;line-height:1.5}
+.csv-adv-panel small{display:block;margin-top:6px;color:#6a7a8d;font-weight:400}
+.adv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.adv-check-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
+.adv-check-grid label{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:#f2f6f8}
+.adv-check-grid input{width:16px;height:16px}
+.csv-adv-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.csv-adv-actions button{min-height:42px;padding:0 18px;border:0;border-radius:10px;font:inherit;font-weight:750;cursor:pointer}
+.csv-adv-actions .viewer-primary{color:#06251a}
+.csv-adv-actions .viewer-download{background:#e8eef3;color:#233447}
+.csv-adv-actions button:disabled{opacity:.5;cursor:not-allowed}
+#advStatus{min-height:20px;margin:12px 0 0;color:#53657a;font-size:14px}
+#advStatus.is-error{color:#b42318}
+#advSummary{font-weight:750;color:#0a8f73}
+#advPreview{max-height:480px;overflow:auto;padding:16px;border-radius:12px;background:#101922;color:#d9f2e9;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}
+#advVisual svg{display:block;width:100%;max-width:900px;height:auto;min-height:250px;margin:14px auto;color:#e4eee9}
+.csv-adv-guide{max-width:850px;margin:0 auto;padding:8px 4px;color:#475569;line-height:1.75}
+.csv-adv-guide h2{margin:26px 0 8px;color:#17212e;font-size:22px}
+.csv-adv-guide a{color:#078b71;font-weight:700}
+body.dark .csv-adv-hero p,body.dark .csv-adv-guide{color:#aebbb7}
+body.dark .csv-adv-panel{background:#111a22;border-color:#28343d}
+body.dark .csv-adv-panel input[type=file],body.dark .csv-adv-panel input[type=text],body.dark .csv-adv-panel input[type=number],body.dark .csv-adv-panel select,body.dark .csv-adv-panel textarea{background:#0b1218;border-color:#34434d;color:#edf5f2}
+body.dark .csv-adv-panel small{color:#9eb0a8}
+body.dark .adv-check-grid label{background:#1b2830;color:#dce8e2}
+body.dark .csv-adv-guide h2{color:#edf5f2}
+body.dark .csv-adv-actions .viewer-download{background:#24313a;color:#dce8e2}
+.adv-result-table-wrap{width:100%;max-height:640px;overflow:auto;border:1px solid var(--line,#34434d);border-radius:12px;background:var(--bg,#0b1218);overscroll-behavior:contain}
+.adv-result-table{width:100%;border-collapse:separate;border-spacing:0;min-width:max-content;color:var(--text,#edf5f2);font-size:13px;text-align:left}
+.adv-result-table th,.adv-result-table td{padding:10px 13px;border-right:1px solid var(--line,#28343d);border-bottom:1px solid var(--line,#28343d);max-width:360px;overflow-wrap:anywhere;vertical-align:top}
+.adv-result-table th{position:sticky;top:0;z-index:1;background:var(--surface,#111a22);color:var(--text,#edf5f2);font-weight:800}
+.adv-result-table tbody tr:nth-child(even){background:color-mix(in srgb,var(--surface,#111a22) 72%,transparent)}
+.adv-result-table tbody tr:hover{background:var(--accent-soft,rgba(16,185,149,.1))}
+@media(max-width:700px){.csv-adv-page{padding:30px 15px 52px}.csv-adv-panel{padding:17px}.adv-grid,.adv-check-grid{grid-template-columns:1fr}.csv-adv-actions button{width:100%}.csv-adv-hero p{font-size:15px}}
