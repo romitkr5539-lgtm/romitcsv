@@ -1,0 +1,25 @@
+.csv-syntax-page{max-width:1280px;margin:0 auto;padding:30px 24px 66px}
+.csv-syntax-page .analysis-hero{margin-bottom:22px}
+.csv-syntax-page .analysis-hero-inner{max-width:1180px}
+.csv-syntax-page .analysis-upload-card[hidden],.csv-syntax-page .analysis-content[hidden]{display:none!important}
+.csv-syntax-page .analysis-dropzone.drag{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent)}
+.csv-syntax-page .analysis-paste-card textarea{min-height:105px}
+.csv-syntax-page .analysis-content{scroll-margin-top:18px}
+.csv-syntax-page .analysis-workspace-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.csv-syntax-page .analysis-filebar{min-height:68px}
+.csv-syntax-page .analysis-source{background:var(--soft)}
+.csv-syntax-page .analysis-tool-panel{background:var(--surface)}
+.csv-syntax-page .analysis-result[hidden]{display:none!important}
+.csv-syntax-page .analysis-result{scroll-margin-top:18px}
+.csv-syntax-page .analysis-result-actions{justify-content:flex-end}
+.csv-syntax-page .validation-report-wrap{max-height:62vh;overflow:auto;border:1px solid var(--line);border-radius:9px;background:var(--surface);overscroll-behavior:contain}
+.csv-syntax-page .validation-report-wrap table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;color:var(--text);font-size:12px}
+.csv-syntax-page .validation-report-wrap th{position:sticky;top:0;z-index:2;min-width:130px;max-width:340px;padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--accent-soft);color:var(--text);text-align:left;white-space:nowrap}
+.csv-syntax-page .validation-report-wrap td{max-width:460px;padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--text);overflow-wrap:anywhere;white-space:pre-wrap}
+.csv-syntax-page .validation-report-wrap tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 58%,var(--surface))}
+.csv-syntax-page .validation-report-wrap tbody tr:hover td{background:var(--accent-soft)}
+.csv-syntax-page .analysis-empty-table{padding:24px;border:1px solid var(--line);border-radius:9px;color:var(--muted);text-align:center}
+.csv-syntax-page .analysis-status.is-error{color:#ff8585}
+.csv-syntax-page .analysis-upload-status.is-error{color:#ff8585}
+@media(max-width:900px){.csv-syntax-page{padding:24px 16px 50px}}
+@media(max-width:720px){.csv-syntax-page{padding:24px 14px 44px}.csv-syntax-page .analysis-upload-card{grid-template-columns:1fr}.csv-syntax-page .analysis-dropzone{min-height:185px}.csv-syntax-page .analysis-filebar{align-items:flex-start;flex-direction:column}.csv-syntax-page .analysis-file-actions{width:100%;justify-content:space-between}.csv-syntax-page .analysis-source,.csv-syntax-page .analysis-tool-panel,.csv-syntax-page .analysis-result{padding:13px}.csv-syntax-page .analysis-section-head,.csv-syntax-page .analysis-result-head{align-items:flex-start;flex-direction:column}.csv-syntax-page .analysis-tool-panel .analysis-section-head>.viewer-primary{width:100%}.csv-syntax-page .analysis-result-actions{width:100%}.csv-syntax-page .analysis-result-actions button{flex:1}.csv-syntax-page .analysis-table-wrap,.csv-syntax-page .validation-report-wrap{max-height:52vh}}

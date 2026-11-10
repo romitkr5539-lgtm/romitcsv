@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert CSV files to YAML online. Choose a delimiter, preview every row, and copy or download a YAML list of records in your browser.">
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV to YAML Converter - Convert CSV to YAML Online</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV to YAML Converter - Convert CSV to YAML Online">
+<meta property="og:description" content="Convert CSV files to YAML online. Choose a delimiter, preview every row, and copy or download a YAML list of records in your browser.">
+<meta property="og:url" content="https://romitcsv.com/csv-to-yaml.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSV to YAML Converter - Convert CSV to YAML Online">
+<meta name="twitter:description" content="Convert CSV files to YAML online. Choose a delimiter, preview every row, and copy or download a YAML list of records in your browser.">
+<link rel="canonical" href="https://romitcsv.com/csv-to-yaml.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to YAML Converter","url":"https://romitcsv.com/csv-to-yaml.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and a modern web browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert headed CSV tables into YAML lists of records in your browser."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-15">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="formatNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div>
+      <div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Clean rows and fields</small></span></a></li><li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine CSV files</small></span></a></li><li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split a large CSV</small></span></a></li><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check CSV structure</small></span></a></li></ul></div>
+      <div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert rows to JSON</small></span></a></li><li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to rows</small></span></a></li><li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export an Excel workbook</small></span></a></li><li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert a workbook</small></span></a></li><li role="none"><a href="csv-to-xml.html" role="menuitem"><span class="ndm-icon ndm-orange">XML</span><span><strong>CSV → XML</strong><small>Convert rows to XML records</small></span></a></li><li role="none"><a href="xml-to-csv.html" role="menuitem"><span class="ndm-icon ndm-cyan">XML</span><span><strong>XML → CSV</strong><small>Convert XML records to rows</small></span></a></li><li role="none"><a href="csv-to-yaml.html" class="active" role="menuitem"><span class="ndm-icon ndm-purple">YAML</span><span><strong>CSV → YAML</strong><small>Convert rows to YAML records</small></span></a></li><li role="none"><a href="yaml-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">YAML</span><span><strong>YAML → CSV</strong><small>Convert YAML records to rows</small></span></a></li><li role="none"><a href="tool.html" role="menuitem"><span class="ndm-icon ndm-blue">＋</span><span><strong>All converters</strong><small>Browse every format tool</small></span></a></li></ul></div>
+      <a href="index.html#resources">Resources</a><a href="index.html#about">About</a>
+    </nav>
+    <div class="header-actions"><button class="menu-btn" id="formatMenu" type="button" aria-label="Open menu">Menu</button></div>
+  </div>
+</header>
+<main class="csv-to-yaml-page csv-excel-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div><span class="viewer-pill">Free Online CSV to YAML Converter</span><h1>Convert CSV to YAML</h1><p>Turn a headed CSV file into a readable YAML list. Choose how your CSV is separated, review the rows, then copy or download the result.</p></div>
+      <div class="editor-upload-card csv-yaml-upload-card" id="csvYamlUploadCard">
+        <div class="csv-yaml-dropzone" id="csvYamlDropzone" role="button" tabindex="0" aria-label="Choose or drop a CSV file">
+          <div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
+          <strong>Drop your CSV file here</strong><span>or</span><input id="csvYamlFile" type="file" accept=".csv,text/csv" hidden><button class="viewer-primary" id="csvYamlBrowse" type="button">Browse CSV File</button><small>CSV file · Up to 50 MB</small>
+        </div>
+        <div class="csv-yaml-paste-card"><span class="csv-yaml-kicker">PASTE CSV</span><h2>Start with CSV text</h2><p>Use the first row for column names.</p><textarea id="csvYamlPaste" rows="5" spellcheck="false" aria-label="Paste CSV input" placeholder="name,city&#10;Ada Lovelace,London&#10;Grace Hopper,New York"></textarea><button class="viewer-primary" id="csvYamlUsePaste" type="button">Use pasted CSV</button></div>
+        <p id="csvYamlUploadStatus" class="tool-status csv-yaml-upload-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content csv-yaml-content" id="csvYamlWorkspaceSection" hidden><div id="csvYamlWorkspace" hidden></div></section>
+  <article class="tool-seo-content viewer-seo-content csv-yaml-guide" aria-labelledby="csv-yaml-guide-title">
+    <span class="csv-yaml-kicker">CSV TO YAML GUIDE</span>
+    <h2 id="csv-yaml-guide-title">Convert a CSV table into YAML records</h2>
+    <p>CSV stores data in a grid, while YAML represents the same information in a more readable text structure. This converter uses the first CSV row as field names and turns each following row into one item in a YAML list. The result works well as a starting point for configuration files, example data, and simple data exchange when a list of flat records is what your application expects.</p>
+    <h2>How the conversion works</h2>
+    <p>Each heading becomes a key and the value in the same column becomes that key's value. Every data row becomes a separate list item. Values are kept as text and quoted so strings such as <code>true</code>, <code>0012</code>, <code>null</code>, colons, or punctuation are not accidentally read as YAML booleans, numbers, or syntax. Empty CSV cells are written as empty strings. Repeated headings are given a numeric suffix to keep every generated key distinct.</p>
+    <h2>Choose the CSV separator</h2>
+    <p>Comma is common in CSV files, but exports may use semicolons, tabs, or pipes between columns. Select the separator that matches your input. Quoted CSV cells can contain commas, line breaks, or doubled quotation marks; the converter reads those as part of the cell instead of splitting them into extra columns.</p>
+    <h2>Steps to create YAML from CSV</h2>
+    <ol><li>Drop a CSV file into the upload area or paste CSV text.</li><li>Check that the first row contains a heading for every column, then choose the separator.</li><li>Select Convert to YAML and review the complete table preview and generated YAML.</li><li>Copy the YAML or download it as a <code>.yaml</code> file.</li></ol>
+    <p>The converter creates a flat list of objects. It does not infer data types, build nested structures, or validate the result against a YAML schema. The preview and output include every parsed data row. Your file is read and converted locally in your browser; it is not uploaded to RomitCSV.</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>What does the first CSV row become?</summary><p>The first row supplies the YAML keys. Each later row becomes one list item, with values matched to their column headings.</p></details>
+    <details><summary>Are numbers and true or false values converted to native YAML types?</summary><p>No. Values are preserved as strings and quoted in the YAML output, so text like <code>0012</code>, <code>true</code>, and <code>null</code> keeps its original meaning as text.</p></details>
+    <details><summary>What happens when a heading is repeated?</summary><p>Repeated headings are made unique with a suffix, such as <code>email</code> and <code>email_2</code>, so the generated YAML does not overwrite a value.</p></details>
+    <details><summary>Can I convert a CSV that uses semicolons or tabs?</summary><p>Yes. Select comma, semicolon, tab, or pipe in the converter's separator menu to match the file.</p></details>
+    <details><summary>Does the converter support nested YAML objects?</summary><p>It creates a flat list of records from CSV columns. It does not infer parent-child relationships or generate nested mappings.</p></details>
+    <details><summary>Is my CSV file uploaded?</summary><p>No. The page reads the selected file in your browser and generates the YAML locally.</p></details>
+    <h2>Related converters</h2><p>Convert structured data with <a href="csv-to-json.html">CSV to JSON</a>, or turn YAML records back into CSV with <a href="yaml-to-csv.html">YAML to CSV</a>. See <a href="tool.html">all CSV tools</a> for more options.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="csv-to-yaml.js?v=1"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>

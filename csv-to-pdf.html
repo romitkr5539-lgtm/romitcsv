@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert CSV or TSV to PDF online. Choose the separator, page size, orientation, font size, and headers, then download a paginated PDF.">
+<title>CSV to PDF Converter - Save CSV as PDF Online | RomitCSV</title>
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV to PDF Converter - Save CSV as PDF Online | RomitCSV">
+<meta property="og:description" content="Convert CSV or TSV to PDF online. Choose the separator, page size, orientation, font size, and headers, then download a paginated PDF.">
+<meta property="og:url" content="https://romitcsv.com/csv-to-pdf.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSV to PDF Converter - Save CSV as PDF Online | RomitCSV">
+<meta name="twitter:description" content="Convert CSV or TSV to PDF online. Choose the separator, page size, orientation, font size, and headers, then download a paginated PDF.">
+<meta name="theme-color" content="#10b995">
+<link rel="canonical" href="https://romitcsv.com/csv-to-pdf.html">
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-11">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="pdfNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" class="active" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="pdfTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="pdfMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="csv-to-pdf-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV to PDF Converter</span>
+        <h1>Convert CSV to PDF</h1>
+        <p>Turn a CSV or TSV table into a paginated PDF for sharing or printing. Upload a file or paste delimited text, review the table, and set the page layout.</p>
+      </div>
+      <div class="editor-upload-card" id="pdfUploadCard">
+        <div class="editor-upload" id="pdfDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop a CSV file here to convert</strong>
+          <span>or</span>
+          <input id="pdfFile" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values" hidden>
+          <button class="viewer-primary" id="pdfBrowse" type="button">Browse CSV File</button>
+          <small>CSV or TSV · Up to 50 MB</small>
+          <div id="pdfStatus" class="tool-status" role="status"></div>
+        </div>
+        <div class="pdf-paste-card">
+          <div><span class="pdf-paste-kicker">PASTE INPUT</span><h2>Have CSV text?</h2><p>Paste comma, tab, semicolon, or pipe-separated rows.</p></div>
+          <textarea id="pdfPasteInput" rows="5" spellcheck="false" aria-label="Paste CSV or delimited text" placeholder="Name,City&#10;Ada,London"></textarea>
+          <button class="viewer-primary" id="pdfPasteConvert" type="button">Use pasted data</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content" id="pdfWorkspaceSection" hidden>
+    <div id="pdfWorkspace" class="pdf-workspace" hidden></div>
+  </section>
+  <article class="viewer-seo-content csv-to-pdf-guide" aria-labelledby="csvToPdfGuideTitle">
+    <span class="pdf-paste-kicker">CSV TO PDF GUIDE</span>
+    <h2 id="csvToPdfGuideTitle">Create a printable PDF from CSV</h2>
+    <p>A CSV is handy for moving table data between apps, while PDF is useful when you want a fixed page layout to share, print, or attach to a report. This converter turns a CSV or TSV table into a paginated PDF. Choose the paper size and orientation, decide how the first row should be handled, and review the table before downloading.</p>
+
+    <h2>Choose page settings for your table</h2>
+    <p>Select A4 or Letter to match the paper size you expect to use. Landscape gives wider tables more room across the page; portrait can suit a short list with only a few columns. The font setting changes the table text size. If cells are crowded, try landscape or a smaller font. Long cell values wrap onto additional lines, which can increase the number of pages.</p>
+    <p>The PDF includes a page number on each page, along with the source filename as its title. The table header repeats when the table continues onto another page, making multi-page output easier to follow.</p>
+
+    <h2>Decide whether the first row contains column names</h2>
+    <p>Keep <strong>Include first row as headers</strong> selected when the first CSV row contains headings such as Name, City, or Date. Those labels appear as the table header and are not repeated as a data row. Turn the option off when the first row is ordinary data; the PDF will use Column 1, Column 2, and similar labels above the data instead.</p>
+    <p>The table preview shows all parsed rows in a scrollable area. Completely blank lines are skipped while parsing, and missing cells in shorter rows are kept empty so later values stay in their columns.</p>
+
+    <h2>Convert and download the PDF</h2>
+    <ol>
+      <li>Choose a CSV or TSV file up to 50 MB, or paste delimited text.</li>
+      <li>Review the table, then select the page size, orientation, font size, and header setting.</li>
+      <li>Select <strong>Download PDF</strong> to create and save the paginated document.</li>
+    </ol>
+    <p>The separator menu starts with auto-detection. If the columns do not line up, choose the source separator directly: comma, semicolon, tab, or pipe. The PDF is generated in your browser. The PDF libraries load from jsDelivr, so an internet connection is needed for the export feature; your CSV contents are not uploaded to RomitCSV.</p>
+
+    <h2>Frequently asked questions</h2>
+    <details><summary>Can I save a CSV as a PDF without installing software?</summary><p>Yes. Upload a CSV or TSV file, adjust the layout options in your browser, and download the generated PDF.</p></details>
+    <details><summary>Will every row appear in the PDF?</summary><p>Yes. The table preview and PDF use all parsed rows. Completely blank lines are skipped, and very large tables may span multiple pages.</p></details>
+    <details><summary>Can I make a wide table fit on the page?</summary><p>Try Landscape orientation, A4 or Letter paper, and a smaller font. Text in long cells wraps, so especially wide or verbose tables may still need several pages.</p></details>
+    <details><summary>What happens if my CSV has no header row?</summary><p>Turn off the first-row header option. The first row remains part of the data, and the PDF uses generated column labels such as Column 1 and Column 2.</p></details>
+    <details><summary>Can I choose a separator if the columns look wrong?</summary><p>Yes. Change CSV separator from Auto-detect to comma, semicolon, tab, or pipe. The preview will update using the selected source separator.</p></details>
+    <details><summary>Can I paste CSV instead of choosing a file?</summary><p>Yes. Paste delimited text in the input box and choose Use pasted data. It opens the same preview and PDF settings as a file.</p></details>
+    <details><summary>Is my data uploaded to a server?</summary><p>No. The CSV is parsed and converted in your browser. The PDF libraries are loaded from jsDelivr, but the file contents are not sent to RomitCSV.</p></details>
+
+    <h2>Need another output format?</h2>
+    <p>Convert the same kind of table to an <a href="csv-to-excel.html">Excel workbook</a> or <a href="csv-to-json.html">JSON data</a>, or find another tool in the <a href="tool.html">CSV tools directory</a>.</p>
+  </article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js?v=romitjson-theme-2"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js?v=romitjson-theme-2"></script>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="csv-to-pdf.js?v=romitjson-theme-3"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>

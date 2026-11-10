@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert CSV and TSV data into SQL table definitions and insert statements in your browser.">
+<title>CSV to SQL Converter – Create Tables &amp; INSERTs</title>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-29">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="sqlNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" class="active" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="sqlTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="sqlMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="csv-sql-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV to SQL Converter</span>
+        <h1>Convert CSV to SQL</h1>
+        <p>Generate a table schema and insert statements from CSV data.<br>Your file is processed on your device.</p>
+      </div>
+      <div class="editor-upload-card" id="sqlUploadCard">
+        <div class="editor-upload" id="sqlDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop a CSV file here to convert</strong>
+          <span>or</span>
+          <input id="sqlFile" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values" hidden>
+          <button class="viewer-primary" id="sqlBrowse" type="button">Browse CSV File</button>
+          <small>Supports CSV, TSV · Max file size: 50MB</small>
+          <div id="sqlStatus" class="tool-status" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content">
+    <div id="sqlWorkspace" class="sql-workspace"></div>
+  </section>
+  <article class="tool-seo-content viewer-seo-content sql-guide" aria-labelledby="sql-guide-title">
+    <span class="sql-guide-kicker">CSV TO SQL GUIDE</span>
+    <h2 id="sql-guide-title">Prepare a CSV import for a relational database</h2>
+    <p>When a database table starts as a spreadsheet export, the repetitive work is translating column names, choosing field types, and writing one INSERT row for every record. This converter builds a CREATE TABLE statement and INSERT statements from the CSV so you can review a starting point before using it in your database workflow.</p>
+    <p>Choose SQLite, PostgreSQL, or MySQL to generate syntax for that dialect. The tool infers a type from the non-empty values in each column: whole numbers, decimal values, booleans, or text. It shows the inferred types alongside the data preview so you can catch a column that needs a different type before copying the SQL.</p>
+    <h2>Check how headings and empty cells are handled</h2>
+    <p>With <strong>First row contains column names</strong> selected, the first row becomes the table headings and the remaining rows become records. Turn it off when the file has no header; generated names such as <code>column_1</code> will be used and the first row will be inserted as data. Blank or repeated headings are replaced with safe, unique names.</p>
+    <p>By default, empty cells become SQL <code>NULL</code>. Turn that option off to write empty text values instead. Apostrophes inside text are doubled, and table and column names are quoted using the selected database dialect. If you enable Drop table before creating it, the output adds <code>DROP TABLE IF EXISTS</code> before the table definition.</p>
+    <h2>Review the generated statements before running them</h2>
+    <p>SQL output is a starting script, not a database connection. Check the inferred types, table name, and values against your actual schema. In particular, confirm that identifiers, dates, decimal precision, and required fields match your database expectations. The converter keeps values as text unless a whole column consistently looks numeric or boolean.</p>
+    <h2>Questions about converting CSV to SQL</h2>
+    <details><summary>Which database formats are supported?</summary><p>The generator supports SQLite, PostgreSQL, and MySQL syntax for table and column identifiers and common data types.</p></details>
+    <details><summary>How are column types inferred?</summary><p>Types are inferred from non-empty data cells. Consistent integers, decimal numbers, and true/false values receive matching types; other or mixed values become text.</p></details>
+    <details><summary>Does an empty CSV cell become NULL?</summary><p>Yes, by default. Turn off Treat empty cells as NULL to generate empty text values instead.</p></details>
+    <details><summary>Does the converter execute SQL?</summary><p>No. It generates a SQL file for you to inspect and run in your own database tools.</p></details>
+    <details><summary>Is my CSV uploaded?</summary><p>No. The file is parsed and converted in your browser.</p></details>
+    <h2>Other ways to convert CSV data</h2>
+    <p>Use <a href="csv-to-json.html">CSV to JSON</a> to create objects for an application, or <a href="csv-to-api-json.html">CSV to API JSON</a> to wrap records with metadata. Browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="csv-to-sql.js?v=romitjson-theme-2"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>

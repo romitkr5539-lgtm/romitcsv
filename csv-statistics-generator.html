@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Statistics Generator</title>
+<meta name="description" content="Generate per-column CSV statistics, including missing values, unique counts, and numeric ranges.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-statistics-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Statistics Generator">
+<meta property="og:description" content="Generate per-column CSV statistics, including missing values, unique counts, and numeric ranges.">
+<meta property="og:url" content="https://romitcsv.com/csv-statistics-generator.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Statistics Generator","url":"https://romitcsv.com/csv-statistics-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate per-column CSV statistics, including missing values, unique counts, and numeric ranges."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-28">
+<link rel="stylesheet" href="csv-validation-tools.css?v=2">
+</head>
+<body class="dark" data-validation-tool="csv-statistics-generator">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-validator.html">CSV Validator</a><a href="csv-viewer.html">CSV Viewer</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-validation-page">
+  <section class="csv-validation-hero">
+    <span class="eyebrow">Free CSV validation tool</span>
+    <h1>CSV Statistics Generator</h1>
+    <p>Generate per-column CSV statistics, including missing values, unique counts, and numeric ranges.</p>
+  </section>
+  <section class="csv-validation-panel" aria-label="CSV validation tool">
+    <label for="validationFile">Choose a CSV or TSV file
+      <input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div class="validation-options"></div>
+    <div class="csv-validation-actions">
+      <button class="viewer-primary" id="runValidation" type="button">Run Check</button>
+      <button class="viewer-download" id="validationDownload" type="button" disabled>Download Report</button>
+      <button class="viewer-download" id="clearValidation" type="button">Clear</button>
+    </div>
+    <p id="validationStatus" role="status" aria-live="polite"></p>
+    <section id="validationOutput" hidden aria-live="polite">
+      <h2>Analysis report</h2>
+      <p id="validationSummary"></p>
+      <pre id="validationPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-validation-guide">
+    <h2>What this tool checks</h2>
+    <p>The report summarizes each column with non-empty and missing counts, unique values, and numeric minimum, maximum, and average where values can be read as numbers. The first row is treated as headings.</p>
+    <h2>How to use it</h2>
+    <ol><li>Choose a CSV or TSV file up to 50 MB.</li><li>Set any requested options and run the check.</li><li>Review the report or download it as a CSV file.</li></ol>
+    <p>The file is read and analyzed in your browser. It is not sent to the RomitCSV server. Use the <a href="csv-validator.html">CSV Validator</a> for a general structure check or browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-validation-tools.js"></script>
+</body>
+</html>

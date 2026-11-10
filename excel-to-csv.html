@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert Excel and OpenDocument workbooks to CSV online. Choose a worksheet and delimiter, review the data, then copy or download the CSV file.">
+<title>Excel to CSV Converter - Convert XLSX to CSV Online | RomitCSV</title>
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Excel to CSV Converter - Convert XLSX to CSV Online | RomitCSV">
+<meta property="og:description" content="Convert Excel and OpenDocument workbooks to CSV online. Choose a worksheet and delimiter, review the data, then copy or download the CSV file.">
+<meta property="og:url" content="https://romitcsv.com/excel-to-csv.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Excel to CSV Converter - Convert XLSX to CSV Online | RomitCSV">
+<meta name="twitter:description" content="Convert Excel and OpenDocument workbooks to CSV online. Choose a worksheet and delimiter, review the data, then copy or download the CSV file.">
+<meta name="theme-color" content="#10b995">
+<link rel="canonical" href="https://romitcsv.com/excel-to-csv.html">
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-10">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="excelCsvNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" class="active" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="excelCsvTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="excelCsvMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="excel-to-csv-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online Excel to CSV Converter</span>
+        <h1>Convert Excel to CSV</h1>
+        <p>Choose a worksheet from your Excel workbook, review its rows, and export a clean CSV file. Processing happens in your browser.</p>
+      </div>
+      <div class="editor-upload-card" id="excelCsvUploadCard">
+        <div class="editor-upload" id="excelCsvDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop an Excel workbook here</strong>
+          <span>or</span>
+          <input id="excelCsvFile" type="file" accept=".xlsx,.xls,.xlsm,.xlsb,.ods,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" hidden>
+          <button class="viewer-primary" id="excelCsvBrowse" type="button">Browse Excel File</button>
+          <small>XLSX, XLS, XLSM, XLSB, or ODS · Up to 50 MB</small>
+          <div id="excelCsvStatus" class="tool-status" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content" id="excelCsvWorkspaceSection" hidden>
+    <div id="excelCsvWorkspace" class="excel-csv-workspace" hidden></div>
+  </section>
+  <article class="viewer-seo-content excel-to-csv-guide" aria-labelledby="excelToCsvGuideTitle">
+    <span class="excel-to-csv-kicker">EXCEL TO CSV GUIDE</span>
+    <h2 id="excelToCsvGuideTitle">Turn workbook data into a CSV file</h2>
+    <p>An Excel workbook can hold several tabs, but a CSV file holds one flat table. This converter opens a workbook, lets you choose which worksheet to export, and creates comma-separated text you can use in a spreadsheet, database import, or another app. You can check the rows before copying the result or downloading it as a <code>.csv</code> file.</p>
+
+    <h2>Export the worksheet you actually need</h2>
+    <p>When a workbook opens, the first worksheet is selected automatically. If the data you need is on another tab, choose its name from the <strong>Worksheet</strong> menu. The table updates to that sheet, and both Copy CSV and Download CSV use the selected worksheet. Export additional tabs one at a time; a CSV cannot contain multiple worksheets.</p>
+    <p>The table displays the first non-empty row as its column headings, and that row remains in the CSV as the first line. Completely blank rows are skipped when the worksheet is read. Empty cells inside a row with data remain empty, so later values stay under the correct columns.</p>
+
+    <h2>Choose a delimiter that suits the next app</h2>
+    <p>Comma is the standard starting choice. Some regional spreadsheet settings and import tools expect semicolons instead; others accept tabs or pipes. Choose the delimiter the destination expects. The selected setting is used for both the copied text and the downloaded file.</p>
+    <p>A value can itself contain commas, quotes, or line breaks. To keep that value in one CSV cell, the converter surrounds it with double quotes and doubles any quote marks inside it. You can therefore export names, notes, and addresses that contain punctuation without splitting them into unintended columns.</p>
+
+    <h2>What spreadsheet details carry over?</h2>
+    <p>CSV is plain text, so it does not keep worksheet colors, font styles, widths, charts, images, macros, or formulas as working spreadsheet formulas. The converter exports the values available in the selected sheet. A formula cell may export its saved result rather than its formula; if the workbook has no saved result for that cell, check the output before using it.</p>
+    <p>CSV also has no separate number or date types. The way a date, long identifier, or formatted number appears in the export can depend on how the workbook stores and displays that cell. Review the full table, especially for dates, codes with leading zeros, and formula results. If a specific value must keep an exact text representation, format or convert that cell to text in the workbook before exporting.</p>
+
+    <h2>From Excel file to downloadable CSV</h2>
+    <ol>
+      <li>Choose or drop an XLSX, XLS, XLSM, XLSB, or ODS workbook into the upload area.</li>
+      <li>Select the worksheet and output delimiter.</li>
+      <li>Review the scrollable table, then copy the CSV text or download the file.</li>
+    </ol>
+    <p>Workbooks up to 50 MB are supported. The workbook is read and converted in your browser; it is not uploaded to RomitCSV. The spreadsheet-reading library loads from jsDelivr, so an internet connection is needed to use the converter.</p>
+
+    <h2>Frequently asked questions</h2>
+    <details><summary>Can I convert an Excel workbook with several tabs?</summary><p>Yes. Select a worksheet and export it as a CSV, then select another worksheet to create a separate file. CSV does not support multiple tabs in one file.</p></details>
+    <details><summary>Does the first row stay in the downloaded CSV?</summary><p>Yes. It is used as the table's visible column heading and is included as the first CSV row.</p></details>
+    <details><summary>Can I save the result with tabs or semicolons instead of commas?</summary><p>Yes. Select tab, semicolon, or pipe from the CSV delimiter menu. Comma is selected by default.</p></details>
+    <details><summary>Are Excel formulas converted?</summary><p>Formulas are not carried over as formulas. The export uses the value available for each cell in the workbook; a formula without a saved result may appear blank.</p></details>
+    <details><summary>Why does my CSV not look like the worksheet?</summary><p>CSV keeps table values, not spreadsheet formatting. Colors, font styles, charts, column widths, and other workbook presentation features are left behind.</p></details>
+    <details><summary>Why are empty lines missing?</summary><p>Completely blank worksheet rows are skipped. Empty cells within rows that contain data are preserved.</p></details>
+    <details><summary>Is my workbook sent to a server?</summary><p>No. The converter reads and converts the workbook in your browser. It does load the spreadsheet library from jsDelivr.</p></details>
+
+    <h2>Choose the next format</h2>
+    <p>To build an Excel workbook from delimited text, use <a href="csv-to-excel.html">CSV to Excel</a>. If another tool needs structured records instead, convert the table with <a href="csv-to-json.html">CSV to JSON</a>.</p>
+  </article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js?v=romitjson-theme-2"></script>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="excel-to-csv.js?v=romitjson-theme-3"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>

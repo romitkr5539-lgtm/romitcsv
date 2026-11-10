@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Open CSV or TSV files as tables in your browser. Search values, sort columns, change rows per page, and download the complete file as CSV or PDF.">
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV Table Viewer – Search, Sort &amp; Browse Rows</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Table Viewer: Search, Sort and Browse Rows | RomitCSV">
+<meta property="og:description" content="Open CSV or TSV files as tables in your browser. Search values, sort columns, change rows per page, and download the complete file as CSV or PDF.">
+<meta property="og:url" content="https://romitcsv.com/csv-table-viewer.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSV Table Viewer: Search, Sort and Browse Rows | RomitCSV">
+<meta name="twitter:description" content="Open CSV or TSV files as tables in your browser. Search values, sort columns, change rows per page, and download the complete file as CSV or PDF.">
+<meta name="theme-color" content="#10b995">
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-10">
+<link rel="canonical" href="https://romitcsv.com/csv-table-viewer.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://romitcsv.com/csv-table-viewer.html#webpage",
+      "url": "https://romitcsv.com/csv-table-viewer.html",
+      "name": "CSV Table Viewer: Search, Sort and Browse Rows | RomitCSV",
+      "description": "Open CSV or TSV files as tables in your browser. Search values, sort columns, change rows per page, and download the complete file as CSV or PDF.",
+      "isPartOf": { "@id": "https://romitcsv.com/#website" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://romitcsv.com/csv-table-viewer.html#webapp",
+      "name": "RomitCSV Table Viewer",
+      "url": "https://romitcsv.com/csv-table-viewer.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript and a modern web browser.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Browser-based CSV and TSV table viewer with search, sorting, pagination, and CSV or PDF export."
+    }
+  ]
+}
+</script>
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown open-on-load">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" class="active" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="theme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="menu" type="button">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="csv-viewer-page">
+  <section class="viewer-hero">
+    <div class="viewer-hero-inner">
+      <div class="viewer-copy">
+        <span class="viewer-pill">Free Online CSV Table Viewer</span>
+        <h1>View CSV Tables<br><span>Instantly</span></h1>
+        <p>Open a CSV or TSV file to view it as a table. Search values, sort by a column, choose how many rows to show, and download your data.</p>
+        <div class="viewer-trust">
+          <span><b class="trust-icon green">✓</b><strong>100% Free</strong></span>
+          <span><b class="trust-icon blue">⌕</b><strong>No Signup</strong></span>
+          <span><b class="trust-icon purple">ϟ</b><strong>Works in Browser</strong></span>
+        </div>
+      </div>
+      <div class="viewer-upload-card" id="app"></div>
+    </div>
+  </section>
+
+  <section class="viewer-content">
+    <div class="viewer-workspace" id="workspace"></div>
+
+    <div class="viewer-benefits">
+      <div class="benefit">
+        <span class="benefit-icon blue"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.5"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+        <div><strong>Easy to Use</strong><p>Just drag and drop your file or click to browse. View your data instantly.</p></div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon purple"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 20 6v5c0 5.2-3.4 8.7-8 10-4.6-1.3-8-4.8-8-10V6l8-3Z" stroke="currentColor" stroke-width="2.2"/><path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><strong>Runs in your browser</strong><p>The viewer reads the selected file on your device; it does not upload the file to our server.</p></div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon violet"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2.2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="15" r="1" fill="currentColor"/></svg></span>
+        <div><strong>Supports Multiple Formats</strong><p>Open CSV and TSV files with full data preview and search.</p></div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon orange">ϟ</span>
+        <div><strong>Files up to 50 MB</strong><p>The viewer accepts files up to 50 MB. Speed depends on your file and device.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <article class="tool-seo-content viewer-seo-content" aria-labelledby="viewer-guide-title">
+    <h2 id="viewer-guide-title">View and Search CSV Tables Online</h2>
+    <p>A CSV file can contain hundreds or thousands of rows, which is hard to scan in a text editor. RomitCSV’s table viewer opens CSV and TSV files as rows and columns so you can search values, sort by a column, and move through the data without installing a spreadsheet app.</p>
+    <p>Choose a file or drop it into the viewer. The first row is treated as the column headings, and the remaining rows are shown in the table. The viewer reads the file in your browser; it does not send the file to the RomitCSV server.</p>
+
+    <h2>How to Use the CSV Table Viewer</h2>
+    <ol>
+      <li>Select <strong>Browse CSV File</strong> or drag a <code>.csv</code> or <code>.tsv</code> file into the upload area. Files must be no larger than 50 MB.</li>
+      <li>Review the column headings and rows in the table.</li>
+      <li>Enter a word or value in <strong>Search in table</strong> to find matching cells.</li>
+      <li>Click a column’s sort arrow or choose a column from <strong>Sort by</strong>. Choose 10, 25, 50, or 100 rows per page and use the page controls to browse.</li>
+      <li>Download the table as CSV, print it or save it as PDF, or select <strong>Edit</strong> to continue in the <a href="csv-editor.html">CSV Editor</a>.</li>
+    </ol>
+
+    <h2>What the Viewer Controls Do</h2>
+    <div class="tool-seo-table-wrap"><table class="tool-seo-table"><thead><tr><th scope="col">Control</th><th scope="col">What it does</th></tr></thead><tbody>
+      <tr><th scope="row">Search in table</th><td>Shows rows with a matching value in any cell. Search ignores letter case.</td></tr>
+      <tr><th scope="row">Column sort</th><td>Reorders the displayed rows in ascending or descending order. Sorting does not edit the source file.</td></tr>
+      <tr><th scope="row">Rows per page</th><td>Shows 10, 25, 50, or 100 rows at a time. The arrows move between pages.</td></tr>
+      <tr><th scope="row">Download CSV</th><td>Downloads the complete table, including rows hidden by search, in the original row order.</td></tr>
+      <tr><th scope="row">Save as PDF</th><td>Opens the browser’s print dialog with the complete table. Choose a PDF destination there to save a PDF copy.</td></tr>
+      <tr><th scope="row">Edit</th><td>Passes the opened data to the <a href="csv-editor.html">CSV Editor</a> so you can make changes and download an edited copy.</td></tr>
+    </tbody></table></div>
+
+    <h2>CSV and TSV Headers, Separators, and Quoted Values</h2>
+    <p>CSV stores table data as text, usually separating fields with commas. TSV uses tabs between fields. This viewer also recognizes semicolons and pipes as common separators. It treats the first row as the header, so files without a header will display their first data row as column names.</p>
+    <p>Quoted fields can contain separators or line breaks. If a row has fewer values than the header, the viewer fills the remaining cells with blanks. Values stay as text in the viewer; it does not calculate spreadsheet formulas or infer number and date types.</p>
+
+    <h2>CSV Viewer, Editor, and Spreadsheet: Which Should I Use?</h2>
+    <p>Use the viewer to inspect, search, sort, and export a CSV table. Use the <a href="csv-editor.html">CSV Editor</a> when you need to change cells, rows, or columns. A spreadsheet app is a better fit when you need formulas, charts, multiple sheets, or formatting that CSV cannot store.</p>
+    <p>If a file has inconsistent rows or duplicate records, try the <a href="csv-validator.html">CSV Validator</a> or <a href="csv-cleaner.html">CSV Cleaner</a>. You can browse the full set of <a href="tool.html">RomitCSV tools</a> for other CSV tasks.</p>
+
+    <h2>File Size and Data Handling</h2>
+    <p>The viewer accepts files up to 50 MB. Larger tables may take longer to read or search depending on your browser and device. The selected file is read in your browser and the viewer processes its contents locally. Avoid using an online tool with confidential data unless its handling suits your needs.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <details><summary>How do I view a CSV file as a table?</summary><p>Select <strong>Browse CSV File</strong> or drop a CSV file in the upload area. The viewer reads the first row as column names and displays the remaining rows in a searchable table.</p></details>
+    <details><summary>Can I view a TSV file here?</summary><p>Yes. The viewer accepts TSV files and displays tab-separated values as table columns.</p></details>
+    <details><summary>Does searching or sorting change my original file?</summary><p>No. Searching and sorting change only the displayed table. Download CSV saves the complete data in its original row order. Use the CSV Editor to make changes and save a separate copy.</p></details>
+    <details><summary>Does Download CSV include only the rows I can see?</summary><p>No. It downloads the complete table, even when a search is active or you are on a later page.</p></details>
+    <details><summary>What is the maximum CSV file size?</summary><p>The viewer accepts CSV and TSV files up to 50 MB. Larger files are not opened, and performance within that limit depends on the browser and device.</p></details>
+    <details><summary>Why are some cells blank?</summary><p>The viewer pads shorter rows with blank cells so each row lines up with the header columns. Check the source file if a blank value is unexpected.</p></details>
+
+    <h2>About RomitCSV</h2>
+    <p>RomitCSV offers browser-based tools for viewing, editing, cleaning, validating, and converting tabular data. Use this CSV table viewer to inspect a file, then choose another <a href="tool.html">CSV tool</a> when you need to change or convert it.</p>
+  </article>
+</main>
+
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="tool.js?v=romitjson-theme-3"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>
+
+

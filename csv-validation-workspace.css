@@ -1,0 +1,28 @@
+.csv-validation-workspace{max-width:1280px;margin:0 auto;padding:30px 24px 66px}
+.csv-analysis-page.csv-validation-workspace{max-width:1160px}
+.csv-validation-workspace .analysis-hero{margin-bottom:22px}
+.csv-validation-workspace .analysis-hero-inner{max-width:1180px}
+.csv-validation-workspace .analysis-upload-card[hidden],.csv-validation-workspace .analysis-content[hidden]{display:none!important}
+.csv-validation-workspace .analysis-dropzone.drag{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent)}
+.csv-validation-workspace .analysis-paste-card textarea{min-height:105px}
+.csv-validation-workspace .analysis-content{scroll-margin-top:18px}
+.csv-validation-workspace .analysis-workspace-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.csv-validation-workspace .analysis-filebar{min-height:68px}
+.csv-validation-workspace .analysis-source{background:var(--soft)}
+.csv-validation-workspace .analysis-table-wrap th.analysis-row-number,.csv-validation-workspace .validator-table-wrap th.analysis-row-number{min-width:38px;width:38px;padding-right:8px;padding-left:8px;text-align:center;background:var(--soft);color:var(--muted);font-variant-numeric:tabular-nums}
+.csv-validation-workspace .analysis-table-wrap tbody th.analysis-row-number,.csv-validation-workspace .validator-table-wrap tbody th.analysis-row-number{position:sticky;left:0;z-index:1;border-right:1px solid var(--line)}
+.csv-validation-workspace .analysis-table-wrap thead th.analysis-row-number,.csv-validation-workspace .validator-table-wrap thead th.analysis-row-number{left:0;z-index:4}
+.csv-validation-workspace .analysis-tool-panel{background:var(--surface)}
+.csv-validation-workspace .analysis-result[hidden]{display:none!important}
+.csv-validation-workspace .analysis-result{scroll-margin-top:18px}
+.csv-validation-workspace .analysis-result-actions{justify-content:flex-end}
+.csv-validation-workspace .validation-report-wrap{max-height:62vh;overflow:auto;border:1px solid var(--line);border-radius:9px;background:var(--surface);overscroll-behavior:contain}
+.csv-validation-workspace .validation-report-wrap table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;color:var(--text);font-size:12px}
+.csv-validation-workspace .validation-report-wrap th{position:sticky;top:0;z-index:2;min-width:130px;max-width:340px;padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--accent-soft);color:var(--text);text-align:left;white-space:nowrap}
+.csv-validation-workspace .validation-report-wrap td{max-width:460px;padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--text);overflow-wrap:anywhere;white-space:pre-wrap}
+.csv-validation-workspace .validation-report-wrap tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 58%,var(--surface))}
+.csv-validation-workspace .validation-report-wrap tbody tr:hover td{background:var(--accent-soft)}
+.csv-validation-workspace .analysis-empty-table{padding:24px;border:1px solid var(--line);border-radius:9px;color:var(--muted);text-align:center}
+.csv-validation-workspace .analysis-status.is-error,.csv-validation-workspace .analysis-upload-status.is-error{color:#ff8585}
+@media(max-width:900px){.csv-validation-workspace{padding:24px 16px 50px}}
+@media(max-width:720px){.csv-validation-workspace{padding:24px 14px 44px}.csv-validation-workspace .analysis-upload-card{grid-template-columns:1fr}.csv-validation-workspace .analysis-dropzone{min-height:185px}.csv-validation-workspace .analysis-filebar{align-items:flex-start;flex-direction:column}.csv-validation-workspace .analysis-file-actions{width:100%;justify-content:space-between}.csv-validation-workspace .analysis-source,.csv-validation-workspace .analysis-tool-panel,.csv-validation-workspace .analysis-result{padding:13px}.csv-validation-workspace .analysis-section-head,.csv-validation-workspace .analysis-result-head{align-items:flex-start;flex-direction:column}.csv-validation-workspace .analysis-tool-panel .analysis-section-head>.viewer-primary{width:100%}.csv-validation-workspace .analysis-result-actions{width:100%}.csv-validation-workspace .analysis-result-actions button{flex:1}.csv-validation-workspace .analysis-table-wrap,.csv-validation-workspace .validation-report-wrap{max-height:52vh}}

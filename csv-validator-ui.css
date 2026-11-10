@@ -1,0 +1,42 @@
+.csv-validator-page .analysis-upload-card[hidden],.csv-validator-page .analysis-content[hidden]{display:none!important}
+.csv-header-checker-page #validationOutput[hidden]{display:none!important}
+.csv-validator-page .analysis-dropzone.drag{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent)}
+.csv-validator-page .analysis-upload-status.is-error{color:#ff8585}
+.csv-validator-page .validator-data-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.csv-validator-page .validator-filebar{min-height:68px;padding:12px 17px;border-color:var(--line)}
+.csv-validator-page .analysis-file-info{min-width:0;display:flex;align-items:center;gap:10px}
+.csv-validator-page .analysis-file-info>span:last-child{min-width:0;display:flex;flex-direction:column;gap:4px}
+.csv-validator-page .analysis-file-info strong{overflow:hidden;color:var(--text);font-size:12px;text-overflow:ellipsis;white-space:nowrap}
+.csv-validator-page .analysis-file-info small{color:var(--muted);font-size:10px}
+.csv-validator-page .validator-source{padding:18px;border-bottom:1px solid var(--line);background:var(--soft)}
+.csv-validator-page .validator-source .analysis-section-head{margin-bottom:12px}
+.csv-validator-page .validator-source .analysis-section-head h2{margin:4px 0;color:var(--text);font-size:19px}
+.csv-validator-page .validator-source .analysis-section-head p{margin:3px 0 0;color:var(--muted);font-size:11px}
+.csv-validator-page .validator-table-wrap{width:100%;max-width:100%;max-height:62vh;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+.csv-validator-page .validator-table-wrap table{width:max-content;min-width:100%;font-size:12px;table-layout:auto}
+.csv-validator-page .validator-table-wrap thead th{position:sticky;top:0;z-index:3;background:var(--accent-soft);color:var(--text)}
+.csv-validator-page .validator-table-wrap th,.csv-validator-page .validator-table-wrap td{border-color:var(--line)}
+.csv-validator-page .validator-table-wrap th:not(.row-num-head),.csv-validator-page .validator-table-wrap td:not(.row-number){min-width:130px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.csv-validator-page .validator-table-wrap th.row-num-head,.csv-validator-page .validator-table-wrap td.row-number{position:sticky;left:0;z-index:4;width:46px;min-width:46px;max-width:46px;padding-right:8px;padding-left:8px;background:var(--surface);color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.csv-validator-page .validator-table-wrap thead th.row-num-head{z-index:5;background:var(--accent-soft)}
+.csv-validator-page .validator-table-wrap td.row-number{z-index:2;border-right:1px solid var(--line)}
+.csv-validator-page .validator-table-wrap th.analysis-row-number{min-width:38px;width:38px;padding-right:8px;padding-left:8px;text-align:center;background:var(--soft);color:var(--muted);font-variant-numeric:tabular-nums}
+.csv-validator-page .validator-table-wrap tbody th.analysis-row-number{position:sticky;left:0;z-index:1;border-right:1px solid var(--line)}
+.csv-validator-page .validator-table-wrap thead th.analysis-row-number{left:0;z-index:4}
+.csv-validator-page .validator-table-wrap tbody tr.has-issue td{background:color-mix(in srgb,#f0a43a 12%,var(--surface))}
+.csv-validator-page .validator-table-wrap tbody tr.has-issue td:first-child{color:#f0a43a;font-weight:800}
+.csv-validator-page .validator-table-wrap thead tr.has-issue th{box-shadow:inset 0 -2px #f0a43a}
+.csv-validator-page .validator-stats{border-color:var(--line)}
+.csv-validator-page .validator-stats div{border-color:var(--line)}
+.csv-validator-page .validator-stats strong{color:var(--text)}
+.csv-validator-page .validator-stats span{color:var(--muted)}
+.csv-validator-page .validator-findings{border-color:var(--line)}
+.csv-validator-page .validator-findings-head h2{color:var(--text)}
+.csv-validator-page .validator-findings-head label,.csv-validator-page .validator-findings-head h2 span{color:var(--muted)}
+.csv-validator-page .validator-findings-head select{background:var(--surface);border-color:var(--line);color:var(--text)}
+.csv-validator-page .validator-issue{border-color:var(--line)}
+.csv-validator-page .validator-issue p{color:var(--text)}
+.csv-validator-page .validator-empty{color:var(--muted)}
+.csv-validator-page .analysis-file-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.csv-validator-page .analysis-file-actions [role=status]{min-width:0;color:var(--accent);font-size:10px;overflow-wrap:anywhere}
+@media(max-width:720px){.csv-validator-page .validator-source{padding:13px}.csv-validator-page .validator-table-wrap{max-height:52vh}.csv-validator-page .analysis-file-actions{width:100%;justify-content:space-between}.csv-validator-page .validator-filebar{align-items:flex-start;flex-direction:column}}

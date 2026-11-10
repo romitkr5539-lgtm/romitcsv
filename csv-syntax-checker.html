@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Syntax Checker Online | Check Quotes and Row Structure</title>
+<meta name="description" content="Check a CSV for unclosed quotes, misplaced quotation marks, unexpected text after quoted fields, and rows with the wrong number of columns. Review and download a clear report.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-syntax-checker.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Syntax Checker Online">
+<meta property="og:description" content="Find quote and row-width issues in CSV files. See the affected row and download the report.">
+<meta property="og:url" content="https://romitcsv.com/csv-syntax-checker.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Syntax Checker Online","url":"https://romitcsv.com/csv-syntax-checker.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Check a CSV for unclosed quotes, misplaced quotation marks, unexpected text after quoted fields, and rows with the wrong number of columns. Review and download a clear report."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-validation-tools.css?v=3">
+<link rel="stylesheet" href="csv-validation-workspace.css?v=1">
+</head>
+<body class="dark csv-analysis-page csv-validation-workspace" data-validation-tool="csv-syntax-checker">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-validator.html">CSV Validator</a><a href="csv-viewer.html">CSV Viewer</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-analysis-page csv-syntax-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner">
+    <div><span class="analysis-kicker">CSV STRUCTURE TOOL</span><h1>CSV Syntax Checker</h1><p>Check quoting and row structure before import. See the source table and find the exact rows with quote or field-count issues.</p></div>
+    <div class="analysis-upload-card" id="syntaxUploadCard">
+      <div class="analysis-dropzone" id="syntaxDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="syntaxBrowse" type="button">Browse File</button><small>Delimited text · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Check pasted CSV</h2><p>Paste rows here to check their quoting and field counts.</p><textarea id="syntaxPaste" rows="5" spellcheck="false" aria-label="Paste CSV data" placeholder="Name,Email,City&#10;Ada,ada@example.com,London&#10;Lin,lin@example.com,Tokyo"></textarea><button class="viewer-primary" id="syntaxUsePaste" type="button">Check pasted data</button><button class="analysis-sample-link" id="syntaxLoadSample" type="button">Try a sample with an issue</button></div>
+      <p id="syntaxUploadStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
+    </div>
+  </div></section>
+  <section class="analysis-content" id="syntaxWorkspaceSection" hidden>
+    <div class="analysis-workspace-card">
+      <header class="analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="syntaxSourceName">Pasted data</strong><small id="syntaxSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="syntaxActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearValidation" type="button">Start over</button></div></header>
+      <section class="analysis-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Review the parsed rows before checking their syntax.</p></div></div><div id="syntaxSourceTable"></div></section>
+      <section class="analysis-tool-panel"><div class="analysis-section-head"><div><span class="analysis-kicker">CHECK QUOTES &amp; ROW WIDTHS</span><h2>CSV syntax check</h2><p>Find malformed quotes and records with a different number of fields from the first row.</p></div><button class="viewer-primary" id="runValidation" type="button" disabled>Check CSV</button></div><p id="validationStatus" class="analysis-status" role="status" aria-live="polite">Ready when the source table is loaded.</p></section>
+      <section id="validationOutput" class="analysis-result" hidden aria-live="polite"><div class="analysis-section-head analysis-result-head"><div><span class="analysis-kicker">CHECK RESULTS</span><h2>Syntax report</h2><p id="validationSummary"></p></div><div class="analysis-result-actions"><button class="viewer-edit" id="validationCopy" type="button" disabled>Copy report</button><button class="viewer-primary" id="validationDownload" type="button" disabled>Download report</button></div></div><div id="validationReportTable" class="validation-report-wrap"></div><pre id="validationPreview" hidden></pre></section>
+    </div>
+  </section>
+  <article class="csv-validation-guide">
+    <h2>Check CSV quotes and row structure</h2>
+    <p>A CSV can look normal in a text editor and still import incorrectly when a quoted value is incomplete or a row has an extra separator. This checker reads the file as delimited text and reports common quote mistakes and uneven row widths. It recognizes comma, tab, semicolon, and pipe separators from the first populated line.</p>
+    <h2>Issues included in the report</h2>
+    <ul>
+      <li><strong>Unclosed quoted field:</strong> a quoted value reaches the end of the file without a matching closing quote.</li>
+      <li><strong>Quote inside an unquoted field:</strong> a quote appears after ordinary text has already started in the same field.</li>
+      <li><strong>Unexpected text after a closing quote:</strong> non-whitespace characters appear between the closing quote and the next separator or line break.</li>
+      <li><strong>Uneven row width:</strong> a record contains more or fewer fields than the header row.</li>
+    </ul>
+    <p>Correctly quoted commas, escaped double quotes (<code>""</code>), and line breaks inside quoted fields are treated as part of the field. The report identifies the record number and explains the issue; it does not rewrite or repair the original file.</p>
+    <h2>How to check a CSV file</h2>
+    <ol><li>Choose a CSV or TSV file up to 50 MB, or paste delimited text into the paste box.</li><li>Review the source table, then choose <strong>Check CSV</strong>.</li><li>Use the row and detail columns to locate any issues and correct the source in your spreadsheet or editor.</li><li>Copy or download the report if you need to keep or share the findings.</li></ol>
+    <p>Processing happens in your browser; files and pasted data are not uploaded to RomitCSV. A clean result means no issues in these checks were found. It does not guarantee that every value matches your application's requirements.</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>What does a valid result mean?</summary><p>It means the checker found no unclosed or misplaced quotes and no data rows whose number of fields differs from the first row. It does not validate required values, data types, or business rules.</p></details>
+    <details><summary>Why does a comma inside a value need quotes?</summary><p>Without quotes, a comma is read as a field separator. Put the whole value in double quotes, for example <code>"Paris, France"</code>.</p></details>
+    <details><summary>Can this tool fix the CSV automatically?</summary><p>No. It reports findings without changing the source so you can decide how each row should be corrected.</p></details>
+    <details><summary>Why might a delimiter be detected incorrectly?</summary><p>Detection uses the first populated line and supports comma, tab, semicolon, and pipe. If that line is irregular or uses another separator, the parser may not interpret the file as intended.</p></details>
+    <p>For broader checks, try the <a href="csv-validator.html">CSV Validator</a> or browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-validation-tools.js?v=4"></script>
+</body>
+</html>

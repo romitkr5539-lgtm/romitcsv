@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Split CSV Files Online | Split by Row Count</title>
+<meta name="description" content="Split a large CSV or TSV into smaller row-based files. Keep the header in the first part, repeat it in later parts, preview each part, and download a ZIP.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-splitter.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Split CSV Files Online | Split by Row Count">
+<meta property="og:description" content="Split a large CSV or TSV into smaller row-based files. Keep the header in the first part, repeat it in later parts, preview each part, and download a ZIP.">
+<meta property="og:url" content="https://romitcsv.com/csv-splitter.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Split CSV Files Online | Split by Row Count">
+<meta name="twitter:description" content="Split a large CSV or TSV into smaller row-based files. Keep the header in the first part, repeat it in later parts, preview each part, and download a ZIP.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Splitter","url":"https://romitcsv.com/csv-splitter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Split a large CSV or TSV into smaller row-based files. Keep the header in the first part, repeat it in later parts, preview each part, and download a ZIP."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-34">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="splitterNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" class="active" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="splitterTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="splitterMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="csv-splitter-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV Splitter</span>
+        <h1>Split CSV Files by Row Count</h1>
+        <p>Choose how many data rows go into each part, preview the results, then download one part or all parts in a ZIP. The first part always keeps the column headings.</p>
+        <p id="splitterStatus" class="splitter-status" role="status" aria-live="polite"></p>
+      </div>
+      <div class="editor-upload-card" id="splitterUploadCard">
+        <div class="editor-upload" id="splitterDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop one CSV or TSV file here to split</strong>
+          <span>or</span>
+          <input id="splitterFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden>
+          <button class="viewer-primary" id="splitterBrowse" type="button">Browse CSV File</button>
+          <small>CSV, TSV, or TXT · Up to 50 MB</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content">
+    <div id="splitterWorkspace" class="splitter-workspace" hidden></div>
+  </section>
+  <article class="tool-seo-content viewer-seo-content splitter-content" aria-labelledby="splitter-guide-title">
+    <h2 id="splitter-guide-title">Split a CSV into Smaller Files by Row Count</h2>
+    <p>A large export can be difficult to upload, email, or review as one file. The CSV Splitter breaks a CSV or TSV into smaller parts based on the number of data rows you choose. Load a file, set the rows per part, inspect each part, then download one part at a time or bundle them all in a ZIP.</p>
+    <p>The first row is treated as the column heading row and is always included in the first part. You can choose whether that heading row is repeated in every later part. The row limit counts data rows, so a part with 500 data rows and a repeated heading contains 501 CSV rows.</p>
+
+    <h2>Choose a row limit that suits the next step</h2>
+    <p>Set <strong>Rows per part</strong> to the maximum number of records you want in each output. For example, a file with 2,350 data rows split at 1,000 rows produces three parts: 1,000 rows, 1,000 rows, and 350 rows. The order of the records is preserved, and each part continues where the previous one stopped.</p>
+    <p>The row limit is independent of file size. A thousand long text records may produce a larger part than a thousand short records. If a receiving system sets a size limit rather than a row limit, check the downloaded parts before uploading them.</p>
+
+    <h2>Decide whether later parts need the header</h2>
+    <p><strong>Repeat header in every part</strong> is enabled by default. This makes each later file easier to understand or import on its own because it starts with the column names. The first part keeps the header either way. Turn the option off when another process will combine the pieces and needs only one header across the full dataset.</p>
+    <p>With the option off, part 1 contains the heading row and its data rows; later parts contain data rows only. The preview still displays the source headings above the selected part so you can read its columns.</p>
+
+    <h2>Preview and download the split parts</h2>
+    <ol>
+      <li>Select a CSV, TSV, or TXT file up to 50 MB, or drop it into the upload area.</li>
+      <li>Enter the maximum number of data rows per part and choose whether to repeat the header after the first part.</li>
+      <li>Select <strong>Split CSV</strong>. Use the part selector or arrow buttons to inspect each part and its original row range.</li>
+      <li>Download the selected part, or download all parts together as a ZIP archive.</li>
+    </ol>
+    <p>The on-page table shows the first 100 data rows in the selected part. The part files and ZIP contain all rows, including rows outside that preview. Output files use comma-separated CSV even when the source was TSV or another supported delimiter.</p>
+
+    <h2>What happens to values and row order</h2>
+    <p>Splitting creates sequential chunks; it does not sort, filter, or remove duplicate records. Quoted commas, quotation marks, and line breaks stay within their original fields. Blank data rows are preserved. Every data record appears in one part, in the same order as the source.</p>
+    <p>The tool works in your browser. It does not upload the source file or change it on disk; each downloaded part is a new file. If a CSV contains an unclosed quoted field, the tool reports the formatting problem rather than splitting a misread table.</p>
+
+    <section class="faq tool-seo-faq" aria-labelledby="splitter-faq-title">
+      <p class="faq-kicker">CSV SPLITTER FAQ</p>
+      <h2 id="splitter-faq-title">Questions About Splitting CSV Files</h2>
+      <details><summary>Does the row limit include the header?</summary><p>No. The number is the maximum data rows in a part. The first part always includes the header, and later parts include it only when the repeat-header option is on.</p></details>
+      <details><summary>Will every part have column headings?</summary><p>The first part always does. Turn on <strong>Repeat header in every part</strong> to add the same headings to each later part.</p></details>
+      <details><summary>Can I download all parts at once?</summary><p>Yes. Select <strong>Download all parts (ZIP)</strong> to save every part in one archive, or download only the part currently shown.</p></details>
+      <details><summary>How many parts can I create?</summary><p>The splitter supports up to 10,000 parts per file. If the chosen row limit would create more, increase the limit before splitting.</p></details>
+      <details><summary>Can I split TSV files?</summary><p>Yes. CSV, TSV, and supported delimited TXT files can be split. The output parts are comma-separated CSV files.</p></details>
+      <details><summary>Are rows sorted or removed?</summary><p>No. Records remain in their original order. The splitter does not filter or remove duplicate rows, and blank data rows are preserved.</p></details>
+      <details><summary>Is there a file size limit?</summary><p>Each input file can be up to 50 MB.</p></details>
+      <details><summary>Are my files uploaded?</summary><p>No. The file is parsed and split in your browser. The original remains unchanged.</p></details>
+    </section>
+
+    <h2>Check a few parts before sharing them</h2>
+    <p>Review the part selector, row ranges, and final part before sending the files to another person or system. The last part is often shorter than the others. If the receiving process expects headings in every file, leave the repeat-header option enabled; if it expects one header for the complete dataset, turn it off for later parts.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="splitter.js?v=romitjson-theme-3"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>

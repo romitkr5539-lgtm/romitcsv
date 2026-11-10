@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV to TypeScript Interface Generator - Type CSV Objects</title>
+<meta name="description" content="Generate a TypeScript interface and typed object array from CSV headings and rows. Preview, copy, or download the code in your browser.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-to-typescript-interface.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV to TypeScript Interface Generator">
+<meta property="og:description" content="Turn CSV headings and records into a TypeScript interface and typed object array.">
+<meta property="og:url" content="https://romitcsv.com/csv-to-typescript-interface.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to TypeScript Interface","url":"https://romitcsv.com/csv-to-typescript-interface.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate a TypeScript interface and typed array of objects from CSV column headings and rows."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-dev-tools.css?v=2">
+</head>
+<body class="dark" data-dev-tool="csv-to-typescript-interface">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-to-json.html">CSV to JSON</a><a href="csv-to-sql.html">CSV to SQL</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-dev-page">
+  <section class="csv-dev-hero">
+    <span class="eyebrow">Free CSV developer tool</span>
+    <h1>CSV to TypeScript Interface</h1>
+    <p>Generate a TypeScript interface and typed array of objects from CSV column headings and rows.</p>
+  </section>
+  <section class="csv-dev-panel" aria-label="CSV code converter">
+    <label for="devFile">Choose a CSV or TSV file
+      <input id="devFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div id="devOptions"></div>
+    <div class="csv-dev-actions">
+      <button class="viewer-primary" id="runDevTool" type="button">Convert</button>
+      <button class="viewer-download" id="devCopy" type="button" disabled>Copy Code</button>
+      <button class="viewer-download" id="devDownload" type="button" disabled>Download Code</button>
+      <button class="viewer-download" id="clearDevTool" type="button">Clear</button>
+    </div>
+    <p id="devStatus" role="status" aria-live="polite"></p>
+    <section id="devOutput" hidden aria-live="polite">
+      <h2>Generated code</h2>
+      <pre id="devPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-dev-guide"><span class="dev-guide-kicker">CSV TO TYPESCRIPT GUIDE</span>
+    <h2>Generate a starting type from your CSV headings</h2>
+    <p>When a project receives records from a spreadsheet export or API, a TypeScript interface can make those fields easier to work with in an editor. This converter uses the CSV headings to make a type definition and produces a sample array of objects that follows it.</p>
+    <p>Column headings are converted to valid camelCase property names. Blank or repeated headings are adjusted so the generated interface does not contain duplicate properties. Review the names if your codebase uses a different naming style.</p>
+    <h2>Understand the generated value types</h2>
+    <p>The generated records preserve CSV cell contents as strings. This is deliberate: CSV does not declare whether a value is an integer, date, identifier, or boolean, and converting a value such as <code>0015</code> into a number would remove its leading zero. Edit the interface and parse values in your application when you know the intended type.</p>
+    <p>The output represents the rows in this file. It does not infer optional fields, unions, nested objects, or validation rules. If a row is shorter than the header, missing fields are represented with empty text.</p>
+    <h2>Convert your file to TypeScript</h2><ol><li>Choose a CSV, TSV, or delimited text file.</li><li>Generate the interface and object array.</li><li>Review property names and string types in the code preview.</li><li>Copy the code or download a TypeScript source file.</li></ol>
+    <h2>Questions about CSV to TypeScript</h2><details><summary>Does the tool infer numbers and dates?</summary><p>No. Values remain strings so source formatting is preserved. Convert them to the application types you expect.</p></details><details><summary>How are invalid headings handled?</summary><p>Headings are normalized into valid property identifiers, and duplicates are made unique with a suffix.</p></details><details><summary>Does the first row become a record?</summary><p>No. The first row is used for the interface fields; following rows become objects in the example array.</p></details><details><summary>Can I use this as runtime validation?</summary><p>No. A TypeScript interface is checked during development and does not validate incoming data at runtime. Add a runtime validator if your app needs one.</p></details><details><summary>Is my CSV uploaded?</summary><p>No. The converter runs in your browser.</p></details>
+    <h2>Related code converters</h2><p>Generate JavaScript objects with <a href="csv-to-javascript-array.html">CSV to JavaScript Array</a> or convert records into Python dictionaries with <a href="csv-to-python-dictionary.html">CSV to Python Dictionary</a>. Browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-dev-tools.js"></script>
+</body>
+</html>

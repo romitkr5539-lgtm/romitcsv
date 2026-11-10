@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convert CSV or TSV to XML online. Choose a separator, set XML root and record tags, preview the full table, then copy or download the XML.">
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV to XML Converter - Convert CSV to XML Online</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV to XML Converter - Convert CSV to XML Online | RomitCSV">
+<meta property="og:description" content="Convert CSV or TSV to XML online. Choose a separator, set XML root and record tags, preview the full table, then copy or download the XML.">
+<meta property="og:url" content="https://romitcsv.com/csv-to-xml.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSV to XML Converter - Convert CSV to XML Online | RomitCSV">
+<meta name="twitter:description" content="Convert CSV or TSV to XML online. Choose a separator, set XML root and record tags, preview the full table, then copy or download the XML.">
+<meta name="theme-color" content="#10b995">
+<link rel="canonical" href="https://romitcsv.com/csv-to-xml.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://romitcsv.com/csv-to-xml.html#webpage",
+      "url": "https://romitcsv.com/csv-to-xml.html",
+      "name": "CSV to XML Converter | RomitCSV",
+      "description": "Convert CSV or TSV to XML online. Choose a separator, set XML root and record tags, preview the full table, then copy or download the XML.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://romitcsv.com/csv-to-xml.html#tool",
+      "name": "RomitCSV CSV to XML Converter",
+      "url": "https://romitcsv.com/csv-to-xml.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript and a modern web browser.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Convert CSV and TSV rows into flat XML records in the browser."
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-12">
+</head>
+<body class="dark" data-converter="csv-xml" data-input-ext=".csv" data-output-type="xml">
+<header class="site-header viewer-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home">
+      <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+      <span>Romit<span class="brand-accent">CSV</span></span>
+    </a>
+    <nav id="xmlNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button>
+        <ul class="nav-drop-menu" role="menu">
+          <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+          <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+        </ul>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span></button>
+        <ul class="nav-drop-menu" role="menu">
+          <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicate rows</small></span></a></li>
+          <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine CSV files</small></span></a></li>
+          <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split a large CSV</small></span></a></li>
+          <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check CSV structure</small></span></a></li>
+        </ul>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button>
+        <ul class="nav-drop-menu" role="menu">
+          <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert rows to JSON</small></span></a></li>
+          <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to rows</small></span></a></li>
+          <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export an Excel workbook</small></span></a></li>
+          <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert a workbook</small></span></a></li>
+          <li role="none"><a href="csv-to-xml.html" class="active" role="menuitem"><span class="ndm-icon ndm-orange">XML</span><span><strong>CSV → XML</strong><small>Convert rows to XML records</small></span></a></li>
+          <li role="none"><a href="xml-to-csv.html" role="menuitem"><span class="ndm-icon ndm-cyan">XML</span><span><strong>XML → CSV</strong><small>Convert XML records to rows</small></span></a></li>
+          <li role="none"><a href="csv-to-yaml.html" role="menuitem"><span class="ndm-icon ndm-purple">YAML</span><span><strong>CSV → YAML</strong><small>Convert rows to YAML</small></span></a></li>
+          <li role="none"><a href="yaml-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">YAML</span><span><strong>YAML → CSV</strong><small>Convert YAML records to rows</small></span></a></li>
+          <li role="none"><a href="tool.html" role="menuitem"><span class="ndm-icon ndm-blue">＋</span><span><strong>All converters</strong><small>Browse every format tool</small></span></a></li>
+        </ul>
+      </div>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="menu-btn" id="xmlMenu" type="button" aria-label="Open menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main class="csv-to-xml-page csv-sql-page csv-xml-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV to XML Converter</span>
+        <h1>Convert CSV to XML</h1>
+        <p>Turn CSV rows into XML records. Upload a file or paste delimited text, choose the source separator and XML tag names, then review and download the result.</p>
+      </div>
+      <div class="editor-upload-card" id="xmlUploadCard">
+        <div class="editor-upload" id="xmlDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop a CSV file here to convert</strong>
+          <span>or</span>
+          <input id="xmlFile" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values" hidden>
+          <button class="viewer-primary" id="xmlBrowse" type="button">Browse CSV File</button>
+          <small>CSV or TSV · Up to 50 MB</small>
+          <div id="xmlStatus" class="tool-status" role="status" aria-live="polite"></div>
+        </div>
+        <div class="xml-paste-card">
+          <div><span class="xml-paste-kicker">PASTE INPUT</span><h2>Have CSV text?</h2><p>Paste comma, tab, semicolon, or pipe-separated rows.</p></div>
+          <textarea id="xmlPasteInput" rows="5" spellcheck="false" aria-label="Paste CSV or delimited text" placeholder="name,city&#10;Ada Lovelace,London"></textarea>
+          <button class="viewer-primary" id="xmlPasteConvert" type="button">Use pasted data</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="editor-content" id="xmlWorkspaceSection" hidden>
+    <div id="xmlWorkspace" class="sql-workspace" hidden></div>
+  </section>
+
+  <article class="tool-seo-content viewer-seo-content csv-xml-seo-content" aria-labelledby="csv-xml-guide-title">
+    <span class="xml-paste-kicker">CSV TO XML GUIDE</span>
+    <h2 id="csv-xml-guide-title">Turn CSV rows into XML records</h2>
+    <p>XML is often used by older systems, data feeds, and applications that expect named elements instead of delimited rows. This converter maps a CSV or TSV table into a simple XML structure: column headings become child element names, and each data row becomes a record. Set the root and record tags to suit your destination, inspect the generated XML, and copy or download it.</p>
+
+    <h2>Example: CSV converted to XML</h2>
+    <p>Starting with this CSV:</p>
+    <pre><code>name,city
+Ada Lovelace,London
+Grace Hopper,New York</code></pre>
+    <p>The default root element is <code>records</code>, and each data row is wrapped in a <code>record</code> element:</p>
+    <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;records&gt;
+  &lt;record&gt;
+    &lt;name&gt;Ada Lovelace&lt;/name&gt;
+    &lt;city&gt;London&lt;/city&gt;
+  &lt;/record&gt;
+  &lt;record&gt;
+    &lt;name&gt;Grace Hopper&lt;/name&gt;
+    &lt;city&gt;New York&lt;/city&gt;
+  &lt;/record&gt;
+&lt;/records&gt;</code></pre>
+
+    <h2>Choose the separator and header option</h2>
+    <p>Auto-detect is the starting separator setting. If the preview places values in the wrong columns, select comma, semicolon, tab, or pipe to match the source file. Keep <strong>First row contains column names</strong> selected when the first line has headings. Turn it off when the file starts with a data row; the converter then creates names such as <code>Column_1</code> and treats every parsed row as a record.</p>
+
+    <h2>How column headings become XML element names</h2>
+    <p>XML tag names cannot contain arbitrary punctuation or spaces. The converter changes unsupported heading characters to underscores, creates a name for blank or number-starting headings, and adds a numeric suffix when two cleaned headings would otherwise match. This keeps every CSV column separate in the output. Check the table heading row and XML preview if your source uses duplicate or unusual column names.</p>
+    <p>You can also change the default root element <code>records</code> and record element <code>record</code>. Names must start with a letter or underscore and may contain letters, numbers, periods, hyphens, and underscores. Names beginning with <code>xml</code> are reserved, and invalid custom names are reported before the XML can be copied or downloaded.</p>
+
+    <h2>XML values, escaping, and the output structure</h2>
+    <p>Cell contents are written as text; the converter does not infer numeric, date, or Boolean types. XML-sensitive characters are escaped so they remain part of the value. For instance, <code>A &amp; B</code> is represented as <code>A &amp;amp; B</code> in the XML source, and an XML reader displays the original <code>A &amp; B</code>.</p>
+    <p>The result is a flat record structure, not an application-specific schema. It does not create nested elements, apply an XSD, or map headings to a particular service's field requirements. If an importer expects a particular namespace, hierarchy, or tag spelling, compare the output with that importer's specification before using it.</p>
+
+    <h2>Convert and save a CSV or TSV file</h2>
+    <ol>
+      <li>Choose a CSV or TSV file up to 50 MB, or paste delimited text.</li>
+      <li>Check the separator and decide whether the first row contains column names.</li>
+      <li>Set the root and record element names, then review the table and XML output.</li>
+      <li>Copy the XML or download a file with an <code>.xml</code> extension.</li>
+    </ol>
+    <p>The table and generated XML include all parsed rows. Completely blank lines are skipped, and missing cells in shorter records remain empty. The file is read and converted in your browser rather than uploaded to RomitCSV.</p>
+
+    <h2>Frequently asked questions</h2>
+    <details><summary>Does the first CSV row become a record?</summary><p>By default, the first row is used for element names, so only the rows after it become records. Turn off <strong>First row contains column names</strong> when the file has no header row.</p></details>
+    <details><summary>Can I convert TSV or semicolon-separated data?</summary><p>Yes. Upload or paste TSV and choose Tab in the separator menu. You can also choose comma, semicolon, or pipe when auto-detection does not match your source.</p></details>
+    <details><summary>Can I paste CSV instead of uploading a file?</summary><p>Yes. Paste delimited text into the input box and choose Use pasted data to open the same XML workspace.</p></details>
+    <details><summary>Why did a heading change in the XML?</summary><p>XML element names cannot contain every character allowed in CSV headings. The converter replaces unsupported characters, generates a name for blank or numeric-start headings, and adds suffixes when cleaned names would otherwise repeat.</p></details>
+    <details><summary>Can I choose a custom root and record element?</summary><p>Yes. Edit the two name fields in the workspace. Each name must start with a letter or underscore and use only letters, numbers, periods, underscores, or hyphens. Names beginning with <code>xml</code> are reserved.</p></details>
+    <details><summary>Does the converter create XML for a specific application?</summary><p>It creates a general flat record structure. It does not know the schema required by a particular application, so check the element names and structure against that application’s import guide.</p></details>
+
+    <h2>Related tools</h2>
+    <p>To turn simple XML records back into a table, use <a href="xml-to-csv.html">XML to CSV</a>. To prepare a CSV before conversion, open the <a href="csv-validator.html">CSV Validator</a>, or browse <a href="tool.html">all RomitCSV tools</a>.</p>
+  </article>
+</main>
+
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="csv-to-xml.js?v=romitjson-theme-3"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-xml.html">CSV to XML</a><a href="xml-to-csv.html">XML to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>
