@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Graph Generator | RomitCSV</title>
+<meta name="description" content="Generate a scatter graph from CSV data">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-graph-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Graph Generator">
+<meta property="og:description" content="Generate a scatter graph from CSV data">
+<meta property="og:url" content="https://romitcsv.com/csv-graph-generator.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Graph Generator","url":"https://romitcsv.com/csv-graph-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate a scatter graph from CSV data"}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-advanced-tools.css?v=2">
+</head>
+<body class="dark" data-advanced-tool="csv-graph-generator">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-viewer.html">CSV Viewer</a><a href="csv-to-json.html">CSV to JSON</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-adv-page">
+  <section class="csv-adv-hero">
+    <span class="eyebrow">Free advanced CSV tool</span>
+    <h1>CSV Graph Generator</h1>
+    <p>Plot two numeric CSV columns as a scatter graph in your browser. Choose X and Y fields, then inspect the plotted points for patterns or outliers.</p>
+  </section>
+  <section class="csv-adv-panel" aria-label="Advanced CSV tool">
+    <label for="advancedFiles">Choose a CSV or TSV file
+      <input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div id="advOptions"></div>
+    <div class="csv-adv-actions">
+      <button class="viewer-primary" id="runAdvanced" type="button">Run Tool</button>
+      <button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button>
+      <button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button>
+      <button class="viewer-download" id="clearAdvanced" type="button">Clear</button>
+    </div>
+    <p id="advStatus" role="status" aria-live="polite"></p>
+    <section id="advOutput" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p id="advSummary"></p>
+      <div id="advVisual" hidden></div>
+      <pre id="advPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-adv-guide"><span class="dev-guide-kicker">Tool guide</span><h2>CSV Graph Generator: what it does</h2><p>The graph uses one selected numeric column for each axis and plots up to 40 rows with valid numeric values. Rows containing blank or non-numeric axis values are omitted.</p><h2>How to use it</h2><p>Load your file, choose numeric X and Y columns, and run the graph generator. Check that both selected fields contain values that can be read as numbers, such as 12 or 3.5.</p><h2>What to check in the result</h2><p>The graph shows association and distribution; it does not establish cause and effect. It uses rows in the CSV without sampling controls or regression calculations, so use a dedicated analysis tool for formal statistical work.</p><h2>Frequently asked questions</h2><details><summary>Can I choose text for the X axis?</summary><p>No. Both axes must contain numeric values.</p></details><details><summary>Why are rows skipped?</summary><p>A row is plotted only when both selected cells contain valid numbers.</p></details><details><summary>Does the graph calculate correlation?</summary><p>No. It visualizes points but does not calculate statistics.</p></details><p>Explore <a href="tool.html">all CSV tools</a> for related file cleanup, comparison, and conversion tasks.</p></article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-advanced-tools.js"></script>
+</body>
+</html>

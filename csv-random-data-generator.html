@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Random Data Generator | RomitCSV</title>
+<meta name="description" content="Generate random sample CSV data online">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-random-data-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Random Data Generator">
+<meta property="og:description" content="Generate random sample CSV data online">
+<meta property="og:url" content="https://romitcsv.com/csv-random-data-generator.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Random Data Generator","url":"https://romitcsv.com/csv-random-data-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate random sample CSV data online"}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-advanced-tools.css?v=2">
+</head>
+<body class="dark" data-advanced-tool="csv-random-data-generator">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-viewer.html">CSV Viewer</a><a href="csv-to-json.html">CSV to JSON</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-adv-page">
+  <section class="csv-adv-hero">
+    <span class="eyebrow">Free advanced CSV tool</span>
+    <h1>CSV Random Data Generator</h1>
+    <p>Create a CSV file with randomly generated sample rows using a field schema you define. Choose row count and supported field types, then download the result.</p>
+  </section>
+  <section class="csv-adv-panel" aria-label="Advanced CSV tool">
+    <label for="advancedFiles">Choose a CSV or TSV file
+      <input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div id="advOptions"></div>
+    <div class="csv-adv-actions">
+      <button class="viewer-primary" id="runAdvanced" type="button">Run Tool</button>
+      <button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button>
+      <button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button>
+      <button class="viewer-download" id="clearAdvanced" type="button">Clear</button>
+    </div>
+    <p id="advStatus" role="status" aria-live="polite"></p>
+    <section id="advOutput" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p id="advSummary"></p>
+      <div id="advVisual" hidden></div>
+      <pre id="advPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-adv-guide"><span class="dev-guide-kicker">Tool guide</span><h2>CSV Random Data Generator: what it does</h2><p>Enter one field per line using <code>name:type</code>, such as <code>email:email</code> or <code>age:integer</code>. The generator supports text, integer, number, email, date, name, and city types and creates up to 10,000 rows.</p><h2>How to use it</h2><p>Set a row count, edit the schema, then click Generate. The output includes a header row. Email values use the reserved example.com domain, making them suitable for demonstrations rather than contacting real people.</p><h2>What to check in the result</h2><p>Generated values are synthetic test data, not a statistically representative sample. Names and locations come from small built-in lists, and the tool does not guarantee uniqueness except where its pattern makes values distinct.</p><h2>Frequently asked questions</h2><details><summary>Can I control the exact values?</summary><p>The tool selects generated values from its built-in patterns and sample lists; it does not accept custom value lists.</p></details><details><summary>Are generated emails real?</summary><p>They use example.com and are for demonstration only.</p></details><details><summary>How many rows can I create?</summary><p>The generator accepts 1 to 10,000 data rows per file.</p></details><p>Explore <a href="tool.html">all CSV tools</a> for related file cleanup, comparison, and conversion tasks.</p></article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-advanced-tools.js"></script>
+</body>
+</html>

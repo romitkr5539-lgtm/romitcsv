@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV Formula Generator | RomitCSV</title>
+<meta name="description" content="Add spreadsheet formulas to a CSV column">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-formula-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Formula Generator">
+<meta property="og:description" content="Add spreadsheet formulas to a CSV column">
+<meta property="og:url" content="https://romitcsv.com/csv-formula-generator.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Formula Generator","url":"https://romitcsv.com/csv-formula-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add spreadsheet formulas to a CSV column"}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-advanced-tools.css?v=2">
+</head>
+<body class="dark" data-advanced-tool="csv-formula-generator">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-viewer.html">CSV Viewer</a><a href="csv-to-json.html">CSV to JSON</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-adv-page">
+  <section class="csv-adv-hero">
+    <span class="eyebrow">Free advanced CSV tool</span>
+    <h1>CSV Formula Generator</h1>
+    <p>Append a formula column to a CSV file using a formula template and row placeholder. Generate formulas for each data row, then download and open the CSV in a spreadsheet.</p>
+  </section>
+  <section class="csv-adv-panel" aria-label="Advanced CSV tool">
+    <label for="advancedFiles">Choose a CSV or TSV file
+      <input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div id="advOptions"></div>
+    <div class="csv-adv-actions">
+      <button class="viewer-primary" id="runAdvanced" type="button">Run Tool</button>
+      <button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button>
+      <button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button>
+      <button class="viewer-download" id="clearAdvanced" type="button">Clear</button>
+    </div>
+    <p id="advStatus" role="status" aria-live="polite"></p>
+    <section id="advOutput" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p id="advSummary"></p>
+      <div id="advVisual" hidden></div>
+      <pre id="advPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-adv-guide"><span class="dev-guide-kicker">Tool guide</span><h2>CSV Formula Generator: what it does</h2><p>Enter a new column heading and a formula containing <code>{row}</code>. The placeholder is replaced with each spreadsheet row number, accounting for the header in row 1. For example, <code>=A{row}+B{row}</code> becomes formulas such as <code>=A2+B2</code>.</p><h2>How to use it</h2><p>Choose a CSV and edit the formula template before running the tool. Check the generated formulas in your spreadsheet application; CSV stores formula text and the behavior depends on how the receiving application interprets it.</p><h2>What to check in the result</h2><p>The generator does not calculate formulas or verify referenced columns. Only use formulas from trusted sources because spreadsheet applications may execute formulas when a CSV is opened.</p><h2>Frequently asked questions</h2><details><summary>Does this calculate the result?</summary><p>No. It writes formula text for a spreadsheet to calculate.</p></details><details><summary>How does the row placeholder work?</summary><p>It is replaced with the data row number, starting at 2 below the header.</p></details><details><summary>Are formulas supported by every CSV reader?</summary><p>No. CSV is plain text, and formula behavior depends on the application opening it.</p></details><p>Explore <a href="tool.html">all CSV tools</a> for related file cleanup, comparison, and conversion tasks.</p></article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-advanced-tools.js"></script>
+</body>
+</html>

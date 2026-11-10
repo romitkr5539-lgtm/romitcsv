@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Filter CSV rows by column online. Match text, find exact values, keep rows that start with a phrase, or show blank and non-blank cells. Preview and download the results in your browser.">
+<meta name="author" content="RomitCSV"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV Filter - Filter Rows by Column and Value</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="RomitCSV"><meta property="og:title" content="CSV Filter - Filter Rows by Column and Value">
+<meta property="og:description" content="Filter CSV rows by column online. Match text, find exact values, keep rows that start with a phrase, or show blank and non-blank cells. Preview and download the results in your browser."><meta property="og:url" content="https://romitcsv.com/csv-filter.html">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="CSV Filter - Filter Rows by Column and Value"><meta name="twitter:description" content="Filter CSV rows by column online. Match text, find exact values, keep rows that start with a phrase, or show blank and non-blank cells. Preview and download the results in your browser.">
+<link rel="canonical" href="https://romitcsv.com/csv-filter.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Filter","url":"https://romitcsv.com/csv-filter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and a modern web browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Filter delimited data rows by a selected column and text condition in your browser."}</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-23">
+</head>
+<body class="dark">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="filterNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div>
+    <div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Clean rows and fields</small></span></a></li><li role="none"><a href="csv-sorter.html" role="menuitem"><span class="ndm-icon ndm-cyan">↕</span><span><strong>CSV Sorter</strong><small>Sort rows by a column</small></span></a></li><li role="none"><a href="csv-filter.html" class="active" role="menuitem"><span class="ndm-icon ndm-blue">⌕</span><span><strong>CSV Filter</strong><small>Keep matching rows</small></span></a></li><li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine CSV files</small></span></a></li><li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split a large CSV</small></span></a></li><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check CSV structure</small></span></a></li></ul></div>
+    <div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert rows to JSON</small></span></a></li><li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export an Excel workbook</small></span></a></li><li role="none"><a href="csv-to-yaml.html" role="menuitem"><span class="ndm-icon ndm-purple">YAML</span><span><strong>CSV → YAML</strong><small>Convert rows to YAML records</small></span></a></li><li role="none"><a href="tool.html" role="menuitem"><span class="ndm-icon ndm-blue">＋</span><span><strong>All converters</strong><small>Browse every format tool</small></span></a></li></ul></div>
+    <a href="index.html#resources">Resources</a><a href="index.html#about">About</a>
+  </nav><div class="header-actions"><button class="menu-btn" id="filterMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-filter-page">
+  <section class="filter-hero"><div class="filter-hero-inner"><div><span class="filter-kicker">CSV DATA TOOL</span><h1>Filter CSV Rows</h1><p>Keep only the rows that match a value in your chosen column. Search for text, match an exact value, find blanks, then review or download the filtered table.</p></div>
+    <div class="filter-upload-card" id="filterUploadCard">
+      <div class="filter-dropzone" id="filterDropzone" role="region" aria-label="Drop or browse for a delimited text file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="filterFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="filterBrowse" type="button">Browse File</button><small>Delimited text · Up to 50 MB</small></div>
+      <div class="filter-paste-card"><span class="filter-kicker">PASTE DATA</span><h2>Filter pasted rows</h2><p>Common comma, semicolon, tab, and pipe separators are detected.</p><textarea id="filterPaste" rows="5" spellcheck="false" aria-label="Paste delimited data" placeholder="Name,Department,Status&#10;Ada,Research,Active&#10;Grace,Engineering,On leave"></textarea><button class="viewer-primary" id="filterUsePaste" type="button">Use pasted data</button></div>
+      <p id="filterUploadStatus" class="tool-status filter-upload-status" role="status" aria-live="polite"></p>
+    </div>
+  </div></section>
+  <section class="filter-content" id="filterWorkspaceSection" hidden><div id="filterWorkspace" hidden></div></section>
+  <article class="tool-seo-content viewer-seo-content filter-guide" aria-labelledby="filter-guide-title">
+    <span class="filter-kicker">CSV FILTER GUIDE</span>
+    <h2 id="filter-guide-title">Filter CSV data by column and value</h2>
+    <p>A large CSV file often contains more records than you need for a report or import. A row filter lets you keep the records that match a condition in one field, while leaving the other values in each matching row together. This online CSV Filter creates a separate result file; it does not delete or alter the source.</p>
+    <h2>Choose a column and condition</h2>
+    <p>Select a column, then choose how its cell should match your search. <strong>Contains</strong> finds the value anywhere in the cell. <strong>Equals</strong> keeps exact matches, and <strong>Starts with</strong> checks the beginning of the cell. Use <strong>Is empty</strong> or <strong>Is not empty</strong> to check whether a cell has content; those conditions do not need a search value.</p>
+    <p>For example, filtering a Status column for “contains” <code>active</code> can keep rows with values such as <code>Active</code> or <code>Inactive</code>. Use “equals” when you want only a complete cell match such as <code>Active</code>.</p>
+    <h2>Case sensitivity and matching</h2>
+    <p>Text matching ignores letter case by default, so a search for <code>north</code> also matches <code>North</code>. Turn on <strong>Match case</strong> when uppercase and lowercase should be treated differently. The match is performed only in the selected column; it does not search other fields in the row.</p>
+    <h2>Headers, blanks, and result rows</h2>
+    <p>The first row is kept as the column header and is not evaluated as data. Every remaining row is checked against the chosen condition. Empty cells in the selected column can be included or excluded with the blank conditions. Rows that do not match are left out of the new CSV, while the order and contents of rows that do match are retained.</p>
+    <h2>How to filter a CSV file</h2>
+    <ol><li>Upload a <code>.csv</code>, <code>.tsv</code>, or <code>.txt</code> file, or paste delimited data.</li><li>Select the column and condition to apply.</li><li>Enter a match value if the condition needs one, then choose whether to match case.</li><li>Select <strong>Filter rows</strong>, review the complete result table, and copy or download the filtered CSV.</li></ol>
+    <p>The tool detects common comma, semicolon, tab, and pipe separators. Quoted fields can include delimiters, quotation marks, and line breaks. The downloadable result is comma-separated CSV. Files up to 50 MB are read and filtered in your browser; they are not uploaded to RomitCSV.</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Does the filter keep the header row?</summary><p>Yes. The first row remains the header in the result, even when no data rows match.</p></details>
+    <details><summary>What is the difference between “contains” and “equals”?</summary><p>Contains matches a search phrase anywhere inside a cell. Equals requires the entire cell value to match the search text.</p></details>
+    <details><summary>Are text matches case-sensitive?</summary><p>They are case-insensitive by default. Enable Match case to distinguish uppercase and lowercase letters.</p></details>
+    <details><summary>How do I find rows with missing values?</summary><p>Select the column to check and choose Is empty. Choose Is not empty to keep rows where that field contains text.</p></details>
+    <details><summary>Can I filter data that uses semicolons or tabs?</summary><p>Yes. The tool detects common comma, semicolon, tab, and pipe separators when it reads the input.</p></details>
+    <details><summary>Will filtering change the original file?</summary><p>No. It creates a separate filtered CSV for copying or downloading.</p></details>
+    <details><summary>Is my file uploaded?</summary><p>No. The selected data is processed in your browser.</p></details>
+    <h2>Related tools</h2><p>Sort records with <a href="csv-sorter.html">CSV Sorter</a>, clean rows with <a href="csv-cleaner.html">CSV Cleaner</a>, or explore <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script><script src="csv-filter.js?v=1"></script>
+<footer class="site-footer">
+  <div class="footer-inner"><div class="footer-link-grid">
+    <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+    <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+    <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+    <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+    <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+  </div>
+  <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+  <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div>
+</footer>
+</body>
+</html>

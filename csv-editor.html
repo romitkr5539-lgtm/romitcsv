@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Edit CSV and TSV files in your browser. Change cells and headers, add or remove rows and columns, and download the complete edited table as CSV.">
+<meta name="author" content="RomitCSV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV Editor Online | Edit CSV Cells, Rows &amp; Columns</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="CSV Editor Online | Edit CSV Cells, Rows and Columns">
+<meta property="og:description" content="Edit CSV and TSV files in your browser. Change cells and headers, add or remove rows and columns, and download the complete edited table as CSV.">
+<meta property="og:url" content="https://romitcsv.com/csv-editor.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSV Editor Online | Edit CSV Cells, Rows and Columns">
+<meta name="twitter:description" content="Edit CSV and TSV files in your browser. Change cells and headers, add or remove rows and columns, and download the complete edited table as CSV.">
+<meta name="theme-color" content="#10b995">
+<link rel="canonical" href="https://romitcsv.com/csv-editor.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"WebPage","@id":"https://romitcsv.com/csv-editor.html#webpage","url":"https://romitcsv.com/csv-editor.html","name":"CSV Editor Online | Edit CSV Cells, Rows and Columns","description":"Edit CSV and TSV files in your browser. Change cells and headers, add or remove rows and columns, and download the complete edited table as CSV.","isPartOf":{"@id":"https://romitcsv.com/#website"},"inLanguage":"en"},
+    {"@type":"WebApplication","@id":"https://romitcsv.com/csv-editor.html#webapp","name":"RomitCSV Editor","url":"https://romitcsv.com/csv-editor.html","applicationCategory":"ProductivityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and a modern web browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Browser-based CSV and TSV editor for changing cells, headers, rows, and columns and downloading the result as CSV."}
+  ]
+}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-7">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="editorNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" class="active" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="editorTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="editorMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="csv-editor-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV Editor</span>
+        <h1>Edit Your CSV Files</h1>
+        <p>Change cell values and headings, add or remove rows and columns, then download the full table as a CSV file. Your data stays in your browser.</p>
+      </div>
+      <div class="editor-upload-card" id="editorUploadCard">
+        <div class="editor-upload" id="editorDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop a CSV file here to edit</strong>
+          <span>or</span>
+          <input id="editorFile" type="file" accept=".csv,.tsv,text/csv,text/tab-separated-values" hidden>
+          <button class="viewer-primary" id="editorBrowse" type="button">Browse CSV File</button>
+          <small>Supports CSV, TSV · Max file size: 50MB</small>
+          <div id="editorStatus" class="tool-status" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="editor-content">
+    <div id="editorWorkspace" class="editor-workspace"></div>
+  </section>
+
+  <article class="tool-seo-content viewer-seo-content editor-seo-content" aria-labelledby="editor-guide-title">
+  <h2 id="editor-guide-title">Edit CSV Cells, Rows, and Columns Online</h2>
+  <p>Use the CSV Editor for practical changes to a table: correct a value, rename a heading, remove an unused field, or add a row to an export. The page starts with sample data so you can see the grid. Choose a CSV or TSV file to replace the sample with your own records.</p>
+  <p>Cells and column headings are edited directly in the table. For example, you can correct a product price or change a heading before sending the file to another system. The editor keeps values as text, so a value such as <code>00127</code> is not automatically converted into a number.</p>
+
+  <h2>Make Changes in the Table</h2>
+  <ol>
+    <li>Choose <strong>Browse CSV File</strong> or drop a CSV or TSV file into the upload area. Files up to 50 MB are accepted.</li>
+    <li>Review the headings and records. The first row is treated as the column headings; if your file has no header, its first data record will be used as headings.</li>
+    <li>Click a cell or heading and type to change its text. Use <strong>Add row</strong> for a blank record or <strong>Add column</strong> for a new field.</li>
+    <li>Use the × control beside a row or column heading to remove it. If the table continues onto more pages, use the page arrows to reach the records you want to edit.</li>
+    <li>Select <strong>Download CSV</strong> when you are ready to save your changes.</li>
+  </ol>
+
+  <h2>What Happens When You Download</h2>
+  <p>Download CSV creates a new file from the full table, not just the 25 rows currently visible. It includes changes made on other pages, added rows and columns, and deletions. The editor does not save changes back into the original file on your device, so download a copy before leaving or refreshing the page.</p>
+  <p>The download is comma-separated CSV with a <code>.csv</code> extension, even if you opened a tab-separated TSV file. CSV is plain text: the editor does not calculate formula-like values or retain workbook colors, fonts, number formats, or multiple worksheets. Any formula expression in the file is handled as text. Values that need quotes because they contain commas, quotes, or line breaks are quoted in the downloaded CSV.</p>
+
+  <h2>File Support and Browser Processing</h2>
+  <p>The editor accepts CSV and TSV files up to 50 MB. It reads the file in your browser and keeps the table data there while you work; the contents are not sent to a server by this tool. The editor detects a common separator from the first non-empty line, including commas, semicolons, tabs, and pipe characters. As with other browser tools, very large files can take longer to open and may use more memory.</p>
+  <p>This page is for changing cell values and table structure. To find or sort records without editing them, use the <a href="csv-table-viewer.html">CSV Table Viewer</a>. For checks on row structure, use the <a href="csv-validator.html">CSV Validator</a>.</p>
+
+  <section class="faq tool-seo-faq" aria-labelledby="editor-faq-title">
+    <label for="editor-faq-title">CSV EDITOR FAQ</label>
+    <h2 id="editor-faq-title">Questions About Editing CSV Files</h2>
+    <details><summary>Can I edit a CSV file online without installing software?</summary><p>Yes. Open a CSV or TSV file in the browser, edit its table, and download the changed data as a CSV file.</p></details>
+    <details><summary>Will the download include rows on other pages?</summary><p>Yes. Download CSV includes the complete table, including rows that were not visible on the current 25-row page, along with your edits.</p></details>
+    <details><summary>Can I change the column names or add and remove fields?</summary><p>Yes. Edit a heading directly, add a column for a new field, or remove a column with its × control. You can also add or remove data rows.</p></details>
+    <details><summary>Does the editor save over my original file?</summary><p>No. It creates a downloadable CSV copy. Download it before leaving the page if you want to keep your changes.</p></details>
+    <details><summary>Will a TSV file remain tab-separated?</summary><p>No. The downloaded file is comma-separated CSV with a .csv extension, even when the source file was TSV.</p></details>
+    <details><summary>Does the editor keep spreadsheet formulas and formatting?</summary><p>No. CSV and TSV do not carry workbook formatting. A formula-like value may remain in the file as text, but the editor does not evaluate it.</p></details>
+    <details><summary>Is my file uploaded?</summary><p>No. The selected file is read and edited in your browser; this editor does not send its contents to a server.</p></details>
+  </section>
+</article>
+</main>
+
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="editor.js?v=romitjson-theme-2"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+

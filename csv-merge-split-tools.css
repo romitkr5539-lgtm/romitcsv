@@ -1,0 +1,131 @@
+.csv-ms-page{max-width:1100px;margin:0 auto;padding:42px 24px 72px}
+.csv-ms-hero{max-width:790px;margin:0 auto 26px;text-align:center}
+.csv-ms-hero .eyebrow{display:inline-flex;padding:7px 12px;border:1px solid rgba(16,185,149,.25);border-radius:999px;color:#0b9679;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.csv-ms-hero h1{margin:14px 0 10px;font-size:clamp(32px,5vw,48px);line-height:1.08}
+.csv-ms-hero p{max-width:690px;margin:0 auto;color:#5d6b7d;font-size:17px;line-height:1.65}
+.csv-ms-panel{max-width:900px;margin:0 auto 34px;padding:24px;border:1px solid #dce4ec;border-radius:20px;background:#fff;box-shadow:0 14px 40px rgba(14,34,55,.07)}
+.csv-ms-panel label{display:block;font-size:14px;font-weight:700}
+.csv-ms-panel input[type=file],.csv-ms-panel input[type=number],.csv-ms-panel select{display:block;width:100%;margin-top:8px;padding:12px 14px;border:1px solid #cfd8e3;border-radius:10px;background:#fff;color:#17212e;font:inherit}
+.csv-ms-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.csv-ms-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.csv-ms-actions button{min-height:42px;padding:0 18px;border:0;border-radius:10px;font:inherit;font-weight:750;cursor:pointer}
+.csv-ms-actions .viewer-primary{color:#06251a}
+.csv-ms-actions .viewer-download{background:#e8eef3;color:#233447}
+#msStatus{min-height:20px;margin:12px 0 0;color:#53657a;font-size:14px}
+#msStatus.is-error{color:#b42318}
+#msSummary{font-weight:750;color:#0a8f73}
+#msPreview{max-height:370px;overflow:auto;padding:16px;border-radius:12px;background:#101922;color:#d9f2e9;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}
+.ms-download-link{display:inline-flex;margin:5px 8px 10px 0;padding:11px 15px;border-radius:9px;background:#10b995;color:#06251a;text-decoration:none;font-weight:750}
+.csv-ms-guide{max-width:850px;margin:0 auto;padding:8px 4px;color:#475569;line-height:1.75}
+.csv-ms-guide h2{margin:26px 0 8px;color:#17212e;font-size:22px}
+.csv-ms-guide a{color:#078b71;font-weight:700}
+body.dark .csv-ms-hero p,body.dark .csv-ms-guide{color:#aebbb7}
+body.dark .csv-ms-panel{background:#111a22;border-color:#28343d}
+body.dark .csv-ms-panel input[type=file],body.dark .csv-ms-panel input[type=number],body.dark .csv-ms-panel select{background:#0b1218;border-color:#34434d;color:#edf5f2}
+body.dark .csv-ms-guide h2{color:#edf5f2}
+body.dark .csv-ms-actions .viewer-download{background:#24313a;color:#dce8e2}
+@media(max-width:700px){.csv-ms-page{padding:30px 15px 52px}.csv-ms-panel{padding:17px}.csv-ms-options{grid-template-columns:1fr}.csv-ms-actions button{width:100%}.csv-ms-hero p{font-size:15px}}
+
+/* CSV Combiner: reuse the merger table layout while making its actions distinct. */
+.csv-combiner-page #combinerUploadCard[hidden]{display:none!important}
+.csv-combiner-page #combinerDropzone.drag{border-color:#39c653;background:color-mix(in srgb,#39c653 12%,var(--surface));box-shadow:0 0 0 4px color-mix(in srgb,#39c653 18%,transparent)}
+.csv-combiner-page #combinerAddFiles{border:1px solid transparent;background:#39c653;color:#0d1117;font-weight:800;box-shadow:0 5px 14px rgba(57,198,83,.22)}
+.csv-combiner-page #combinerAddFiles:hover{background:#2fba48;transform:translateY(-1px)}
+.csv-combiner-page #combinerDownload{background:#0db88b;color:#06251a;border-color:transparent;font-weight:800}
+.csv-combiner-page #combinerDownload:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.csv-combiner-page .merger-workspace{position:relative}
+.csv-combiner-page .merger-workspace.merger-drop-active::after{content:"Drop CSV, TSV, or TXT files to add them to this combined table";position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;padding:24px;border:3px dashed #39c653;border-radius:18px;background:rgba(10,18,23,.9);color:#fff;font-size:clamp(17px,3vw,24px);font-weight:800;text-align:center;pointer-events:none}
+@media(max-width:760px){.csv-combiner-page .merger-workspace{width:calc(100% - 24px)}.csv-combiner-page .merger-filebar{align-items:flex-start;flex-direction:column}.csv-combiner-page .merger-actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.csv-combiner-page .merger-actions #combinerDownload{grid-column:1/-1}.csv-combiner-page .merger-actions button{width:100%}.csv-combiner-page .merger-table-wrap{max-height:62vh;margin:0 11px}.csv-combiner-page .merger-sources{padding:10px 11px}.csv-combiner-page .merger-alignment-note{margin:12px 11px}.csv-combiner-page .viewer-pager{align-items:flex-start;flex-direction:column;gap:10px;margin:0 11px}.csv-combiner-page .merger-example{grid-template-columns:1fr;gap:9px;padding:12px}}
+
+/* CSV Joiner: two-file key selection, join result, and responsive preview. */
+.csv-joiner-page #joinerUploadCard[hidden],.csv-joiner-page .merger-workspace[hidden],.csv-joiner-page .joiner-result[hidden]{display:none!important}
+.csv-joiner-page #joinerDropzone.drag{border-color:#39c653;background:color-mix(in srgb,#39c653 12%,var(--surface));box-shadow:0 0 0 4px color-mix(in srgb,#39c653 18%,transparent)}
+.csv-joiner-page .merger-workspace{width:min(1120px,calc(100% - 36px));margin:0 auto 36px}
+.csv-joiner-page .joiner-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 16px 42px rgba(8,30,48,.12)}
+.csv-joiner-page .joiner-file-pair{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);align-items:center;gap:14px;padding:18px;border-bottom:1px solid var(--line)}
+.csv-joiner-page .joiner-file-pair>div{min-width:0;display:flex;flex-direction:column;gap:5px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.csv-joiner-page .joiner-file-pair>div>span{color:var(--accent-dark);font-size:9px;font-weight:850;letter-spacing:.1em}
+.csv-joiner-page .joiner-file-pair strong{overflow:hidden;color:var(--text);font-size:12px;text-overflow:ellipsis;white-space:nowrap}
+.csv-joiner-page .joiner-file-pair small{color:var(--muted);font-size:10px}
+.csv-joiner-page .joiner-link-icon{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;color:var(--accent-dark);font-size:20px}
+.csv-joiner-page .joiner-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:18px;border-bottom:1px solid var(--line);background:var(--surface)}
+.csv-joiner-page .joiner-controls label{display:flex;flex-direction:column;gap:7px;color:var(--text);font-size:11px;font-weight:750}
+.csv-joiner-page .joiner-controls select{width:100%;min-height:40px;padding:0 11px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--text);font:inherit}
+.csv-joiner-page .joiner-controls select:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.csv-joiner-page .joiner-controls button{align-self:end;min-height:40px}
+.csv-joiner-page .joiner-hint{margin:0;padding:11px 18px;color:var(--muted);font-size:10px}
+.csv-joiner-page .joiner-result{display:block}
+.csv-joiner-page .joiner-result-actions{display:flex;justify-content:flex-end;padding:0 18px 12px}
+.csv-joiner-page .joiner-result-actions button{min-height:38px}
+.csv-joiner-page .merger-table-wrap{max-height:62vh;margin:0 18px;border:1px solid var(--line);border-radius:11px}
+.csv-joiner-page .merger-table-wrap table{min-width:680px}
+.csv-joiner-page .merger-table-wrap thead th{position:sticky;top:0;z-index:2;background:var(--accent-soft);color:var(--accent-dark)}
+.csv-joiner-page .merger-table-wrap tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 72%,var(--surface))}
+.csv-joiner-page .merger-table-wrap tbody tr:hover td{background:var(--accent-soft)}
+.csv-joiner-page .joiner-result .viewer-pager{margin:0 18px;padding:13px 0 16px;border:0}
+@media(max-width:760px){.csv-joiner-page .merger-workspace{width:calc(100% - 24px)}.csv-joiner-page .joiner-file-pair{grid-template-columns:minmax(0,1fr);gap:8px;padding:12px}.csv-joiner-page .joiner-link-icon{margin:auto;transform:rotate(90deg)}.csv-joiner-page .joiner-controls{grid-template-columns:1fr;padding:13px;gap:12px}.csv-joiner-page .joiner-controls button{width:100%}.csv-joiner-page .joiner-result-actions{padding:0 12px 12px}.csv-joiner-page .joiner-result-actions button{width:100%}.csv-joiner-page .merger-table-wrap{max-height:54vh;margin:0 11px}.csv-joiner-page .joiner-result .viewer-pager{align-items:flex-start;flex-direction:column;gap:10px;margin:0 11px}}
+
+/* Row and column CSV split tool workspaces. */
+.csv-row-split-page #splitUploadCard[hidden],.csv-row-split-page .merger-workspace[hidden],.csv-column-split-page #splitUploadCard[hidden],.csv-column-split-page .merger-workspace[hidden]{display:none!important}
+.csv-row-split-page #splitDropzone.drag,.csv-column-split-page #splitDropzone.drag{border-color:#39c653;background:color-mix(in srgb,#39c653 12%,var(--surface));box-shadow:0 0 0 4px color-mix(in srgb,#39c653 18%,transparent)}
+.csv-row-split-page .merger-workspace,.csv-column-split-page .merger-workspace{width:min(1120px,calc(100% - 36px));margin:0 auto 36px}
+.split-tool-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 16px 42px rgba(8,30,48,.12)}
+.split-tool-controls{display:flex;align-items:center;flex-wrap:wrap;gap:14px;padding:15px 18px;border-bottom:1px solid var(--line);background:var(--surface)}
+.split-tool-controls label{display:flex;align-items:center;gap:10px;color:var(--text);font-size:11px;font-weight:750}
+.split-tool-controls input{width:132px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.split-tool-controls input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.split-tool-controls #splitRun{min-height:38px;margin-left:auto}
+.split-tool-error{flex-basis:100%;color:#f85149;font-size:11px}
+.split-tool-partbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line)}
+.split-tool-partbar label{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px}
+.split-tool-partbar select{height:36px;min-width:190px;padding:0 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font-size:11px}
+.split-tool-partbar>span{color:var(--muted);font-size:10px}
+.split-tool-downloads{display:flex;gap:8px;margin-left:auto}
+.split-tool-downloads button{min-height:38px}
+.csv-row-split-page #splitDownloadAll,.csv-column-split-page #splitDownloadAll{background:#39c653;color:#0d1117;border-color:transparent;font-weight:800}
+.split-tool-preview-note{margin:0;padding:9px 18px;color:var(--muted);font-size:10px}
+.split-tool-table{max-height:62vh;margin:0 18px;border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+.split-tool-table table{min-width:680px}
+.split-tool-table thead th{position:sticky;top:0;z-index:2;background:var(--accent-soft);color:var(--accent-dark)}
+.split-tool-table tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 72%,var(--surface))}
+.split-tool-table tbody tr:hover td{background:var(--accent-soft)}
+.split-tool-card>.viewer-pager{margin:0 18px;padding:13px 0 16px;border:0}
+@media(max-width:760px){.csv-row-split-page .merger-workspace,.csv-column-split-page .merger-workspace{width:calc(100% - 24px)}.split-tool-controls{align-items:stretch;flex-direction:column;gap:12px;padding:13px}.split-tool-controls label{justify-content:space-between}.split-tool-controls input{width:42%}.split-tool-controls #splitRun{width:100%;margin:0}.split-tool-partbar{align-items:stretch;flex-direction:column;padding:12px}.split-tool-partbar label{justify-content:space-between}.split-tool-partbar select{flex:1;min-width:0}.split-tool-downloads{display:grid;grid-template-columns:1fr 1fr;margin:0}.split-tool-downloads button{width:100%;justify-content:center}.split-tool-table{max-height:54vh;margin:0 11px}.split-tool-preview-note{padding:9px 12px}.split-tool-card>.viewer-pager{align-items:flex-start;flex-direction:column;gap:10px;margin:0 11px}}
+
+/* File-size splitting, multiple-file merging, and same-layout appending. */
+.csv-batch-page #batchUploadCard[hidden],.csv-batch-page .merger-workspace[hidden]{display:none!important}
+.csv-batch-page #batchDropzone.drag{border-color:#39c653;background:color-mix(in srgb,#39c653 12%,var(--surface));box-shadow:0 0 0 4px color-mix(in srgb,#39c653 18%,transparent)}
+.csv-batch-page #batchAdd{border:1px solid transparent;background:#39c653;color:#0d1117;font-weight:800;box-shadow:0 5px 14px rgba(57,198,83,.22)}
+.csv-batch-page #batchAdd:hover{background:#2fba48;transform:translateY(-1px)}
+.csv-batch-page #batchAdd:focus-visible{outline:3px solid color-mix(in srgb,#39c653 45%,transparent);outline-offset:2px}
+.csv-batch-page .merger-workspace{width:min(1120px,calc(100% - 36px));margin:0 auto 36px}
+.batch-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 16px 42px rgba(8,30,48,.12)}
+.batch-controls{display:flex;align-items:center;flex-wrap:wrap;gap:14px;padding:15px 18px;border-bottom:1px solid var(--line);background:var(--surface)}
+.batch-controls label{display:flex;align-items:center;gap:10px;color:var(--text);font-size:11px;font-weight:750}
+.batch-controls input{width:140px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.batch-controls input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.batch-controls>button{min-height:38px;margin-left:auto}
+.batch-controls>p{flex:1;margin:0;color:var(--muted);font-size:11px;line-height:1.55}
+.batch-error{flex-basis:100%;color:#f85149;font-size:11px}
+.batch-partbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line)}
+.batch-partbar label{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px}
+.batch-partbar select{height:36px;min-width:200px;padding:0 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font-size:11px}
+.batch-partbar>span{color:var(--muted);font-size:10px}
+.batch-downloads{display:flex;gap:8px;margin-left:auto}
+.batch-downloads button{min-height:38px}
+.csv-batch-page #batchDownloadAll{background:#39c653;color:#0d1117;border-color:transparent;font-weight:800}
+.batch-resultbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line)}
+.batch-resultbar>div{display:flex;flex-direction:column;gap:5px}.batch-resultbar strong{color:var(--text);font-size:12px}.batch-resultbar span{color:var(--muted);font-size:10px}.batch-resultbar button{min-height:38px}
+.batch-table-wrap{max-height:62vh;margin:14px 18px 0;overflow:auto;border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+.batch-table-wrap table{min-width:680px}
+.batch-table-wrap thead th{position:sticky;top:0;z-index:2;background:var(--accent-soft);color:var(--accent-dark)}
+.batch-table-wrap tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 72%,var(--surface))}
+.batch-table-wrap tbody tr:hover td{background:var(--accent-soft)}
+.batch-card>.viewer-pager{margin:0 18px;padding:13px 0 16px;border:0}
+@media(max-width:760px){.csv-batch-page .merger-workspace{width:calc(100% - 24px)}.csv-batch-page .merger-filebar{align-items:flex-start;flex-direction:column}.csv-batch-page .merger-actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.csv-batch-page .merger-actions button{width:100%}.batch-controls{align-items:stretch;flex-direction:column;gap:12px;padding:13px}.batch-controls label{justify-content:space-between}.batch-controls input{width:42%}.batch-controls>button{width:100%;margin:0}.batch-partbar{align-items:stretch;flex-direction:column;padding:12px}.batch-partbar label{justify-content:space-between}.batch-partbar select{flex:1;min-width:0}.batch-downloads{display:grid;grid-template-columns:1fr 1fr;margin:0}.batch-downloads button{width:100%;justify-content:center}.batch-resultbar{align-items:stretch;flex-direction:column;padding:12px}.batch-resultbar button{width:100%}.batch-table-wrap{max-height:54vh;margin:0 11px}.batch-card>.viewer-pager{align-items:flex-start;flex-direction:column;gap:10px;margin:0 11px}}
+.ms-result-table-wrap{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.ms-result-table{width:100%;min-width:max-content;border-collapse:separate;border-spacing:0;color:var(--text);font-size:13px;text-align:left}
+.ms-result-table th,.ms-result-table td{max-width:320px;padding:9px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere;vertical-align:top}
+.ms-result-table th{position:sticky;top:0;z-index:1;background:var(--surface);font-weight:800}
+.ms-result-table tbody tr:nth-child(even){background:var(--soft)}
+.ms-table-section{margin:18px 0}.ms-table-section h4{margin:0 0 8px;color:var(--text)}

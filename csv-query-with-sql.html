@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Query CSV with SQL | RomitCSV</title>
+<meta name="description" content="Run SQL-style queries on CSV data online">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-query-with-sql.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Query CSV with SQL">
+<meta property="og:description" content="Run SQL-style queries on CSV data online">
+<meta property="og:url" content="https://romitcsv.com/csv-query-with-sql.html">
+<meta name="theme-color" content="#10b995">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Query CSV with SQL","url":"https://romitcsv.com/csv-query-with-sql.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Run SQL-style queries on CSV data online"}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-advanced-tools.css?v=2">
+</head>
+<body class="dark" data-advanced-tool="csv-query-with-sql">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-viewer.html">CSV Viewer</a><a href="csv-to-json.html">CSV to JSON</a><a href="about.html">About</a></nav>
+    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+  </div>
+</header>
+<main class="csv-adv-page">
+  <section class="csv-adv-hero">
+    <span class="eyebrow">Free advanced CSV tool</span>
+    <h1>Query CSV with SQL</h1>
+    <p>Filter, sort, and select CSV columns with a simple SQL-style SELECT query in your browser. Preview matching rows in a table and download the result as CSV.</p>
+  </section>
+  <section class="csv-adv-panel" aria-label="Advanced CSV tool">
+    <label for="advancedFiles">Choose a CSV or TSV file
+      <input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
+    </label>
+    <div id="advOptions"></div>
+    <div class="csv-adv-actions">
+      <button class="viewer-primary" id="runAdvanced" type="button">Run Tool</button>
+      <button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button>
+      <button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button>
+      <button class="viewer-download" id="clearAdvanced" type="button">Clear</button>
+    </div>
+    <p id="advStatus" role="status" aria-live="polite"></p>
+    <section id="advOutput" hidden aria-live="polite">
+      <h2>Result</h2>
+      <p id="advSummary"></p>
+      <div id="advVisual" hidden></div>
+      <pre id="advPreview"></pre>
+    </section>
+  </section>
+  <article class="csv-adv-guide"><span class="dev-guide-kicker">Tool guide</span><h2>Query CSV with SQL: what it does</h2><p>Write a query against the virtual table named data, for example <code>SELECT Name, City FROM data WHERE City = 'Pune' ORDER BY Name LIMIT 20</code>. The tool supports selected columns or *, one basic WHERE condition, ORDER BY, and LIMIT.</p><h2>How to use it</h2><p>Choose a CSV or TSV file, enter your query, then run it. Column names must match the header text. Text comparisons are exact except LIKE, which supports % and _ wildcards; numeric comparisons use numeric values.</p><h2>What to check in the result</h2><p>This is a small in-browser query helper rather than a complete SQL engine. It does not support joins, aggregates, expressions, or multiple predicates. Treat CSV values as text unless using a numeric comparison.</p><h2>Frequently asked questions</h2><details><summary>Can I use JOIN or GROUP BY?</summary><p>No. The current query tool supports SELECT, one WHERE condition, ORDER BY, and LIMIT.</p></details><details><summary>How do I select every column?</summary><p>Use SELECT * FROM data.</p></details><details><summary>Can I download the query result?</summary><p>Yes. Use Download Result to save the matching rows as CSV.</p></details><p>Explore <a href="tool.html">all CSV tools</a> for related file cleanup, comparison, and conversion tasks.</p></article>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script>
+var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
+menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+</script>
+<script src="csv-advanced-tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sort CSV rows online by a column in ascending or descending order. Preview the complete sorted table, copy the result, or download a new CSV file in your browser.">
+<meta name="author" content="RomitCSV"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>CSV Sorter - Sort CSV Rows by Column</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="RomitCSV"><meta property="og:title" content="CSV Sorter - Sort CSV Rows by Column">
+<meta property="og:description" content="Sort CSV rows online by a column in ascending or descending order. Preview the complete sorted table, copy the result, or download a new CSV file in your browser."><meta property="og:url" content="https://romitcsv.com/csv-sorter.html">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="CSV Sorter - Sort CSV Rows by Column"><meta name="twitter:description" content="Sort CSV rows online by a column in ascending or descending order. Preview the complete sorted table, copy the result, or download a new CSV file in your browser.">
+<link rel="canonical" href="https://romitcsv.com/csv-sorter.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Sorter","url":"https://romitcsv.com/csv-sorter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and a modern web browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Sort delimited table rows by a selected column in your browser."}</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-21">
+</head>
+<body class="dark">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="sorterNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div>
+    <div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Clean rows and fields</small></span></a></li><li role="none"><a href="csv-sorter.html" class="active" role="menuitem"><span class="ndm-icon ndm-cyan">↕</span><span><strong>CSV Sorter</strong><small>Sort rows by a column</small></span></a></li><li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine CSV files</small></span></a></li><li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split a large CSV</small></span></a></li><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check CSV structure</small></span></a></li></ul></div>
+    <div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert rows to JSON</small></span></a></li><li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to rows</small></span></a></li><li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export an Excel workbook</small></span></a></li><li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert a workbook</small></span></a></li><li role="none"><a href="csv-to-yaml.html" role="menuitem"><span class="ndm-icon ndm-purple">YAML</span><span><strong>CSV → YAML</strong><small>Convert rows to YAML records</small></span></a></li><li role="none"><a href="tool.html" role="menuitem"><span class="ndm-icon ndm-blue">＋</span><span><strong>All converters</strong><small>Browse every format tool</small></span></a></li></ul></div>
+    <a href="index.html#resources">Resources</a><a href="index.html#about">About</a>
+  </nav><div class="header-actions"><button class="menu-btn" id="sorterMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-sorter-page">
+  <section class="sorter-hero"><div class="sorter-hero-inner"><div><span class="sorter-kicker">CSV DATA TOOL</span><h1>Sort CSV Rows</h1><p>Choose a column and sort your table A to Z, Z to A, smallest to largest, or largest to smallest. Review the complete result before copying or downloading it.</p></div>
+    <div class="sorter-upload-card" id="sorterUploadCard">
+      <div class="sorter-dropzone" id="sorterDropzone" role="region" aria-label="Drop or browse for a delimited text file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="sorterFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="sorterBrowse" type="button">Browse File</button><small>Delimited text · Up to 50 MB</small></div>
+      <div class="sorter-paste-card"><span class="sorter-kicker">PASTE DATA</span><h2>Sort pasted rows</h2><p>Comma, semicolon, tab, and pipe separators are detected automatically.</p><textarea id="sorterPaste" rows="5" spellcheck="false" aria-label="Paste CSV or delimited text" placeholder="Name,Department,Score&#10;Ada,Research,92&#10;Grace,Engineering,88"></textarea><button class="viewer-primary" id="sorterUsePaste" type="button">Use pasted data</button></div>
+      <p id="sorterUploadStatus" class="tool-status sorter-upload-status" role="status" aria-live="polite"></p>
+    </div>
+  </div></section>
+  <section class="sorter-content" id="sorterWorkspaceSection" hidden><div id="sorterWorkspace" hidden></div></section>
+  <article class="tool-seo-content viewer-seo-content sorter-guide" aria-labelledby="sorter-guide-title">
+    <span class="sorter-kicker">CSV SORTER GUIDE</span>
+    <h2 id="sorter-guide-title">Sort CSV rows by a column</h2>
+    <p>A long CSV export can be difficult to review when related records are scattered throughout the file. Sorting brings names, dates, categories, or measurements together so you can scan the rows in a useful order. This CSV sorter keeps the first row as the column headings, reorders the data rows by the field you select, and produces a separate CSV result for copying or downloading.</p>
+    <h2>Text order and numeric order</h2>
+    <p>Choose a column, then sort ascending or descending. Text sorting compares values without treating uppercase and lowercase as different and uses natural number ordering for text such as <code>item 2</code> and <code>item 10</code>. For a column of numbers, switch on numeric comparison: <code>2</code> then comes before <code>10</code> by numeric value instead of by the first character.</p>
+    <p>Numeric comparison does not change the values in your file. When both values being compared are numbers, they are ordered numerically; comparisons involving non-numeric text fall back to text order. This is useful for mixed columns, but if a column should be entirely numeric, check for stray labels or symbols that may be stored with the numbers.</p>
+    <h2>Headers, ties, and empty cells</h2>
+    <p>The first row stays fixed as the header; it is never moved into the data rows. When two records have the same sort value, their original order is kept. Empty cells sort as empty text, so they appear near the top in ascending order and near the bottom in descending order. All the other values in each record travel with that row.</p>
+    <p>For example, sorting these scores numerically in ascending order:</p>
+    <pre><code>Name,Score
+Ravi,12
+Ava,3
+Liam,20</code></pre>
+    <p>places Ava first, followed by Ravi and Liam. The names remain paired with their original scores.</p>
+    <h2>Accepted files and the sorted CSV</h2>
+    <p>Upload or paste comma-, semicolon-, tab-, or pipe-separated data. The tool detects the common delimiter and supports quoted fields, including cells with separators, quotation marks, or line breaks. The generated download is comma-separated CSV. Values that need CSV quoting are wrapped in double quotes, and quotes inside a value are doubled.</p>
+    <h2>How to sort a CSV file</h2>
+    <ol><li>Upload a <code>.csv</code>, <code>.tsv</code>, or <code>.txt</code> file, or paste delimited rows.</li><li>Select the column whose values should determine the row order.</li><li>Choose ascending or descending, and turn on numeric comparison when appropriate.</li><li>Select <strong>Sort rows</strong>, review the complete result table, then copy or download the new CSV.</li></ol>
+    <p>Sorting changes row order only. It does not edit cell values, remove duplicate records, or interpret dates. Dates are compared as text; a consistent format such as <code>YYYY-MM-DD</code> sorts chronologically as text. The source file remains unchanged. Files up to 50 MB are processed in your browser and are not uploaded to RomitCSV.</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Does the CSV sorter keep my header row at the top?</summary><p>Yes. The first row is treated as the headings and stays in place while the remaining rows are sorted.</p></details>
+    <details><summary>Why does text sort show item 2 before item 10?</summary><p>Text sorting uses natural order for number-like parts of a value, which is easier to scan than comparing each character from left to right.</p></details>
+    <details><summary>When should I enable numeric comparison?</summary><p>Use it for values such as counts, scores, or prices when you want 2 to come before 10 numerically. Values stay unchanged in the result.</p></details>
+    <details><summary>What happens to rows with matching sort values?</summary><p>Their initial order is preserved. Sorting one column does not scramble records that tie on that value.</p></details>
+    <details><summary>Can I sort dates chronologically?</summary><p>The sorter compares date strings as text rather than parsing date formats. A consistent year-month-day format generally sorts in calendar order.</p></details>
+    <details><summary>Can I sort a semicolon- or tab-delimited file?</summary><p>Yes. The tool detects common comma, semicolon, tab, and pipe separators. It writes the sorted download as comma-separated CSV.</p></details>
+    <details><summary>Does sorting overwrite my source file?</summary><p>No. The sorted result is separate and can be copied or downloaded as a new file.</p></details>
+    <details><summary>Is my data uploaded?</summary><p>No. The file is read and sorted in your browser.</p></details>
+    <h2>Related tools</h2><p>Clean records with <a href="csv-cleaner.html">CSV Cleaner</a>, browse the data with <a href="csv-table-viewer.html">CSV Table Viewer</a>, or explore <a href="tool.html">all CSV tools</a>.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script><script src="csv-sorter.js?v=1"></script>
+<footer class="site-footer">
+  <div class="footer-inner"><div class="footer-link-grid">
+    <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+    <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+    <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+    <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+    <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+  </div>
+  <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+  <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div>
+</footer>
+</body>
+</html>

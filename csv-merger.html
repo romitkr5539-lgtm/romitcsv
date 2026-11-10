@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Merge CSV Files Online | Combine CSV and TSV</title>
+<meta name="description" content="Merge CSV or TSV files online. Align columns by exact header names or position, preview the combined rows, and download one CSV in your browser.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://romitcsv.com/csv-merger.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RomitCSV">
+<meta property="og:title" content="Merge CSV Files Online | Combine CSV and TSV">
+<meta property="og:description" content="Merge CSV or TSV files online. Align columns by exact header names or position, preview the combined rows, and download one CSV in your browser.">
+<meta property="og:url" content="https://romitcsv.com/csv-merger.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Merge CSV Files Online | Combine CSV and TSV">
+<meta name="twitter:description" content="Merge CSV or TSV files online. Align columns by exact header names or position, preview the combined rows, and download one CSV in your browser.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Merger","url":"https://romitcsv.com/csv-merger.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Merge CSV or TSV files online. Align columns by exact header names or position, preview the combined rows, and download one CSV in your browser."}
+</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-32">
+</head>
+<body class="dark">
+<header class="site-header viewer-header">
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="mergerNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" class="active" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="mergerTheme" type="button" aria-label="Toggle theme" aria-pressed="false">
+      <span>☼</span><i></i><span>☾</span>
+    </button>
+    <button class="menu-btn" id="mergerMenu" type="button" aria-label="Open menu">Menu</button>
+  </div>
+
+</div>
+</header>
+
+<main class="csv-merger-page">
+  <section class="editor-hero">
+    <div class="editor-hero-inner">
+      <div>
+        <span class="viewer-pill">Free Online CSV Merger</span>
+        <h1>Merge CSV Files Online</h1>
+        <p>Combine CSV or TSV files into one downloadable CSV. Match columns by heading or by position, then review the merged table before saving.</p>
+        <div class="merger-option-card">
+          <label for="alignByHeader"><input id="alignByHeader" type="checkbox" checked><span><strong>Match columns by header name</strong><small>Align fields even when files list them in a different order.</small></span></label>
+          <p>Turn this off to combine columns by position and use the first file’s headings.</p>
+        </div>
+        <p id="mergerStatus" class="merger-status" role="status" aria-live="polite"></p>
+      </div>
+      <div class="editor-upload-card" id="mergerUploadCard">
+        <div class="editor-upload" id="mergerDropzone">
+          <div class="viewer-upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <strong>Drop two or more CSV or TSV files here</strong>
+          <span>or</span>
+          <input id="mergerFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" multiple hidden>
+          <button class="viewer-primary" id="mergerBrowse" type="button">Browse CSV Files</button>
+          <small>Select several files at once · Up to 50 MB per file</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="editor-content">
+    <div id="mergerWorkspace" class="merger-workspace" hidden></div>
+  </section>
+  <article class="tool-seo-content viewer-seo-content merger-content" aria-labelledby="merger-guide-title">
+    <h2 id="merger-guide-title">Merge CSV Files into One Dataset</h2>
+    <p>When data is split across monthly exports, regional reports, or separate contact lists, merging the files puts the records into one table. This CSV merger appends the data rows from each file and lets you decide how it lines up the columns. You can add several files at once, drop more onto the preview later, remove a file you no longer want, and review the combined rows before downloading.</p>
+    <p>Each file’s first row is treated as its column headings. Those heading rows are used to organize the output; they are not repeated as data rows. The rows underneath are kept in source-file order, and the original files are left unchanged.</p>
+
+    <h2>Match columns by heading name</h2>
+    <p>This option is on by default. It is useful when two exports contain the same fields in a different order. The merger reads the headings, then places each value under its matching name instead of blindly copying it into the same numbered position.</p>
+    <p>The first file establishes the starting order of the output headings. If a later file contains a heading that has not appeared yet, the merger adds that column at the end. If a file has no matching column, the cells for those rows are left blank. The rows are still appended, so a missing field does not shift the values in neighboring columns.</p>
+    <div class="merger-example" aria-label="Example of combining files with different column orders">
+      <div><span>FILE ONE</span><pre>Name,Email,City
+Sam,sam@example.com,Leeds</pre></div>
+      <div><span>FILE TWO</span><pre>City,Name,Email
+York,Ana,ana@example.com</pre></div>
+      <div><span>MERGED TABLE</span><pre>Name,Email,City
+Sam,sam@example.com,Leeds
+Ana,ana@example.com,York</pre></div>
+    </div>
+    <p>Heading matching is exact. <code>Email</code>, <code>email</code>, and <code>Email </code> are three different names because the capitalization or spacing differs. The merger does not infer that headings such as <code>Customer</code> and <code>Customer Name</code> refer to the same field. Rename inconsistent headings first if they should become one output column.</p>
+
+    <h2>Combine columns by position</h2>
+    <p>Turn off <strong>Match columns by header name</strong> when each file uses the same column order, or when a file has no meaningful header row. In position mode, values from column one are placed under the first file’s first heading, values from column two under its second heading, and so on. The first file supplies the output headings; additional positions found in later files are included as extra columns.</p>
+    <p>Position matching does not check whether the headings describe the same information. If one file is ordered <code>Name,Email,City</code> and another is <code>City,Name,Email</code>, their values will be put under the wrong headings in this mode. Keep header matching on for that situation.</p>
+
+    <h2>Add files, review the result, and download</h2>
+    <ol>
+      <li>Choose or drop two or more CSV, TSV, or TXT files. Each file can be up to 50 MB.</li>
+      <li>Choose header matching or position matching before or after loading the files. The preview updates when you change this setting.</li>
+      <li>Check the source-file list and row counts. Use <strong>Add more files</strong> or drop additional files onto the preview to include them; remove a listed file with its × button if it should be excluded.</li>
+      <li>Review the merged table, then select <strong>Download Merged CSV</strong>. The download becomes available once at least two files are loaded.</li>
+    </ol>
+    <p>The preview shows ten data rows per page and provides page controls for the rest. Files can contain commas, line breaks, or quotation marks inside quoted fields; those values stay in their cells. Blank data rows are preserved. The merged download is always comma-separated CSV, including when the input is TSV, semicolon-delimited, or pipe-delimited text.</p>
+
+    <h2>Know what the merger does with your data</h2>
+    <p>Merging appends records; it does not remove duplicate rows, sort the result, or decide which file is newer. If two files contain the same customer record, both copies remain. Files are appended in the order they were added. If you need a different order, remove the files and add them again in the sequence you want. The preview lists the files in merge order so you can check it.</p>
+    <p>The merger reads the files in your browser and creates a new download. It does not send the contents to the RomitCSV server or modify the original files. If a file has an unmatched quotation mark, the merger reports a formatting error instead of producing a partial result.</p>
+
+    <section class="faq tool-seo-faq" aria-labelledby="merger-faq-title">
+      <p class="faq-kicker">CSV MERGER FAQ</p>
+      <h2 id="merger-faq-title">Questions About Merging CSV Files</h2>
+      <details><summary>Can I merge files when their columns are in a different order?</summary><p>Yes. Keep <strong>Match columns by header name</strong> selected. Values are placed under matching headings rather than copied into the same numbered position.</p></details>
+      <details><summary>Which file supplies the headings?</summary><p>The first file supplies the initial heading order. With header matching on, new headings found in later files are added after those first headings.</p></details>
+      <details><summary>What happens when a file is missing a column?</summary><p>The merger leaves that field blank for rows from that file. Other values stay under their matching headings.</p></details>
+      <details><summary>Are matching headings case-sensitive?</summary><p>Yes. Headings must match exactly. <code>Email</code>, <code>email</code>, and <code>Email </code> are separate names.</p></details>
+      <details><summary>Can I merge TSV or semicolon-delimited files?</summary><p>Yes. CSV, TSV, and supported delimited TXT files are accepted. The combined result downloads as a comma-separated CSV.</p></details>
+      <details><summary>Can I download after loading just one file?</summary><p>No. One file can be previewed, but the merge download becomes available after you add at least one more file.</p></details>
+      <details><summary>Can I add files after the first upload?</summary><p>Yes. Select <strong>Add more files</strong> or drop the additional files onto the merge preview. You can also remove a source file before downloading.</p></details>
+      <details><summary>Is there a file size limit?</summary><p>Each selected file can be up to 50 MB.</p></details>
+      <details><summary>Are my files uploaded?</summary><p>No. Files are read and combined in your browser. The merger does not overwrite the source files.</p></details>
+    </section>
+
+    <h2>Check the merged CSV before using it</h2>
+    <p>Before importing the result into another system, scan the headings and a few rows from each source. Look for newly added columns, blank values where a file lacked a field, and headings that differ only by capitalization or spaces. If a value appears under the wrong heading, switch to header matching and review the preview again. The download contains a new combined CSV; your source files remain available as they were.</p>
+  </article>
+</main>
+<script src="nav.js?v=romitjson-theme-2"></script>
+<script src="merger.js?v=romitjson-theme-4"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-link-grid">
+      <section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a><a class="footer-all-link" href="tool.html">All converters <span aria-hidden="true">↗</span></a></section>
+      <section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="csv-validator.html">Check CSV structure</a></section>
+      <section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section>
+      <section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+    </div>
+    <div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+  </div>
+</footer>
+</body>
+</html>
