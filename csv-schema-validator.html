@@ -3,67 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CSV Schema Validator</title>
-<meta name="description" content="Validate CSV column names and order against an expected schema that you provide.">
+<title>CSV Schema Validator | Check CSV Headers and Order</title>
+<meta name="description" content="Compare CSV headers with your expected column names and order. Find missing, unexpected, or misplaced columns, preview the data, and download a schema report.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-schema-validator.html">
+<link rel="canonical" href="https://csv.romitjson.com/csv-schema-validator.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RomitCSV">
 <meta property="og:title" content="CSV Schema Validator">
-<meta property="og:description" content="Validate CSV column names and order against an expected schema that you provide.">
-<meta property="og:url" content="https://romitcsv.com/csv-schema-validator.html">
+<meta property="og:description" content="Check CSV column names and order against your expected schema. See missing, unexpected, and misplaced headings in a report.">
+<meta property="og:url" content="https://csv.romitjson.com/csv-schema-validator.html">
 <meta name="theme-color" content="#10b995">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Schema Validator","url":"https://romitcsv.com/csv-schema-validator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Validate CSV column names and order against an expected schema that you provide."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Schema Validator","url":"https://csv.romitjson.com/csv-schema-validator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compare CSV headers with your expected column names and order. Find missing, unexpected, or misplaced columns, preview the data, and download a schema report."}
 </script>
 <link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-28">
-<link rel="stylesheet" href="csv-validation-tools.css?v=2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-validation-tools.css?v=3">
+<link rel="stylesheet" href="csv-validator-ui.css?v=4">
 </head>
-<body class="dark" data-validation-tool="csv-schema-validator">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-validator.html">CSV Validator</a><a href="csv-viewer.html">CSV Viewer</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-validation-page">
-  <section class="csv-validation-hero">
-    <span class="eyebrow">Free CSV validation tool</span>
-    <h1>CSV Schema Validator</h1>
-    <p>Validate CSV column names and order against an expected schema that you provide.</p>
-  </section>
-  <section class="csv-validation-panel" aria-label="CSV validation tool">
-    <label for="validationFile">Choose a CSV or TSV file
-      <input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div class="validation-options"><label>Expected column headings (one per line)<textarea id="expectedHeaders" placeholder="Name&#10;Email&#10;Date"></textarea></label></div>
-    <div class="csv-validation-actions">
-      <button class="viewer-primary" id="runValidation" type="button">Run Check</button>
-      <button class="viewer-download" id="validationDownload" type="button" disabled>Download Report</button>
-      <button class="viewer-download" id="clearValidation" type="button">Clear</button>
-    </div>
-    <p id="validationStatus" role="status" aria-live="polite"></p>
-    <section id="validationOutput" hidden aria-live="polite">
-      <h2>Analysis report</h2>
-      <p id="validationSummary"></p>
-      <pre id="validationPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-validation-guide">
-    <h2>What this tool checks</h2>
-    <p>Enter the expected column names one per line. The validator checks for missing, unexpected, or out-of-order headings. Header names are compared exactly after trimming surrounding whitespace.</p>
-    <h2>How to use it</h2>
-    <ol><li>Choose a CSV or TSV file up to 50 MB.</li><li>Set any requested options and run the check.</li><li>Review the report or download it as a CSV file.</li></ol>
-    <p>The file is read and analyzed in your browser. It is not sent to the RomitCSV server. Use the <a href="csv-validator.html">CSV Validator</a> for a general structure check or browse <a href="tool.html">all CSV tools</a>.</p>
+<body class="dark csv-schema-validator-page" data-validation-tool="csv-schema-validator">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="validatorNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Analyze &amp; Validate <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li><li role="none"><a href="csv-schema-validator.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-cyan">▤</span><span><strong>CSV Schema Validator</strong><small>Check expected headings and order</small></span></a></li><li role="none"><a href="csv-header-checker.html" role="menuitem"><span class="ndm-icon ndm-blue">▥</span><span><strong>CSV Header Checker</strong><small>Check blank and duplicate headings</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="validatorTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="validatorMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV COLUMN STRUCTURE</span><h1>CSV Schema Validator</h1><p>Check whether your CSV has the column names and order another system expects. Compare the file’s header with your schema to find missing, unexpected, or misplaced columns.</p></div>
+    <div class="analysis-upload-card" id="syntaxUploadCard"><div class="analysis-dropzone" id="syntaxDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="syntaxBrowse" type="button">Browse File</button><small>Processed in your browser · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Paste a CSV to validate</h2><p>Paste the file contents here, then enter the required headers after the source table loads.</p><textarea id="syntaxPaste" rows="5" spellcheck="false" aria-label="Paste CSV data" placeholder="ID,Name,Email&#10;1,Ada,ada@example.com&#10;2,Ben,ben@example.com"></textarea><button class="viewer-primary" id="syntaxUsePaste" type="button">Load pasted CSV</button><button class="analysis-sample-link" id="syntaxLoadSample" type="button">Load a schema example</button></div><p id="syntaxUploadStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
+    </div></div></section>
+  <section class="analysis-content" id="syntaxWorkspaceSection" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="syntaxSourceName">Selected file</strong><small id="syntaxSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="syntaxActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearValidation" type="button">Start over</button></div></header>
+    <section class="validator-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Review the actual headings and records before comparing them with the expected schema.</p></div></div><div id="syntaxSourceTable"></div></section>
+    <section class="validator-source schema-expectations"><div class="analysis-section-head"><div><span class="analysis-kicker">EXPECTED SCHEMA</span><h2>Required column headings</h2><p>Enter one expected heading per line, in the order they should appear in the CSV.</p></div></div><label for="expectedHeaders">Expected headings<textarea id="expectedHeaders" rows="6" spellcheck="false" placeholder="ID&#10;Name&#10;Email"></textarea></label><button class="viewer-primary" id="runValidation" type="button" hidden>Validate schema</button><p id="schemaInputStatus" class="analysis-status" role="status" aria-live="polite"></p></section>
+    <div class="validator-stats" aria-label="Schema comparison summary"><div><strong id="schemaExpectedCount">0</strong><span>Expected columns</span></div><div><strong id="schemaActualCount">0</strong><span>Actual columns</span></div><div><strong id="schemaIssueCount">0</strong><span>Differences found</span></div><div><strong id="schemaMissingCount">0</strong><span>Missing columns</span></div></div>
+    <section id="validationOutput" class="validator-findings" hidden aria-live="polite"><div class="validator-findings-head"><div><span class="analysis-kicker">SCHEMA REPORT</span><h2>Comparison results</h2><p id="validationSummary"></p></div><div class="analysis-result-actions"><button class="viewer-edit" id="validationCopy" type="button" disabled>Copy report</button><button class="viewer-primary" id="validationDownload" type="button" disabled>Download report</button></div></div><div id="validationReportTable" class="validator-table-wrap"></div><p id="validationStatus" class="analysis-status" role="status" aria-live="polite"></p><pre id="validationPreview" hidden></pre></section>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content" aria-labelledby="schema-guide-title">
+    <h2 id="schema-guide-title">Check your CSV against an expected schema</h2><p>Many import tools expect column headings to be present in a specific order. A file with the right data but a renamed, missing, or extra column can fail validation or map values into the wrong fields. The Schema Validator compares the CSV’s first row with a list of headings you provide and reports where they differ.</p>
+    <h2>What the schema comparison checks</h2><ul><li><strong>Missing columns:</strong> expected headings that do not appear in the CSV.</li><li><strong>Unexpected columns:</strong> actual headings that are not listed in your expected schema.</li><li><strong>Name or order mismatches:</strong> each expected heading is compared with the actual heading at the same position.</li></ul>
+    <p>Enter one expected name per line in the required order. Blank lines are ignored, and surrounding whitespace in the expected and actual heading names is trimmed before comparison. Matching is case-sensitive, so <code>email</code> and <code>Email</code> are different. The first CSV row is treated as headers; this tool does not validate the data values in the rows below them.</p>
+    <h2>How to validate a CSV schema</h2><ol><li>Choose or drop a CSV, TSV, or plain-text file up to 50 MB, or paste delimited data.</li><li>Review the source table and confirm that the first row contains the actual headings.</li><li>Enter the required headings, one per line and in the expected order.</li><li>Select <strong>Validate schema</strong>, then review or download the comparison report.</li></ol>
+    <p>The validator identifies differences but does not rename or reorder columns. Files are processed in your browser and are not sent to the RomitCSV server. For blank or repeated headings, use the <a href="csv-header-checker.html">CSV Header Checker</a>; for row-width and quote checks, use the <a href="csv-validator.html">CSV Validator</a>.</p>
+    <h2>Frequently asked questions</h2><details><summary>How should I enter the expected schema?</summary><p>Enter one column heading on each line, in the exact order required by the system that will receive the CSV. Empty lines are ignored.</p></details><details><summary>Does the comparison ignore capitalization?</summary><p>No. It trims whitespace at the beginning and end of heading names, but matching is case-sensitive.</p></details><details><summary>Why can one missing column create more than one finding?</summary><p>The report can show that an expected name is missing and that its position does not match the actual header. These describe separate schema differences.</p></details><details><summary>Does this check the values in every row?</summary><p>No. It compares column headings and their order. It does not validate cell types, required values, or row lengths.</p></details><details><summary>Will it fix or reorder my CSV?</summary><p>No. The tool creates a report and leaves the source unchanged so you can decide how to resolve the differences.</p></details><details><summary>Can I paste CSV data?</summary><p>Yes. Paste comma-, tab-, semicolon-, or pipe-delimited text, load it, then enter the expected headings in the workspace.</p></details>
+    <p>Browse <a href="tool.html">all CSV tools</a> or use the <a href="csv-data-profiler.html">CSV Data Profiler</a> to inspect column types and values.</p>
   </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-validation-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var validatorMenu=document.getElementById("validatorMenu"),validatorNav=document.getElementById("validatorNav"),validatorTheme=document.getElementById("validatorTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);validatorTheme.setAttribute("aria-pressed",String(initialDark));validatorMenu.addEventListener("click",function(){var isOpen=validatorNav.classList.toggle("open");validatorMenu.setAttribute("aria-expanded",String(isOpen))});validatorTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);validatorTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-validation-tools.js?v=13"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-validator.html">CSV Validator</a><a href="csv-schema-validator.html">CSV Schema Validator</a><a href="csv-header-checker.html">CSV Header Checker</a><a href="csv-duplicate-checker.html">CSV Duplicate Checker</a><a href="csv-table-viewer.html">CSV Table Viewer</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a class="footer-all-link" href="tool.html">All converters ↗</a></section><section class="footer-column"><h2>CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a href="csv-validator.html">Check CSV structure</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>

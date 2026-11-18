@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   var action=document.body.dataset.mergeSplitTool||"";
-  var input=document.getElementById("csvFiles"),status=document.getElementById("msStatus"),options=document.getElementById("msOptions"),output=document.getElementById("msOutput"),preview=document.getElementById("msPreview"),summary=document.getElementById("msSummary"),downloads=document.getElementById("msDownloads");
+  var input=document.getElementById("csvFiles"),status=document.getElementById("msStatus"),options=document.getElementById("msOptions"),output=document.getElementById("msOutput"),preview=document.getElementById("msPreview"),summary=document.getElementById("msSummary"),downloads=document.getElementById("msDownloads"),uploadCard=document.getElementById("msUploadCard"),workspace=document.getElementById("msWorkspace"),fileSummary=document.getElementById("msFileSummary"),dropzone=document.getElementById("msDropzone");
   var urls=[];
   var modes={"csv-combiner":"combine","csv-joiner":"join","split-csv-by-rows":"rows","split-csv-by-columns":"columns","split-csv-by-size":"size","merge-multiple-csv-files":"merge","append-csv-files":"append","compare-csv-files":"compare"};
   var mode=modes[action]||"";
@@ -40,10 +40,10 @@
     preview.textContent=sample.slice(0,5000)+(sample.length>5000?"\n\nPreview shortened. Use the download links for complete files.":"");
     if(tableArea&&mode==="compare"){
       files.forEach(function(file){
-        var section=document.createElement("section"),title=document.createElement("h4"),wrap=document.createElement("div"),table=document.createElement("table"),thead=document.createElement("thead"),tbody=document.createElement("tbody"),rows=file.rows||[],headers=rows[0]||[];
+        var section=document.createElement("section"),title=document.createElement("h4"),wrap=document.createElement("div"),table=document.createElement("table"),thead=document.createElement("thead"),tbody=document.createElement("tbody"),rows=file.rows||[],headers=rows[0]||[],width=Math.max(headers.length,rows.reduce(function(max,row){return Math.max(max,row.length)},0));
         section.className="ms-table-section";title.textContent=file.name;wrap.className="ms-result-table-wrap";table.className="ms-result-table";table.setAttribute("aria-label",file.name+" preview");
-        var headRow=document.createElement("tr");headers.forEach(function(value){var th=document.createElement("th");th.scope="col";th.textContent=String(value==null?"":value);headRow.appendChild(th)});thead.appendChild(headRow);
-        rows.slice(1).forEach(function(row){var tr=document.createElement("tr");for(var i=0;i<headers.length;i++){var td=document.createElement("td");td.textContent=String(row[i]==null?"":row[i]);tr.appendChild(td)}tbody.appendChild(tr)});
+        var headRow=document.createElement("tr");for(var h=0;h<width;h++){var th=document.createElement("th");th.scope="col";th.textContent=String(headers[h]||("Column "+(h+1)));headRow.appendChild(th)}thead.appendChild(headRow);
+        rows.slice(1).forEach(function(row){var tr=document.createElement("tr");for(var i=0;i<width;i++){var td=document.createElement("td");td.textContent=String(row[i]==null?"":row[i]);tr.appendChild(td)}tbody.appendChild(tr)});
         table.appendChild(thead);table.appendChild(tbody);wrap.appendChild(table);section.appendChild(title);section.appendChild(wrap);tableArea.appendChild(section);
       });
       tableArea.hidden=false;preview.hidden=true;
@@ -158,9 +158,19 @@
     var files=selectedFiles();
     if(!files.length){setStatus("");return}
     if(files.some(function(file){return file.size>50*1024*1024})){setStatus("Each file must be 50 MB or smaller.",true);return}
-    setStatus(files.length+" file"+(files.length===1?"":"s")+" selected.");
+    if(mode==="compare"){
+      if(files.length>2){setStatus("Choose exactly two CSV files to compare.",true);return}
+      if(files.length===2){fileSummary.textContent=files[0].name+"  ↔  "+files[1].name;uploadCard.hidden=true;workspace.hidden=false;setStatus("Both files are ready. Compare their rows when you’re ready.")}
+      else setStatus("Choose one more CSV file to compare.");
+    }else setStatus(files.length+" file"+(files.length===1?"":"s")+" selected.");
     populateJoinKeys(files);
   });
+  if(dropzone){
+    document.getElementById("msBrowse").addEventListener("click",function(){input.click()});
+    ["dragenter","dragover"].forEach(function(type){dropzone.addEventListener(type,function(event){event.preventDefault();dropzone.classList.add("drag")})});
+    ["dragleave","drop"].forEach(function(type){dropzone.addEventListener(type,function(event){event.preventDefault();dropzone.classList.remove("drag")})});
+    dropzone.addEventListener("drop",function(event){var files=event.dataTransfer&&event.dataTransfer.files;if(files&&files.length){var transfer=new DataTransfer();Array.from(files).forEach(function(file){transfer.items.add(file)});input.files=transfer.files;input.dispatchEvent(new Event("change"))}});
+  }
   document.getElementById("runMsTool").addEventListener("click",run);
-  document.getElementById("clearMsTool").addEventListener("click",function(){revokeURLs();input.value="";output.hidden=true;downloads.innerHTML="";var tableArea=document.getElementById("msPreviewTables");if(tableArea){tableArea.innerHTML="";tableArea.hidden=true}preview.hidden=false;setStatus("");if(mode==="join"){document.getElementById("joinKeyA").innerHTML="";document.getElementById("joinKeyB").innerHTML=""}});
+  document.getElementById("clearMsTool").addEventListener("click",function(){revokeURLs();input.value="";output.hidden=true;downloads.innerHTML="";if(uploadCard)uploadCard.hidden=false;if(workspace)workspace.hidden=true;if(fileSummary)fileSummary.textContent="";var tableArea=document.getElementById("msPreviewTables");if(tableArea){tableArea.innerHTML="";tableArea.hidden=true}preview.hidden=false;setStatus("");if(mode==="join"){document.getElementById("joinKeyA").innerHTML="";document.getElementById("joinKeyB").innerHTML=""}});
 })();

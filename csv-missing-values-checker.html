@@ -3,67 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CSV Missing Values Checker</title>
-<meta name="description" content="Find missing or blank CSV cells and see their counts and row locations by column.">
+<title>CSV Missing Values Checker | Find Blank CSV Cells</title>
+<meta name="description" content="Find blank or whitespace-only cells in a CSV. See missing counts and affected row numbers by column, preview your data, and download the report.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-missing-values-checker.html">
+<link rel="canonical" href="https://csv.romitjson.com/csv-missing-values-checker.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RomitCSV">
 <meta property="og:title" content="CSV Missing Values Checker">
-<meta property="og:description" content="Find missing or blank CSV cells and see their counts and row locations by column.">
-<meta property="og:url" content="https://romitcsv.com/csv-missing-values-checker.html">
+<meta property="og:description" content="Check a CSV for missing cells and see the affected columns and row numbers in a downloadable report.">
+<meta property="og:url" content="https://csv.romitjson.com/csv-missing-values-checker.html">
 <meta name="theme-color" content="#10b995">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Missing Values Checker","url":"https://romitcsv.com/csv-missing-values-checker.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find missing or blank CSV cells and see their counts and row locations by column."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Missing Values Checker","url":"https://csv.romitjson.com/csv-missing-values-checker.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find blank or whitespace-only cells in a CSV. See missing counts and affected row numbers by column, preview your data, and download the report."}
 </script>
 <link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-28">
-<link rel="stylesheet" href="csv-validation-tools.css?v=2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-validation-tools.css?v=3">
+<link rel="stylesheet" href="csv-validator-ui.css?v=3">
 </head>
-<body class="dark" data-validation-tool="csv-missing-values-checker">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-validator.html">CSV Validator</a><a href="csv-viewer.html">CSV Viewer</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-validation-page">
-  <section class="csv-validation-hero">
-    <span class="eyebrow">Free CSV validation tool</span>
-    <h1>CSV Missing Values Checker</h1>
-    <p>Find missing or blank CSV cells and see their counts and row locations by column.</p>
-  </section>
-  <section class="csv-validation-panel" aria-label="CSV validation tool">
-    <label for="validationFile">Choose a CSV or TSV file
-      <input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div class="validation-options"></div>
-    <div class="csv-validation-actions">
-      <button class="viewer-primary" id="runValidation" type="button">Run Check</button>
-      <button class="viewer-download" id="validationDownload" type="button" disabled>Download Report</button>
-      <button class="viewer-download" id="clearValidation" type="button">Clear</button>
-    </div>
-    <p id="validationStatus" role="status" aria-live="polite"></p>
-    <section id="validationOutput" hidden aria-live="polite">
-      <h2>Analysis report</h2>
-      <p id="validationSummary"></p>
-      <pre id="validationPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-validation-guide">
-    <h2>What this tool checks</h2>
-    <p>A cell is treated as missing when it is empty or contains only whitespace. The report shows a count for each column and lists up to 100 row numbers with missing values.</p>
-    <h2>How to use it</h2>
-    <ol><li>Choose a CSV or TSV file up to 50 MB.</li><li>Set any requested options and run the check.</li><li>Review the report or download it as a CSV file.</li></ol>
-    <p>The file is read and analyzed in your browser. It is not sent to the RomitCSV server. Use the <a href="csv-validator.html">CSV Validator</a> for a general structure check or browse <a href="tool.html">all CSV tools</a>.</p>
+<body class="dark csv-missing-values-checker-page" data-validation-tool="csv-missing-values-checker">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="validatorNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Analyze &amp; Validate <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li><li role="none"><a href="csv-missing-values-checker.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-orange">∅</span><span><strong>CSV Missing Values Checker</strong><small>Find blank cells by column</small></span></a></li><li role="none"><a href="csv-data-profiler.html" role="menuitem"><span class="ndm-icon ndm-blue">▥</span><span><strong>CSV Data Profiler</strong><small>Inspect types and value patterns</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="validatorTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="validatorMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV COMPLETENESS CHECK</span><h1>CSV Missing Values Checker</h1><p>Find empty and whitespace-only cells before they cause problems in a spreadsheet, import, or analysis. See how many values are missing in each column and which row numbers to review.</p></div>
+    <div class="analysis-upload-card" id="syntaxUploadCard"><div class="analysis-dropzone" id="syntaxDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="syntaxBrowse" type="button">Browse File</button><small>Processed in your browser · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Check pasted CSV data</h2><p>Paste the header row and records. Blank cells will be counted under their column headings.</p><textarea id="syntaxPaste" rows="5" spellcheck="false" aria-label="Paste CSV data" placeholder="ID,Name,Email,Score&#10;1,Ada,ada@example.com,92&#10;2,Ben,,"></textarea><button class="viewer-primary" id="syntaxUsePaste" type="button">Check missing values</button><button class="analysis-sample-link" id="syntaxLoadSample" type="button">Load a sample with blanks</button></div><p id="syntaxUploadStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
+    </div></div></section>
+  <section class="analysis-content" id="syntaxWorkspaceSection" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="syntaxSourceName">Selected file</strong><small id="syntaxSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="syntaxActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearValidation" type="button">Start over</button></div></header>
+    <section class="validator-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Review the parsed rows and headings used to identify missing cells.</p></div></div><div id="syntaxSourceTable"></div></section><button id="runValidation" type="button" hidden>Check missing values</button>
+    <div class="validator-stats" aria-label="Missing-value summary"><div><strong id="missingRows">0</strong><span>Data rows</span></div><div><strong id="missingColumns">0</strong><span>Columns checked</span></div><div><strong id="missingCells">0</strong><span>Missing cells</span></div><div><strong id="missingAffectedColumns">0</strong><span>Columns with blanks</span></div></div>
+    <section id="validationOutput" class="validator-findings" hidden aria-live="polite"><div class="validator-findings-head"><div><span class="analysis-kicker">MISSING VALUE REPORT</span><h2>Results by column</h2><p id="validationSummary"></p></div><div class="analysis-result-actions"><button class="viewer-edit" id="validationCopy" type="button" disabled>Copy report</button><button class="viewer-primary" id="validationDownload" type="button" disabled>Download report</button></div></div><div id="validationReportTable" class="validator-table-wrap"></div><p id="validationStatus" class="analysis-status" role="status" aria-live="polite"></p><pre id="validationPreview" hidden></pre></section>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content" aria-labelledby="missing-guide-title">
+    <h2 id="missing-guide-title">Find blank cells in your CSV</h2><p>Missing values can affect formulas, imports, charts, and reports. They are easy to overlook in a large table, especially when blanks appear in only a few rows. The CSV Missing Values Checker scans each column, counts empty cells, and lists the row numbers where you may want to review the data.</p>
+    <h2>What counts as a missing value?</h2><p>A cell is counted as missing when it is empty or contains only whitespace such as spaces or tabs. A value like <code>0</code>, <code>false</code>, or <code>N/A</code> is treated as present because it contains text. If your data uses a marker such as <code>N/A</code> to mean “not available,” this checker does not reinterpret that marker automatically.</p>
+    <h2>What the report shows</h2><ul><li><strong>Missing cells:</strong> total number of blank cells found across the checked columns.</li><li><strong>Columns with blanks:</strong> number of columns containing at least one missing value.</li><li><strong>Missing values per column:</strong> count beneath each first-row heading.</li><li><strong>Affected row numbers:</strong> data row numbers, based on the original CSV line numbering that includes the header. The report lists up to 100 rows per column.</li></ul>
+    <p>The first row is treated as column headings and isn’t counted as data. Row numbers start at 2 for the first data record. If a file has more than 100 missing cells in one column, the count still includes them all, while the row list is capped at 100 for a compact report.</p>
+    <h2>How to check for missing CSV values</h2><ol><li>Choose or drop a CSV, TSV, or plain-text file up to 50 MB, or paste delimited data.</li><li>Check the source table preview and confirm the header row.</li><li>Review the missing-cell totals and row locations by column.</li><li>Copy or download the report, then decide how you want to fill or preserve the blanks.</li></ol>
+    <p>The checker only reports missing values; it does not fill cells or alter the source file. Data is processed in your browser and is not sent to the RomitCSV server. To check row widths, quote syntax, or headers, use the <a href="csv-validator.html">CSV Validator</a>.</p>
+    <h2>Frequently asked questions</h2><details><summary>Does zero count as a missing value?</summary><p>No. A cell containing <code>0</code> is present. Only empty and whitespace-only cells are counted as missing.</p></details><details><summary>Does the tool treat N/A or NULL as blank?</summary><p>No. These are text values, so they count as present. The checker does not guess whether a text marker has a special meaning in your dataset.</p></details><details><summary>Are cells containing spaces considered missing?</summary><p>Yes. A cell that contains only whitespace is treated as empty. Spaces around a non-empty value do not make that cell missing.</p></details><details><summary>Why does the report stop listing rows after 100?</summary><p>To keep the report readable, it lists at most 100 affected row numbers per column. The missing-value count still includes all matching cells.</p></details><details><summary>Is the header row included?</summary><p>No. The first row is used as the column names. Data row numbering starts at row 2 of the CSV, immediately after the header.</p></details><details><summary>Will this fill in the missing data?</summary><p>No. It identifies blanks but does not guess replacement values or modify your CSV.</p></details>
+    <p>Explore <a href="tool.html">all CSV tools</a> or use the <a href="csv-data-profiler.html">CSV Data Profiler</a> to inspect types and value patterns.</p>
   </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-validation-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var validatorMenu=document.getElementById("validatorMenu"),validatorNav=document.getElementById("validatorNav"),validatorTheme=document.getElementById("validatorTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);validatorTheme.setAttribute("aria-pressed",String(initialDark));validatorMenu.addEventListener("click",function(){var isOpen=validatorNav.classList.toggle("open");validatorMenu.setAttribute("aria-expanded",String(isOpen))});validatorTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);validatorTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-validation-tools.js?v=11"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-validator.html">CSV Validator</a><a href="csv-missing-values-checker.html">CSV Missing Values Checker</a><a href="csv-data-profiler.html">CSV Data Profiler</a><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a class="footer-all-link" href="tool.html">All converters ↗</a></section><section class="footer-column"><h2>CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a href="csv-validator.html">Check CSV structure</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>
