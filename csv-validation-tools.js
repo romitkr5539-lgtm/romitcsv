@@ -161,7 +161,7 @@
   function setStatus(message,isError){status.textContent=message;status.classList.toggle("is-error",!!isError)}
   function renderReportTable(rows){
     var reportTable=document.getElementById("validationReportTable");
-    if(!reportTable){reportTable=document.createElement("div");reportTable.id="validationReportTable";reportTable.className="validation-report-wrap";output.insertBefore(reportTable,preview)}
+    if(!reportTable){reportTable=document.createElement("div");reportTable.id="validationReportTable";reportTable.className=(mode==="delimiter"||mode==="encoding")?"validator-table-wrap":"validation-report-wrap";output.insertBefore(reportTable,preview)}
     var table=document.createElement("table"),thead=document.createElement("thead"),headRow=document.createElement("tr"),tbody=document.createElement("tbody");
     (rows[0]||[]).forEach(function(value){var th=document.createElement("th");th.scope="col";th.textContent=String(value==null?"":value);headRow.appendChild(th)});
     thead.appendChild(headRow);
@@ -174,9 +174,9 @@
     renderReportTable(reportRows);
     output.hidden=false;download.disabled=false;
   }
-  if(mode==="syntax"||mode==="headers"){
+  if(mode==="syntax"||mode==="headers"||mode==="delimiter"||mode==="encoding"||mode==="stats"||mode==="profile"||mode==="types"||mode==="missing"||mode==="duplicates"||mode==="schema"||mode==="quality"){
     var uploadCard=document.getElementById("syntaxUploadCard"),workspaceSection=document.getElementById("syntaxWorkspaceSection"),sourceName=document.getElementById("syntaxSourceName"),sourceDetails=document.getElementById("syntaxSourceDetails"),sourceTable=document.getElementById("syntaxSourceTable"),pasteInput=document.getElementById("syntaxPaste"),uploadStatus=document.getElementById("syntaxUploadStatus"),actionStatus=document.getElementById("syntaxActionStatus"),sampleButton=document.getElementById("syntaxLoadSample"),copyReport=document.getElementById("validationCopy"),sourceParsed=null;
-    var isSyntax=mode==="syntax";
+    var isSyntax=mode==="syntax",isHeaders=mode==="headers",isDelimiter=mode==="delimiter",isEncoding=mode==="encoding",isStats=mode==="stats",isProfile=mode==="profile",isTypes=mode==="types",isMissing=mode==="missing",isDuplicates=mode==="duplicates",isSchema=mode==="schema",isQuality=mode==="quality";
     function setUploadStatus(message,isError){uploadStatus.textContent=message;uploadStatus.classList.toggle("is-error",!!isError)}
     function renderSourceTable(rows,headerIssues){
       if(!rows.length){sourceTable.innerHTML='<p class="analysis-empty-table">The file contains no rows to preview.</p>';return}
@@ -192,13 +192,87 @@
       document.getElementById("headerIssueList").innerHTML=findings.map(function(item){var match=String(item[2]).match(/Columns? (\d+)(?: and (\d+))?/i),col=match?(match[2]?match[1]+" & "+match[2]:match[1]):"—";return '<div class="validator-issue error"><span>Column '+esc(col)+'</span><strong>Issue</strong><p>'+esc(item[2])+'</p></div>'}).join("")||'<p class="validator-empty">No blank, duplicate, or padded column headings found.</p>';
       output.hidden=false;download.disabled=false;copyReport.disabled=false;status.textContent=findings.length?"Header check complete. Review the highlighted heading and findings below.":"Header check complete. No blank, duplicate, or padded headings were found.";actionStatus.textContent="Checked in your browser";
     }
-    function openSource(text,name,bytes){
-      fileInfo={text:String(text||""),encoding:"Text",bom:"",bytes:bytes||new Blob([text||""]).size,utf8Valid:true};
-      fileName=(name||"pasted-data.csv").replace(/\.(csv|tsv|txt)$/i,"")+(isSyntax?"-syntax-report.csv":"-header-report.csv");sourceParsed=parseCSV(fileInfo.text);reportRows=null;
+    function renderDelimiterResult(result,parsed){
+      renderResult(result);var detected=parsed.delimiter,labels={",":"Comma",";":"Semicolon","\t":"Tab","|":"Pipe"},detectedLabel=detected.found?labels[detected.delimiter]:"None found",detectedCount=detected.found?(detected.counts.find(function(item){return item[0]===detected.delimiter})||["",0])[1]:0;
+      document.getElementById("delimiterDetected").textContent=detectedLabel;document.getElementById("delimiterCount").textContent=detectedCount.toLocaleString();document.getElementById("delimiterCandidates").textContent=detected.counts.filter(function(item){return item[1]>0}).length.toLocaleString();document.getElementById("delimiterRowsChecked").textContent=parsed.rows.length.toLocaleString();
+      copyReport.disabled=false;status.textContent=detected.found?"Detection complete. Review the delimiter counts and source table.":"No common delimiter was found. This may be a single-column file.";actionStatus.textContent="Detected in your browser";
+    }
+    function renderEncodingResult(result){
+      renderResult(result);
+      document.getElementById("encodingDetected").textContent=fileInfo.encoding;
+      document.getElementById("encodingBom").textContent=fileInfo.bom;
+      document.getElementById("encodingUtf8").textContent=fileInfo.utf8Valid?"Valid":"Not valid";
+      document.getElementById("encodingBytes").textContent=fileInfo.bytes.toLocaleString();
+      copyReport.disabled=false;status.textContent="Encoding check complete. Review the detected encoding and source table.";actionStatus.textContent="Analyzed in your browser";
+    }
+    function renderStatsResult(result,parsed){
+      renderResult(result);
+      document.getElementById("statsRows").textContent=Math.max(0,parsed.rows.length-1).toLocaleString();
+      document.getElementById("statsColumns").textContent=Math.max(0,result.rows.length-1).toLocaleString();
+      document.getElementById("statsFilled").textContent=result.rows.slice(1).reduce(function(total,row){return total+(Number(row[1])||0)},0).toLocaleString();
+      document.getElementById("statsMissing").textContent=result.rows.slice(1).reduce(function(total,row){return total+(Number(row[2])||0)},0).toLocaleString();
+      copyReport.disabled=false;status.textContent="Statistics generated. Review the per-column report and source table.";actionStatus.textContent="Calculated in your browser";
+    }
+    function renderProfileResult(result,parsed){
+      renderResult(result);
+      document.getElementById("profileRows").textContent=Math.max(0,parsed.rows.length-1).toLocaleString();
+      document.getElementById("profileColumns").textContent=Math.max(0,result.rows.length-1).toLocaleString();
+      document.getElementById("profileMissing").textContent=result.rows.slice(1).reduce(function(total,row){return total+(Number(row[3])||0)},0).toLocaleString();
+      document.getElementById("profileMixed").textContent=result.rows.slice(1).filter(function(row){return row[1]==="Mixed"}).length.toLocaleString();
+      copyReport.disabled=false;status.textContent="Profile complete. Review inferred types, missing values, and examples by column.";actionStatus.textContent="Profiled in your browser";
+    }
+    function renderMissingResult(result,parsed){
+      renderResult(result);
+      document.getElementById("missingRows").textContent=Math.max(0,parsed.rows.length-1).toLocaleString();
+      document.getElementById("missingColumns").textContent=Math.max(0,result.rows.length-1).toLocaleString();
+      document.getElementById("missingCells").textContent=result.rows.slice(1).reduce(function(total,row){return total+(Number(row[1])||0)},0).toLocaleString();
+      document.getElementById("missingAffectedColumns").textContent=result.rows.slice(1).filter(function(row){return Number(row[1])>0}).length.toLocaleString();
+      copyReport.disabled=false;status.textContent="Missing-value check complete. Review counts and affected row numbers by column.";actionStatus.textContent="Checked in your browser";
+    }
+    function renderDuplicateResult(result,parsed){
+      renderResult(result);
+      var found=result.rows.length>1&&result.rows[0][0]==="First occurrence row",duplicateCount=found?result.rows.length-1:0,dataRows=Math.max(0,parsed.rows.length-1);
+      document.getElementById("duplicateRows").textContent=dataRows.toLocaleString();
+      document.getElementById("duplicateCount").textContent=duplicateCount.toLocaleString();
+      document.getElementById("duplicateUniqueRows").textContent=Math.max(0,dataRows-duplicateCount).toLocaleString();
+      document.getElementById("duplicateColumns").textContent=((parsed.rows[0]||[]).length).toLocaleString();
+      copyReport.disabled=false;status.textContent=duplicateCount?"Duplicate check complete. Each report row identifies a repeated record and its first occurrence.":"Duplicate check complete. No repeated complete data rows were found.";actionStatus.textContent="Checked in your browser";
+    }
+    function renderSchemaResult(result,parsed){
+      renderResult(result);
+      var findings=result.rows.length>1&&result.rows[0][0]==="Issue"?result.rows.slice(1):[],expected=(schemaBox.value||"").split(/\r?\n/).map(function(value){return value.trim()}).filter(Boolean);
+      document.getElementById("schemaExpectedCount").textContent=expected.length.toLocaleString();
+      document.getElementById("schemaActualCount").textContent=((parsed.rows[0]||[]).length).toLocaleString();
+      document.getElementById("schemaIssueCount").textContent=findings.length.toLocaleString();
+      document.getElementById("schemaMissingCount").textContent=findings.filter(function(row){return row[0]==="Missing expected column"}).length.toLocaleString();
+      copyReport.disabled=false;status.textContent=findings.length?"Schema check complete. Review missing, unexpected, and position differences below.":"Schema check complete. The headings match the expected names and order.";actionStatus.textContent="Checked in your browser";
+    }
+    function renderTypeResult(result,parsed){
+      renderResult(result);
+      var columns=result.rows.slice(1);
+      document.getElementById("typeRows").textContent=Math.max(0,parsed.rows.length-1).toLocaleString();
+      document.getElementById("typeColumns").textContent=columns.length.toLocaleString();
+      document.getElementById("typeMixed").textContent=columns.filter(function(row){return row[1]==="Mixed"}).length.toLocaleString();
+      document.getElementById("typeEmpty").textContent=columns.filter(function(row){return row[1]==="Empty"}).length.toLocaleString();
+      copyReport.disabled=false;status.textContent="Type detection complete. Review the inferred type and non-empty value count for each column.";actionStatus.textContent="Analyzed in your browser";
+    }
+    function renderQualityResult(result,parsed){
+      renderResult(result);
+      var findings=result.rows.length>1&&result.rows[1][0]==="No issues"?[]:result.rows.slice(1);
+      document.getElementById("qualityRows").textContent=Math.max(0,parsed.rows.length-1).toLocaleString();
+      document.getElementById("qualityFindings").textContent=findings.length.toLocaleString();
+      document.getElementById("qualityMissing").textContent=findings.filter(function(row){return row[0]==="Missing value"}).length.toLocaleString();
+      document.getElementById("qualityDuplicates").textContent=findings.filter(function(row){return row[0]==="Duplicate row"}).length.toLocaleString();
+      copyReport.disabled=false;status.textContent=findings.length?"Quality check complete. Review each finding by row and type.":"Quality check complete. No checked issues were found.";actionStatus.textContent="Checked in your browser";
+    }
+    function openSource(text,name,bytes,decodedInfo){
+      fileInfo=decodedInfo||{text:String(text||""),encoding:isEncoding?"UTF-8 (pasted text)":"Text",bom:"No BOM",bytes:bytes||new Blob([text||""]).size,utf8Valid:true};
+      fileInfo.text=String(text||"");
+      fileName=(name||"pasted-data.csv").replace(/\.(csv|tsv|txt)$/i,"")+(isSyntax?"-syntax-report.csv":isHeaders?"-header-report.csv":isDelimiter?"-delimiter-report.csv":isEncoding?"-encoding-report.csv":isProfile?"-profile-report.csv":isTypes?"-data-types-report.csv":isMissing?"-missing-values-report.csv":isDuplicates?"-duplicate-rows-report.csv":isSchema?"-schema-report.csv":isQuality?"-quality-report.csv":"-statistics-report.csv");sourceParsed=parseCSV(fileInfo.text);reportRows=null;
       sourceName.textContent=name||"Pasted data";var rows=sourceParsed.rows,columns=rows.length?Math.max.apply(null,rows.map(function(row){return row.length})):0;
       sourceDetails.textContent=Math.max(0,rows.length-1).toLocaleString()+" data rows · "+columns.toLocaleString()+" columns · "+(sourceParsed.delimiter.delimiter==="\t"?"tab":sourceParsed.delimiter.delimiter)+" separated · "+fileInfo.bytes.toLocaleString()+" bytes";
-      var headerIssues=isSyntax?0:headerFindings(rows).length;renderSourceTable(rows,headerIssues);uploadCard.hidden=true;workspaceSection.hidden=false;output.hidden=true;download.disabled=true;copyReport.disabled=true;runButton.disabled=false;status.textContent=isSyntax?"Source table loaded. Run the syntax check when ready.":"Checking column headings…";actionStatus.textContent="Processed in your browser";
-      if(!isSyntax)renderHeaderResult(run(sourceParsed,fileInfo),rows);
+      var headerIssues=isHeaders?headerFindings(rows).length:0;renderSourceTable(rows,headerIssues);uploadCard.hidden=true;workspaceSection.hidden=false;output.hidden=true;download.disabled=true;copyReport.disabled=true;runButton.disabled=false;if(isSchema)runButton.hidden=false;status.textContent=isSyntax?"Source table loaded. Run the syntax check when ready.":isHeaders?"Checking column headings…":isDelimiter?"Detecting the field separator…":isEncoding?"Checking text encoding…":isProfile?"Profiling each column…":isTypes?"Detecting column data types…":isMissing?"Checking blank cells by column…":isDuplicates?"Comparing complete data rows…":isSchema?"Source table loaded. Enter expected headings, then validate the schema.":isQuality?"Checking common data-quality issues…":"Calculating column statistics…";actionStatus.textContent="Processed in your browser";
+      if(isHeaders)renderHeaderResult(run(sourceParsed,fileInfo),rows);else if(isDelimiter)renderDelimiterResult(run(sourceParsed,fileInfo),sourceParsed);else if(isEncoding)renderEncodingResult(run(sourceParsed,fileInfo));else if(isStats)renderStatsResult(run(sourceParsed,fileInfo),sourceParsed);else if(isProfile)renderProfileResult(run(sourceParsed,fileInfo),sourceParsed);else if(isTypes)renderTypeResult(run(sourceParsed,fileInfo),sourceParsed);else if(isMissing)renderMissingResult(run(sourceParsed,fileInfo),sourceParsed);else if(isDuplicates)renderDuplicateResult(run(sourceParsed,fileInfo),sourceParsed);else if(isQuality)renderQualityResult(run(sourceParsed,fileInfo),sourceParsed);
       if(window.requestAnimationFrame)requestAnimationFrame(function(){workspaceSection.scrollIntoView({behavior:"smooth",block:"start"})});
     }
     function openFile(file){
@@ -206,7 +280,7 @@
       if(!/\.(csv|tsv|txt)$/i.test(file.name)){setUploadStatus("Choose a CSV, TSV, or TXT file.",true);return}
       if(file.size>maxBytes){setUploadStatus("Choose a file no larger than 50 MB.",true);return}
       setUploadStatus("Reading "+file.name+"…");
-      file.arrayBuffer().then(function(buffer){var decoded=decodeFile(buffer);openSource(decoded.text,file.name,decoded.bytes);setUploadStatus("");input.value=""}).catch(function(){setUploadStatus("Could not read this file. Try saving it as UTF-8 CSV and select it again.",true)});
+      file.arrayBuffer().then(function(buffer){var decoded=decodeFile(buffer);openSource(decoded.text,file.name,decoded.bytes,decoded);setUploadStatus("");input.value=""}).catch(function(){setUploadStatus("Could not read this file. Try saving it as UTF-8 CSV and select it again.",true)});
     }
     document.getElementById("syntaxBrowse").addEventListener("click",function(){input.click()});
     input.addEventListener("change",function(){openFile(input.files&&input.files[0])});
@@ -214,11 +288,11 @@
     ["dragleave","drop"].forEach(function(type){dropzone.addEventListener(type,function(event){event.preventDefault();dropzone.classList.remove("drag")})});
     dropzone.addEventListener("drop",function(event){openFile(event.dataTransfer&&event.dataTransfer.files&&event.dataTransfer.files[0])});
     document.getElementById("syntaxUsePaste").addEventListener("click",function(){if(!pasteInput.value.trim()){setUploadStatus("Paste CSV data first.",true);pasteInput.focus();return}try{openSource(pasteInput.value,"pasted-data.csv",new Blob([pasteInput.value]).size);setUploadStatus("")}catch(error){setUploadStatus(error.message||"Could not read the pasted data.",true)}});
-    sampleButton.addEventListener("click",function(){pasteInput.value=isSyntax?'Name,Email,City\nAda,ada@example.com,London\nLin,lin@example.com\nSam,sam"oops@example.com,Paris':'Name,name, City ,\nAda,ada@example.com,London,';setUploadStatus(isSyntax?"Sample loaded. Select the syntax check button to inspect it.":"Sample added. Select Check pasted data to review the headers.")});
-    runButton.addEventListener("click",function(){if(!sourceParsed){setStatus("Load a file or paste CSV data first.",true);return}runButton.disabled=true;status.textContent=isSyntax?"Checking quote syntax and row widths…":"Checking column headings…";try{if(isSyntax){renderResult(run(sourceParsed,fileInfo));copyReport.disabled=false;var issues=reportRows.length>1&&reportRows[0][0]==="Issue";status.textContent=issues?"Check complete. Review the findings in the report below.":"Check complete. No quote or row-width issues were found."}else renderHeaderResult(run(sourceParsed,fileInfo),sourceParsed.rows);if(window.requestAnimationFrame)requestAnimationFrame(function(){output.scrollIntoView({behavior:"smooth",block:"start"})})}catch(error){status.textContent=error.message||"Could not check this data.";status.classList.add("is-error")}finally{runButton.disabled=false}});
+    sampleButton.addEventListener("click",function(){pasteInput.value=isSyntax?'Name,Email,City\nAda,ada@example.com,London\nLin,lin@example.com\nSam,sam"oops@example.com,Paris':isHeaders?'Name,name, City ,\nAda,ada@example.com,London,':isEncoding?'Name,City\nAda,London\nLin,Tokyo':isStats?'Name,Department,Sales\nAda,North,1250\nBen,South,980\nCara,North,1425\nDan,South,\nEli,North,1250':isProfile?'Contact,Age,Active,Rating\nada@example.com,34,true,4.8\nben@example.com,unknown,false,3.5\ncara@example.com,,yes,4.2\ndan@example.com,29,true,':isTypes?'ID,Age,Price,Active,Start date,Notes\n001,42,19.95,true,2024-01-15,Ready\n002,37,25.00,false,2024-02-02,On hold\n003,unknown,free,yes,not set,':isMissing?'ID,Name,Email,Score\n1,Ada,ada@example.com,92\n2,Ben,,\n3,Cara,cara@example.com,\n4,Dan,dan@example.com,81':isDuplicates?'ID,Name,City\n1,Ada,London\n2,Ben,Paris\n1,Ada,London\n3,Cara,Tokyo\n2,Ben,Paris':isSchema?'ID,Name,Email\n1,Ada,ada@example.com\n2,Ben,ben@example.com':isQuality?'ID,Name,Email,Score\n1, Ada ,ada@example.com,92\n2,Ben,,\n3,Cara,cara@example.com,\n2,Ben,,\n\n4,Dan,dan@example.com,81':'Name;Email;City\nAda;ada@example.com;London\nSam;sam@example.com;Paris';if(isSchema) schemaBox.value="ID\nName\nEmail\nStatus";setUploadStatus(isSyntax?"Sample loaded. Select the syntax check button to inspect it.":isHeaders?"Sample added. Select Check pasted data to review the headers.":isEncoding?"Sample added. Select Detect pasted data to review the UTF-8 text representation.":isStats?"Sample added. Select Generate statistics to see the per-column summary.":isProfile?"Sample added. Select Profile data to see inferred types and column details.":isTypes?"Sample added. Select Detect data types to see the column summary.":isMissing?"Sample added. Select Check missing values to view blank cells by column.":isDuplicates?"Sample added. Select Check duplicates to see repeated rows.":isSchema?"Sample added with an example expected schema.":isQuality?"Sample added. Select Check data quality to review the findings.":"Sample added. Select Detect pasted data to inspect the separator.")});
+    runButton.addEventListener("click",function(){if(!sourceParsed){setStatus("Load a file or paste CSV data first.",true);return}runButton.disabled=true;status.textContent=isSyntax?"Checking quote syntax and row widths…":isHeaders?"Checking column headings…":isEncoding?"Reviewing the text encoding…":isStats?"Calculating column statistics…":isProfile?"Profiling column values…":isTypes?"Detecting data types…":isMissing?"Checking missing cells…":isDuplicates?"Comparing complete data rows…":isSchema?"Comparing actual and expected headings…":isQuality?"Checking common data-quality issues…":"Detecting the field separator…";if(isSchema){var schemaInputStatus=document.getElementById("schemaInputStatus");schemaInputStatus.textContent="";schemaInputStatus.classList.remove("is-error")}try{if(isSyntax){renderResult(run(sourceParsed,fileInfo));copyReport.disabled=false;var issues=reportRows.length>1&&reportRows[0][0]==="Issue";status.textContent=issues?"Check complete. Review the findings in the report below.":"Check complete. No quote or row-width issues were found."}else if(isHeaders)renderHeaderResult(run(sourceParsed,fileInfo),sourceParsed.rows);else if(isEncoding)renderEncodingResult(run(sourceParsed,fileInfo));else if(isStats)renderStatsResult(run(sourceParsed,fileInfo),sourceParsed);else if(isProfile)renderProfileResult(run(sourceParsed,fileInfo),sourceParsed);else if(isTypes)renderTypeResult(run(sourceParsed,fileInfo),sourceParsed);else if(isMissing)renderMissingResult(run(sourceParsed,fileInfo),sourceParsed);else if(isDuplicates)renderDuplicateResult(run(sourceParsed,fileInfo),sourceParsed);else if(isSchema)renderSchemaResult(run(sourceParsed,fileInfo),sourceParsed);else if(isQuality)renderQualityResult(run(sourceParsed,fileInfo),sourceParsed);else renderDelimiterResult(run(sourceParsed,fileInfo),sourceParsed);if(window.requestAnimationFrame)requestAnimationFrame(function(){output.scrollIntoView({behavior:"smooth",block:"start"})})}catch(error){if(isSchema){var schemaStatus=document.getElementById("schemaInputStatus");schemaStatus.textContent=error.message||"Enter expected headings before validating.";schemaStatus.classList.add("is-error")}else{status.textContent=error.message||"Could not check this data.";status.classList.add("is-error")}}finally{runButton.disabled=false}});
     copyReport.addEventListener("click",function(){if(!reportRows)return;if(!navigator.clipboard||!navigator.clipboard.writeText){actionStatus.textContent="Clipboard access is unavailable in this browser.";return}navigator.clipboard.writeText(serializeCSV(reportRows)).then(function(){actionStatus.textContent="Report copied to clipboard."}).catch(function(){actionStatus.textContent="Clipboard access is unavailable in this browser."})});
     download.addEventListener("click",function(){if(!reportRows)return;var link=document.createElement("a"),url=URL.createObjectURL(new Blob(["\uFEFF",serializeCSV(reportRows)],{type:"text/csv;charset=utf-8"}));link.href=url;link.download=fileName;document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000);actionStatus.textContent="Report download started."});
-    document.getElementById("clearValidation").addEventListener("click",function(){input.value="";pasteInput.value="";fileInfo=null;sourceParsed=null;reportRows=null;output.hidden=true;workspaceSection.hidden=true;uploadCard.hidden=false;download.disabled=true;copyReport.disabled=true;runButton.disabled=true;sourceTable.replaceChildren();uploadStatus.classList.remove("is-error");setUploadStatus("Choose a file or paste delimited data to begin.");status.textContent="Ready when the source table is loaded.";status.classList.remove("is-error");actionStatus.textContent="";["headersCheckedCount","headerIssueCount","blankHeaderCount","duplicateHeaderCount","paddedHeaderCount","headerFindingCount"].forEach(function(id){document.getElementById(id).textContent="0"});document.getElementById("headerIssueList").replaceChildren();var reportTable=document.getElementById("validationReportTable");if(reportTable)reportTable.replaceChildren()});
+    document.getElementById("clearValidation").addEventListener("click",function(){input.value="";pasteInput.value="";fileInfo=null;sourceParsed=null;reportRows=null;output.hidden=true;workspaceSection.hidden=true;uploadCard.hidden=false;download.disabled=true;copyReport.disabled=true;runButton.disabled=true;if(isSchema){runButton.hidden=true;schemaBox.value="";var schemaInputStatus=document.getElementById("schemaInputStatus");schemaInputStatus.textContent="";schemaInputStatus.classList.remove("is-error")}sourceTable.replaceChildren();uploadStatus.classList.remove("is-error");setUploadStatus("Choose a file or paste delimited data to begin.");status.textContent="Ready when the source table is loaded.";status.classList.remove("is-error");actionStatus.textContent="";if(isHeaders){["headersCheckedCount","headerIssueCount","blankHeaderCount","duplicateHeaderCount","paddedHeaderCount","headerFindingCount"].forEach(function(id){document.getElementById(id).textContent="0"});document.getElementById("headerIssueList").replaceChildren()}if(isDelimiter){["delimiterDetected","delimiterCount","delimiterCandidates","delimiterRowsChecked"].forEach(function(id){document.getElementById(id).textContent="—"})}if(isEncoding){["encodingDetected","encodingBom","encodingUtf8","encodingBytes"].forEach(function(id){document.getElementById(id).textContent="—"})}if(isStats){["statsRows","statsColumns","statsFilled","statsMissing"].forEach(function(id){document.getElementById(id).textContent="0"})}if(isProfile){["profileRows","profileColumns","profileMissing","profileMixed"].forEach(function(id){document.getElementById(id).textContent="0"})}if(isMissing){["missingRows","missingColumns","missingCells","missingAffectedColumns"].forEach(function(id){document.getElementById(id).textContent="0"})}if(isDuplicates){["duplicateRows","duplicateCount","duplicateUniqueRows","duplicateColumns"].forEach(function(id){document.getElementById(id).textContent="0"})}if(isSchema){["schemaExpectedCount","schemaActualCount","schemaIssueCount","schemaMissingCount"].forEach(function(id){document.getElementById(id).textContent="0"})}if(isTypes){["typeRows","typeColumns","typeMixed","typeEmpty"].forEach(function(id){document.getElementById(id).textContent="0"})}if(isQuality){["qualityRows","qualityFindings","qualityMissing","qualityDuplicates"].forEach(function(id){document.getElementById(id).textContent="0"})}var reportTable=document.getElementById("validationReportTable");if(reportTable)reportTable.replaceChildren()});
     return;
   }
   input.addEventListener("change",function(){

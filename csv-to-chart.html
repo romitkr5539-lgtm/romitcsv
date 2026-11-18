@@ -1,65 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CSV to Chart | RomitCSV</title>
-<meta name="description" content="Create a chart from CSV data online">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-to-chart.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="RomitCSV">
-<meta property="og:title" content="CSV to Chart">
-<meta property="og:description" content="Create a chart from CSV data online">
-<meta property="og:url" content="https://romitcsv.com/csv-to-chart.html">
-<meta name="theme-color" content="#10b995">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to Chart","url":"https://romitcsv.com/csv-to-chart.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Create a chart from CSV data online"}
-</script>
-<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
-<link rel="stylesheet" href="csv-advanced-tools.css?v=2">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV to Chart Maker | Create Bar and Line Charts</title>
+<meta name="description" content="Create a bar or line chart from CSV data in your browser. Choose a category column and numeric values, preview up to 40 records, and explore patterns in your data.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://csv.romitjson.com/csv-to-chart.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RomitCSV"><meta property="og:title" content="CSV to Chart Maker"><meta property="og:description" content="Create a bar or line chart from CSV data. Select category and numeric columns, then preview the chart in your browser."><meta property="og:url" content="https://csv.romitjson.com/csv-to-chart.html"><meta name="theme-color" content="#10b995">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to Chart Maker","url":"https://csv.romitjson.com/csv-to-chart.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Create a bar or line chart from CSV data in your browser. Choose a category column and numeric values, preview up to 40 records, and explore patterns in your data."}</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30"><link rel="stylesheet" href="csv-advanced-tools.css?v=3"><link rel="stylesheet" href="csv-validator-ui.css?v=3">
+<style>.csv-chart-page .analysis-upload-card[hidden],.csv-chart-page .analysis-content[hidden],.csv-chart-page #advOutput[hidden]{display:none!important}.csv-chart-page #advStatus{margin:12px 18px;color:var(--muted);font-size:13px}.csv-chart-page #advStatus.is-error{color:#f08080}.csv-chart-page #advFileSummary{display:block;margin-top:5px;color:var(--muted);font-size:12px}.csv-chart-page .chart-workspace{padding:20px}.csv-chart-page .adv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 14px}.csv-chart-page .adv-grid label{display:block;color:var(--text);font-size:12px;font-weight:700}.csv-chart-page .adv-grid select{box-sizing:border-box;width:100%;min-height:42px;margin-top:8px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:13px ui-sans-serif,system-ui,sans-serif}.csv-chart-page #advOutput{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.csv-chart-page #advOutput h2{margin:0 0 8px;color:var(--text);font-size:20px}.csv-chart-page #advSummary{margin:0 0 10px;color:var(--muted)}.csv-chart-page #advVisual{overflow:auto;border:1px solid var(--line);border-radius:10px;background:var(--bg);padding:10px}.csv-chart-page #advVisual svg{display:block;width:100%;max-width:900px;min-height:300px;margin:auto;color:var(--text)}.csv-chart-page #advCopy,.csv-chart-page #advDownload{display:none!important}.csv-chart-page .chart-guide-note{margin:0;padding:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.csv-chart-page .chart-guide-note strong{color:var(--text)}@media(max-width:700px){.csv-chart-page .adv-grid{grid-template-columns:1fr}}</style>
 </head>
-<body class="dark" data-advanced-tool="csv-to-chart">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-viewer.html">CSV Viewer</a><a href="csv-to-json.html">CSV to JSON</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-adv-page">
-  <section class="csv-adv-hero">
-    <span class="eyebrow">Free advanced CSV tool</span>
-    <h1>CSV to Chart</h1>
-    <p>Create a bar or line chart from a CSV category column and numeric value column. Choose the fields, inspect the chart, and use the visual to explore your data.</p>
-  </section>
-  <section class="csv-adv-panel" aria-label="Advanced CSV tool">
-    <label for="advancedFiles">Choose a CSV or TSV file
-      <input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div id="advOptions"></div>
-    <div class="csv-adv-actions">
-      <button class="viewer-primary" id="runAdvanced" type="button">Run Tool</button>
-      <button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button>
-      <button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button>
-      <button class="viewer-download" id="clearAdvanced" type="button">Clear</button>
+<body class="dark csv-chart-page" data-advanced-tool="csv-to-chart">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="devNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Analyze <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-chart.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-violet">▥</span><span><strong>CSV to Chart</strong><small>Plot categories and values</small></span></a></li><li role="none"><a href="csv-graph-generator.html" role="menuitem"><span class="ndm-icon ndm-blue">⌁</span><span><strong>CSV Graph Generator</strong><small>Plot numeric relationships</small></span></a></li><li role="none"><a href="csv-data-visualizer.html" role="menuitem"><span class="ndm-icon ndm-green">◒</span><span><strong>CSV Data Visualizer</strong><small>Inspect data completeness</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="devTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="devMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV DATA VISUALIZATION</span><h1>CSV to Chart Maker</h1><p>Turn a category column and numeric values into a quick bar or line chart. Choose a file, select the fields to plot, and inspect the chart in your browser.</p></div>
+    <div class="analysis-upload-card" id="advUploadCard"><div class="analysis-dropzone" id="advDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="advancedFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="advBrowse" type="button">Browse File</button><small>Processed in your browser · Up to 50 MB</small></div><p id="advStatus" role="status" aria-live="polite">Choose a file to begin.</p></div>
+  </div></section>
+  <section class="analysis-content" id="advWorkspace" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong>CSV ready to chart</strong><small id="advFileSummary"></small></span></div><div class="analysis-file-actions"><span id="advActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearAdvanced" type="button">Choose another file</button></div></header>
+    <div class="chart-workspace"><div id="advOptions"></div><div class="analysis-result-actions dev-convert-actions"><button class="viewer-primary" id="runAdvanced" type="button">Create Chart</button></div>
+      <section id="advOutput" hidden aria-live="polite"><h2>Chart preview</h2><p id="advSummary"></p><div id="advVisual" hidden></div><pre id="advPreview" hidden></pre><button class="viewer-download" id="advCopy" type="button" disabled>Copy Result</button><button class="viewer-download" id="advDownload" type="button" disabled>Download Result</button></section>
     </div>
-    <p id="advStatus" role="status" aria-live="polite"></p>
-    <section id="advOutput" hidden aria-live="polite">
-      <h2>Result</h2>
-      <p id="advSummary"></p>
-      <div id="advVisual" hidden></div>
-      <pre id="advPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-adv-guide"><span class="dev-guide-kicker">Tool guide</span><h2>CSV to Chart: what it does</h2><p>Select the column used for category labels and a column containing numeric values. The chart plots up to 40 usable rows and skips rows with blank labels or non-numeric values in the selected value field.</p><h2>How to use it</h2><p>Upload a CSV, choose both fields and a chart style, then run the tool. A line chart connects values in file order; a bar chart displays each row as its own bar.</p><h2>What to check in the result</h2><p>This page plots rows as provided and does not aggregate repeated categories. Clean or summarize the CSV first if you need totals per group. Charts are intended for quick inspection rather than a statistically validated report.</p><h2>Frequently asked questions</h2><details><summary>Why are some rows missing?</summary><p>Rows without a category label or numeric value are skipped.</p></details><details><summary>Are repeated categories combined?</summary><p>No. Each usable row is plotted separately.</p></details><details><summary>Can I download the chart as CSV?</summary><p>The chart is a visual preview; the source CSV remains unchanged.</p></details><p>Explore <a href="tool.html">all CSV tools</a> for related file cleanup, comparison, and conversion tasks.</p></article>
+    <div class="chart-guide-note"><strong>Chart note:</strong> the tool plots up to 40 usable data rows in their original order. Rows with a blank category or a nonnumeric value are skipped; repeated categories are shown separately rather than combined.</div>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content csv-dev-guide" aria-labelledby="chart-guide-title"><span class="dev-guide-kicker">CSV CHART GUIDE</span>
+    <h2 id="chart-guide-title">Create a chart from CSV data</h2><p>A quick chart can make changes and patterns easier to spot than a long list of values. This CSV chart maker uses one column for category labels and another for numeric values. Choose a bar chart to compare individual values or a line chart to see how values move through the rows in your file.</p>
+    <h2>Choose fields and a chart style</h2><p>The category column provides labels such as dates, product names, or locations. The value column must contain numbers that the browser can parse. The tool plots up to 40 usable rows in the order they appear. Blank category labels and values that are not numeric are skipped. If a category occurs more than once, each row is drawn separately; the tool does not calculate totals or averages.</p>
+    <h2>How to make a chart from a CSV</h2><ol><li>Drop a CSV, TSV, or text file into the upload area, or browse for one.</li><li>Select the category column and numeric value column.</li><li>Choose a bar or line chart, then select <strong>Create Chart</strong>.</li><li>Review the chart preview and adjust the selected fields if needed.</li></ol><p>Your file is processed locally in your browser. The chart is for quick exploration and does not change the CSV or replace a statistical analysis.</p>
+    <h2>Frequently asked questions</h2><details><summary>Why are some rows not shown?</summary><p>Rows with an empty category label or a value that cannot be read as a number are skipped. The chart also displays at most 40 usable rows.</p></details><details><summary>Are repeated categories combined?</summary><p>No. Each row is plotted individually. Group or summarize the CSV first if you need a total or average for each category.</p></details><details><summary>When should I use a bar chart or a line chart?</summary><p>Bars work well for comparing separate categories. A line chart connects values in file order, which can help show a sequence or trend when the rows have a meaningful order.</p></details><details><summary>Can I download the chart as an image?</summary><p>This page currently provides an in-browser chart preview. The original CSV is unchanged.</p></details><details><summary>Is my CSV uploaded?</summary><p>No. The browser reads the selected file locally to build the preview.</p></details>
+    <p>For numeric X and Y values, try the <a href="csv-graph-generator.html">CSV Graph Generator</a>, or browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-advanced-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var devMenu=document.getElementById("devMenu"),devNav=document.getElementById("devNav"),devTheme=document.getElementById("devTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);devTheme.setAttribute("aria-pressed",String(initialDark));devMenu.addEventListener("click",function(){var isOpen=devNav.classList.toggle("open");devMenu.setAttribute("aria-expanded",String(isOpen))});devTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);devTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-advanced-tools.js?v=8"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>CHART &amp; ANALYSIS TOOLS</h2><a href="csv-to-chart.html">CSV to Chart</a><a href="csv-graph-generator.html">CSV Graph Generator</a><a href="csv-data-visualizer.html">CSV Data Visualizer</a><a href="csv-statistics-generator.html">CSV Statistics Generator</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>

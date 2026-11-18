@@ -1,63 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Convert CSV rows to Java objects online | RomitCSV</title>
-<meta name="description" content="Generate a Java class and object list from CSV headings and rows. Set a class name, review the source, then copy or download it.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-to-java-objects.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="RomitCSV">
-<meta property="og:title" content="Convert CSV rows to Java objects online">
-<meta property="og:description" content="Generate a Java class and object list from CSV headings and rows. Set a class name, review the source, then copy or download it.">
-<meta property="og:url" content="https://romitcsv.com/csv-to-java-objects.html">
-<meta name="theme-color" content="#10b995">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Convert CSV rows to Java objects online","url":"https://romitcsv.com/csv-to-java-objects.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate a Java class and object list from CSV headings and rows. Set a class name, review the source, then copy or download it."}
-</script>
-<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
-<link rel="stylesheet" href="csv-dev-tools.css?v=2">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV to Java Objects Converter | Generate Java Classes</title>
+<meta name="description" content="Convert CSV rows into Java objects with a generated class, constructor, getters, and sample data. Preview the table, choose a class name, then copy or download the Java source.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://csv.romitjson.com/csv-to-java-objects.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RomitCSV"><meta property="og:title" content="CSV to Java Objects Converter"><meta property="og:description" content="Generate a Java class and object list from CSV headings and rows. Review the table, set a class name, and copy or download the Java source."><meta property="og:url" content="https://csv.romitjson.com/csv-to-java-objects.html"><meta name="theme-color" content="#10b995">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to Java Objects Converter","url":"https://csv.romitjson.com/csv-to-java-objects.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert CSV rows into Java objects with a generated class, constructor, getters, and sample data. Preview the table, choose a class name, then copy or download the Java source."}</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30"><link rel="stylesheet" href="csv-dev-tools.css?v=3"><link rel="stylesheet" href="csv-validator-ui.css?v=3">
+<style>.csv-validator-page #devOptions.java-settings{padding:18px;border-bottom:1px solid var(--line);background:var(--surface)}.csv-validator-page #devOptions.java-settings>label{display:block;width:min(100%,420px);color:var(--text);font-size:12px;font-weight:700}.csv-validator-page #devOptions.java-settings input[type=text]{box-sizing:border-box;display:block;width:100%;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:13px/1.4 ui-sans-serif,system-ui,sans-serif}</style>
 </head>
-<body class="dark" data-dev-tool="csv-to-java-objects">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-to-json.html">CSV to JSON</a><a href="csv-to-sql.html">CSV to SQL</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-dev-page">
-  <section class="csv-dev-hero">
-    <span class="eyebrow">Free CSV developer tool</span>
-    <h1>CSV to Java Objects</h1>
-    <p>Generate a Java class and object list from CSV headings and rows. Set a class name, review the source, then copy or download it.</p>
-  </section>
-  <section class="csv-dev-panel" aria-label="CSV code converter">
-    <label for="devFile">Choose a CSV or TSV file
-      <input id="devFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div id="devOptions"></div>
-    <div class="csv-dev-actions">
-      <button class="viewer-primary" id="runDevTool" type="button">Convert</button>
-      <button class="viewer-download" id="devCopy" type="button" disabled>Copy Code</button>
-      <button class="viewer-download" id="devDownload" type="button" disabled>Download Code</button>
-      <button class="viewer-download" id="clearDevTool" type="button">Clear</button>
-    </div>
-    <p id="devStatus" role="status" aria-live="polite"></p>
-    <section id="devOutput" hidden aria-live="polite">
-      <h2>Generated code</h2>
-      <pre id="devPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-dev-guide"><span class="dev-guide-kicker">Practical guide</span><h2>How CSV to Java Objects works</h2><p>The first row provides property names. The output includes private string fields, a constructor, getters, and a static list containing one object per data row. Fields remain strings to avoid guessing at types.</p><h2>Convert your file</h2><p>Choose a CSV, TSV, or delimited file and enter a class name before converting. Column headings are normalized into Java-style identifiers; duplicate names receive suffixes.</p><h2>Before using the output</h2><p>The output uses List.of, which requires Java 9 or newer. It is a starting point, not a CSV parser; check class/package conventions and data size before adding it to a project.</p><h2>Frequently asked questions</h2><details><summary>Are fields typed from their values?</summary><p>No. The generated fields are strings so source values are preserved.</p></details><details><summary>Does it include a CSV parser?</summary><p>No. It embeds selected rows as Java objects.</p></details><details><summary>Which Java version is needed?</summary><p>The generated List.of call requires Java 9 or newer.</p></details><p>Explore <a href="tool.html">all CSV tools</a> or use the <a href="csv-to-json.html">CSV to JSON converter</a> for another output format.</p></article>
+<body class="dark csv-to-java-objects-page" data-dev-tool="csv-to-java-objects">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="devNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-java-objects.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-blue">Java</span><span><strong>CSV to Java Objects</strong><small>Generate Java classes and records</small></span></a></li><li role="none"><a href="csv-to-csharp-objects.html" role="menuitem"><span class="ndm-icon ndm-violet">C#</span><span><strong>CSV to C# Objects</strong><small>Generate class properties and objects</small></span></a></li><li role="none"><a href="csv-to-python-dictionary.html" role="menuitem"><span class="ndm-icon ndm-blue">Py</span><span><strong>CSV to Python Dictionary</strong><small>Generate a list of dictionaries</small></span></a></li><li role="none"><a href="csv-to-pandas-dataframe.html" role="menuitem"><span class="ndm-icon ndm-blue">Py</span><span><strong>CSV to Pandas DataFrame</strong><small>Generate DataFrame code</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="devTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="devMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV DEVELOPER CONVERTER</span><h1>CSV to Java Objects Converter</h1><p>Turn each CSV data row into a Java object with fields based on the header row. Preview the table, choose a class name, then copy or download the generated source.</p></div>
+    <div class="analysis-upload-card" id="devUploadCard"><div class="analysis-dropzone" id="devDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="devFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="devBrowse" type="button">Browse File</button><small>Processed in your browser · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Paste CSV data</h2><p>The first row provides field names. Every following row becomes a Java object.</p><textarea id="devPaste" rows="5" spellcheck="false" aria-label="Paste CSV data" placeholder="id,name,email&#10;001,Ada Lovelace,ada@example.com&#10;002,Lin Chen,lin@example.com"></textarea><button class="viewer-primary" id="devUsePaste" type="button">Load pasted CSV</button><button class="analysis-sample-link" id="devLoadSample" type="button">Try a sample</button></div><p id="devStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
+    </div></div></section>
+  <section class="analysis-content" id="devWorkspace" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="devSourceName">Selected file</strong><small id="devSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="devActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearDevTool" type="button">Start over</button></div></header>
+    <div id="devOptions" class="java-settings"></div>
+    <section class="validator-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Review the headings and values used to create Java fields and objects.</p></div></div><div id="devSourceTable"></div></section>
+    <div class="analysis-result-actions dev-convert-actions"><button class="viewer-primary" id="runDevTool" type="button">Generate Java objects</button></div>
+    <section id="devOutput" class="validator-findings" hidden aria-live="polite"><div class="validator-findings-head"><div><span class="analysis-kicker">JAVA OUTPUT</span><h2>Generated Java source</h2><p>Includes a class, constructor, getters, and a static list of records.</p></div><div class="analysis-result-actions"><button class="viewer-edit" id="devCopy" type="button" disabled>Copy code</button><button class="viewer-primary" id="devDownload" type="button" disabled>Download .java</button></div></div><pre id="devPreview"></pre></section>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content csv-dev-guide" aria-labelledby="java-guide-title"><span class="dev-guide-kicker">CSV TO JAVA GUIDE</span>
+    <h2 id="java-guide-title">Convert CSV rows into Java objects</h2><p>CSV is a straightforward format for exporting tabular data. If you need a small, fixed set of records in a Java project, this converter turns the header row into fields and each remaining row into an object. It generates a Java class, constructor, getters, and a static list containing the converted records.</p>
+    <h2>What the generated Java class includes</h2><p>The output creates one class with private fields, a constructor that assigns those fields, getter methods, and a <code>List.of</code> collection named <code>DATA</code>. Field names are converted from CSV headings to Java style. Blank headings get generated names, and duplicate or conflicting names receive suffixes to keep the fields distinct.</p><p>Every field and value is a <code>String</code>. This preserves source text such as identifiers with leading zeroes and avoids guessing whether a column should be numeric, a date, or another type. Convert fields explicitly in your application when you know their intended types.</p>
+    <h2>Choose a class name and check the data</h2><p>Set the class name after loading the file. It is normalized into a valid Java class identifier, and the downloaded file uses that name with a <code>.java</code> extension. A shorter row gets empty strings for missing cells; additional cells are kept in generated fields. Inspect the preview if the CSV has irregular rows.</p>
+    <h2>Convert a CSV file to Java objects</h2><ol><li>Drop a CSV, TSV, or text file into the upload area, browse for one, or paste delimited data.</li><li>Review the table and make sure the first row contains the field names you want.</li><li>Enter a Java class name and choose <strong>Generate Java objects</strong>.</li><li>Copy the source or download the <code>.java</code> file.</li></ol><p>The generated <code>List.of</code> call requires Java 9 or newer. The snippet embeds the selected records; it does not include a CSV parser or read an external file at runtime. File processing happens locally in your browser.</p>
+    <h2>Frequently asked questions</h2><details><summary>Does it infer Java field types?</summary><p>No. Fields use <code>String</code> so source values and formatting are preserved. Change types in your project when you know the data rules.</p></details><details><summary>Does the generated class read CSV files?</summary><p>No. It contains objects created from the current file contents. Add a CSV library if your application needs to read changing files at runtime.</p></details><details><summary>Which Java version does the generated list need?</summary><p>The output uses <code>List.of</code>, which is available in Java 9 and newer.</p></details><details><summary>How are CSV headings turned into field names?</summary><p>Headings are converted to Java style identifiers. Blank names are generated, and duplicate or reserved names are adjusted to avoid conflicts.</p></details><details><summary>Can I choose the class name?</summary><p>Yes. Set the class name in the option shown with the CSV preview before generating the source.</p></details><details><summary>Is my CSV sent to a server?</summary><p>No. The file is read locally in your browser, and the generated Java is shown as text.</p></details>
+    <p>Generate <a href="csv-to-csharp-objects.html">C# objects</a>, convert to a <a href="csv-to-python-dictionary.html">Python dictionary</a>, or explore <a href="tool.html">all CSV tools</a>.</p>
+  </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-dev-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var devMenu=document.getElementById("devMenu"),devNav=document.getElementById("devNav"),devTheme=document.getElementById("devTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);devTheme.setAttribute("aria-pressed",String(initialDark));devMenu.addEventListener("click",function(){var isOpen=devNav.classList.toggle("open");devMenu.setAttribute("aria-expanded",String(isOpen))});devTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);devTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-dev-tools.js?v=11"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>JAVA &amp; DEVELOPER TOOLS</h2><a href="csv-to-java-objects.html">CSV to Java Objects</a><a href="csv-to-csharp-objects.html">CSV to C# Objects</a><a href="csv-to-python-dictionary.html">CSV to Python Dictionary</a><a href="csv-to-pandas-dataframe.html">CSV to Pandas DataFrame</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>

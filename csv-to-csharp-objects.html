@@ -1,63 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Convert CSV rows to C# objects online | RomitCSV</title>
-<meta name="description" content="Create C# class properties and object initializers from CSV data. Choose a class name, review the code, and copy or download the source.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-to-csharp-objects.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="RomitCSV">
-<meta property="og:title" content="Convert CSV rows to C# objects online">
-<meta property="og:description" content="Create C# class properties and object initializers from CSV data. Choose a class name, review the code, and copy or download the source.">
-<meta property="og:url" content="https://romitcsv.com/csv-to-csharp-objects.html">
-<meta name="theme-color" content="#10b995">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Convert CSV rows to C# objects online","url":"https://romitcsv.com/csv-to-csharp-objects.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Create C# class properties and object initializers from CSV data. Choose a class name, review the code, and copy or download the source."}
-</script>
-<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
-<link rel="stylesheet" href="csv-dev-tools.css?v=2">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSV to C# Objects Converter | Generate C# Classes</title>
+<meta name="description" content="Convert CSV rows into C# objects with a generated class and object initializer list. Preview the data, choose a class name, then copy or download the C# source.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://csv.romitjson.com/csv-to-csharp-objects.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RomitCSV"><meta property="og:title" content="CSV to C# Objects Converter"><meta property="og:description" content="Generate C# classes and object initializers from CSV headings and rows. Preview the data, choose a class name, and copy or download the source."><meta property="og:url" content="https://csv.romitjson.com/csv-to-csharp-objects.html"><meta name="theme-color" content="#10b995">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to C# Objects Converter","url":"https://csv.romitjson.com/csv-to-csharp-objects.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert CSV rows into C# objects with a generated class and object initializer list. Preview the data, choose a class name, then copy or download the C# source."}</script>
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30"><link rel="stylesheet" href="csv-dev-tools.css?v=3"><link rel="stylesheet" href="csv-validator-ui.css?v=3">
+<style>.csv-validator-page #devOptions.csharp-settings{padding:18px;border-bottom:1px solid var(--line);background:var(--surface)}.csv-validator-page #devOptions.csharp-settings>label{display:block;width:min(100%,420px);color:var(--text);font-size:12px;font-weight:700}.csv-validator-page #devOptions.csharp-settings input[type=text]{box-sizing:border-box;display:block;width:100%;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:13px/1.4 ui-sans-serif,system-ui,sans-serif}</style>
 </head>
-<body class="dark" data-dev-tool="csv-to-csharp-objects">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-to-json.html">CSV to JSON</a><a href="csv-to-sql.html">CSV to SQL</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-dev-page">
-  <section class="csv-dev-hero">
-    <span class="eyebrow">Free CSV developer tool</span>
-    <h1>CSV to C# Objects</h1>
-    <p>Create C# class properties and object initializers from CSV data. Choose a class name, review the code, and copy or download the source.</p>
-  </section>
-  <section class="csv-dev-panel" aria-label="CSV code converter">
-    <label for="devFile">Choose a CSV or TSV file
-      <input id="devFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div id="devOptions"></div>
-    <div class="csv-dev-actions">
-      <button class="viewer-primary" id="runDevTool" type="button">Convert</button>
-      <button class="viewer-download" id="devCopy" type="button" disabled>Copy Code</button>
-      <button class="viewer-download" id="devDownload" type="button" disabled>Download Code</button>
-      <button class="viewer-download" id="clearDevTool" type="button">Clear</button>
-    </div>
-    <p id="devStatus" role="status" aria-live="polite"></p>
-    <section id="devOutput" hidden aria-live="polite">
-      <h2>Generated code</h2>
-      <pre id="devPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-dev-guide"><span class="dev-guide-kicker">Practical guide</span><h2>How CSV to C# Objects works</h2><p>The first row becomes property names and each later row becomes an object initializer. Generated properties use string values with empty-string defaults to preserve source data without type guesses.</p><h2>Convert your file</h2><p>Select a CSV or TSV file and enter a class name, then choose Convert. Headings are normalized to PascalCase properties and collisions receive a suffix.</p><h2>Before using the output</h2><p>Review property names, namespaces, and collection needs before using the output. Convert values to numeric or date types only when those types match the data and application rules. The code embeds data; it does not parse a CSV at runtime.</p><h2>Frequently asked questions</h2><details><summary>Does it infer C# types?</summary><p>No. Properties are strings unless you change them in your project.</p></details><details><summary>Does the class parse CSV files?</summary><p>No. It embeds selected rows as object initializers.</p></details><details><summary>Can I customize the class name?</summary><p>Yes. Set the class name in the field before converting.</p></details><p>Explore <a href="tool.html">all CSV tools</a> or use the <a href="csv-to-json.html">CSV to JSON converter</a> for another output format.</p></article>
+<body class="dark csv-to-csharp-objects-page" data-dev-tool="csv-to-csharp-objects">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="devNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-csharp-objects.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-violet">C#</span><span><strong>CSV to C# Objects</strong><small>Generate classes and object records</small></span></a></li><li role="none"><a href="csv-to-java-objects.html" role="menuitem"><span class="ndm-icon ndm-blue">Java</span><span><strong>CSV to Java Objects</strong><small>Generate Java classes and records</small></span></a></li><li role="none"><a href="csv-to-python-dictionary.html" role="menuitem"><span class="ndm-icon ndm-blue">Py</span><span><strong>CSV to Python Dictionary</strong><small>Generate a list of dictionaries</small></span></a></li><li role="none"><a href="csv-to-pandas-dataframe.html" role="menuitem"><span class="ndm-icon ndm-blue">Py</span><span><strong>CSV to Pandas DataFrame</strong><small>Generate DataFrame code</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="devTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="devMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV DEVELOPER CONVERTER</span><h1>CSV to C# Objects Converter</h1><p>Turn each CSV data row into a C# object using the first row as field names. Review the table, set your class name, then copy or download the generated source.</p></div>
+    <div class="analysis-upload-card" id="devUploadCard"><div class="analysis-dropzone" id="devDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="devFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="devBrowse" type="button">Browse File</button><small>Processed in your browser · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Paste CSV data</h2><p>The header row provides property names. Each following row becomes an object initializer.</p><textarea id="devPaste" rows="5" spellcheck="false" aria-label="Paste CSV data" placeholder="id,name,email&#10;001,Ada Lovelace,ada@example.com&#10;002,Lin Chen,lin@example.com"></textarea><button class="viewer-primary" id="devUsePaste" type="button">Load pasted CSV</button><button class="analysis-sample-link" id="devLoadSample" type="button">Try a sample</button></div><p id="devStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
+    </div></div></section>
+  <section class="analysis-content" id="devWorkspace" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="devSourceName">Selected file</strong><small id="devSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="devActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearDevTool" type="button">Start over</button></div></header>
+    <div id="devOptions" class="csharp-settings"></div>
+    <section class="validator-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Check the headings and values that will become C# properties and objects.</p></div></div><div id="devSourceTable"></div></section>
+    <div class="analysis-result-actions dev-convert-actions"><button class="viewer-primary" id="runDevTool" type="button">Generate C# objects</button></div>
+    <section id="devOutput" class="validator-findings" hidden aria-live="polite"><div class="validator-findings-head"><div><span class="analysis-kicker">C# OUTPUT</span><h2>Generated C# source</h2><p>Includes a class with string properties and a list of object initializers.</p></div><div class="analysis-result-actions"><button class="viewer-edit" id="devCopy" type="button" disabled>Copy code</button><button class="viewer-primary" id="devDownload" type="button" disabled>Download .cs</button></div></div><pre id="devPreview"></pre></section>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content csv-dev-guide" aria-labelledby="csharp-guide-title"><span class="dev-guide-kicker">CSV TO C# GUIDE</span>
+    <h2 id="csharp-guide-title">Convert CSV rows into C# objects</h2><p>CSV files are a convenient way to move tabular data between spreadsheets and applications. This converter turns the first row into C# property names and each later row into an object initializer. The generated source includes a class and a list containing the converted records, ready to review in your project.</p>
+    <h2>What the generated C# code contains</h2><p>The output defines a class with string properties and a static collection of objects initialized from the CSV rows. Column headings are converted to PascalCase property names. Blank headings receive generated names, while duplicate or conflicting names get suffixes to keep properties unique.</p><p>Properties remain strings so values such as identifiers with leading zeroes keep their original form. The converter does not infer numeric, date, or Boolean types. Change property types and parse values in your application when you know the data requirements.</p>
+    <h2>Set the class name and review the rows</h2><p>After loading the CSV, enter the class name you want. The tool normalizes it into a valid C# identifier and uses it in the generated source and download filename. If a row has fewer cells than the header, missing values are initialized to empty strings. Extra cells are kept under generated property names.</p>
+    <h2>Convert CSV to C# objects</h2><ol><li>Drop a CSV, TSV, or text file into the upload area, browse for one, or paste delimited data.</li><li>Check the table and confirm the first row contains the column names you want.</li><li>Set a class name and select <strong>Generate C# objects</strong>.</li><li>Copy the code or download the <code>.cs</code> source file.</li></ol><p>The generated snippet embeds the current rows; it does not read a CSV file at runtime. Review namespaces and collection types for your project. Processing happens locally in your browser.</p>
+    <h2>Frequently asked questions</h2><details><summary>Does it infer property types?</summary><p>No. Generated properties are strings to preserve the original cell contents. Convert them to numbers, dates, or other types when your application rules are clear.</p></details><details><summary>Does the class include a CSV reader?</summary><p>No. It contains objects generated from the selected data. Add a CSV library if your program needs to read files later.</p></details><details><summary>Can I choose the generated class name?</summary><p>Yes. Set it in the class name field shown alongside the CSV table before generating the source.</p></details><details><summary>How are duplicate headings handled?</summary><p>Headings become PascalCase properties. Blank, repeated, and conflicting names are adjusted to generate distinct property identifiers.</p></details><details><summary>What happens to missing values?</summary><p>Missing cells are initialized to empty strings. Extra cells are retained under generated property names.</p></details><details><summary>Is my CSV uploaded?</summary><p>No. Your browser reads the file locally and displays the generated C# source as text.</p></details>
+    <p>Generate <a href="csv-to-java-objects.html">Java objects</a>, convert to a <a href="csv-to-python-dictionary.html">Python dictionary</a>, or browse <a href="tool.html">all CSV tools</a>.</p>
+  </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-dev-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var devMenu=document.getElementById("devMenu"),devNav=document.getElementById("devNav"),devTheme=document.getElementById("devTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);devTheme.setAttribute("aria-pressed",String(initialDark));devMenu.addEventListener("click",function(){var isOpen=devNav.classList.toggle("open");devMenu.setAttribute("aria-expanded",String(isOpen))});devTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);devTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-dev-tools.js?v=11"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>DEVELOPER TOOLS</h2><a href="csv-to-csharp-objects.html">CSV to C# Objects</a><a href="csv-to-java-objects.html">CSV to Java Objects</a><a href="csv-to-python-dictionary.html">CSV to Python Dictionary</a><a href="csv-to-pandas-dataframe.html">CSV to Pandas DataFrame</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>
