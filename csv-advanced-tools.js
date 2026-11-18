@@ -1,6 +1,6 @@
 (function(){
  "use strict";
- var mode=document.body.dataset.advancedTool||"",input=document.getElementById("advancedFiles"),options=document.getElementById("advOptions"),status=document.getElementById("advStatus"),output=document.getElementById("advOutput"),summary=document.getElementById("advSummary"),preview=document.getElementById("advPreview"),visual=document.getElementById("advVisual"),download=document.getElementById("advDownload"),copy=document.getElementById("advCopy");
+ var mode=document.body.dataset.advancedTool||"",input=document.getElementById("advancedFiles"),options=document.getElementById("advOptions"),status=document.getElementById("advStatus"),actionStatus=document.getElementById("advActionStatus"),output=document.getElementById("advOutput"),summary=document.getElementById("advSummary"),preview=document.getElementById("advPreview"),visual=document.getElementById("advVisual"),download=document.getElementById("advDownload"),copy=document.getElementById("advCopy"),uploadCard=document.getElementById("advUploadCard"),workspace=document.getElementById("advWorkspace"),fileSummary=document.getElementById("advFileSummary"),dropzone=document.getElementById("advDropzone");
  var currentRows=[],currentFiles=[],resultText="",resultName="result.csv",resultMime="text/csv;charset=utf-8",resultBytes=null,maxBytes=50*1024*1024;
  var generator=mode==="csv-random-data-generator"||mode==="csv-template-generator"||mode==="csv-sample-data-generator";
  if(generator)input.closest("label").hidden=true;
@@ -29,7 +29,7 @@
  function width(rows){return rows.reduce(function(n,r){return Math.max(n,r.length)},0)}
  function headers(rows){var h=rows[0]||[],used=new Set();return Array.from({length:width(rows)},function(_,i){var base=String(h[i]||"").trim()||("Column "+(i+1)),name=base,n=2;while(used.has(name)){name=base+"_"+n;n++}used.add(name);return name})}
  function optionsFor(rows){return headers(rows).map(function(h,i){return '<option value="'+i+'">'+esc(h)+'</option>'}).join("")}
- function setStatus(text,error){status.textContent=text;status.classList.toggle("is-error",!!error)}
+ function setStatus(text,error){status.textContent=text;status.classList.toggle("is-error",!!error);if(actionStatus){actionStatus.textContent=text;actionStatus.classList.toggle("is-error",!!error)}}
  function showText(text,name,mime,summaryText){
    resultText=text;resultName=name;resultMime=mime||"text/plain;charset=utf-8";resultBytes=null;
    preview.textContent=text.slice(0,10000)+(text.length>10000?"\n\nPreview shortened. Download the complete result.":"");
@@ -130,6 +130,7 @@
    else if(kind==="line"){var points=data.map(function(p,i){return (90+i*(650/Math.max(1,data.length-1)))+","+(330-(p.y-min)/(max-min)*270)}).join(" ");el("polyline",{points:points,fill:"none",stroke:"#10b995","stroke-width":3});data.forEach(function(p,i){var x=90+i*(650/Math.max(1,data.length-1)),y=330-(p.y-min)/(max-min)*270;el("circle",{cx:x,cy:y,r:4,fill:"#6be2c5"});el("text",{x:x,y:375,"text-anchor":"middle",fill:"currentColor","font-size":10},p.x.slice(0,10))})}
    else{var bw=Math.min(34,600/data.length);data.forEach(function(p,i){var h=(p.y-min)/(max-min)*270+4,x=90+i*(650/data.length);el("rect",{x:x,y:330-h,width:bw,height:h,rx:3,fill:"#10b995"});el("text",{x:x+bw/2,y:375,"text-anchor":"middle",fill:"currentColor","font-size":10},p.x.slice(0,10))})}
    el("text",{x:18,y:30,fill:"currentColor","font-size":12},String(max));el("text",{x:18,y:350,fill:"currentColor","font-size":12},String(min));
+   if(scatter){el("text",{x:420,y:405,"text-anchor":"middle",fill:"currentColor","font-size":12},String((rows[0]||[])[xIndex]||"X"));el("text",{x:18,y:200,"text-anchor":"middle",fill:"currentColor","font-size":12,transform:"rotate(-90 18 200)"},String((rows[0]||[])[yIndex]||"Y"))}
    visual.innerHTML="";visual.appendChild(svg);return data;
  }
  function runRows(rows){
@@ -216,13 +217,24 @@
  }
  input.addEventListener("change",function(){
    var files=Array.from(input.files||[]);if(!files.length)return;if(files.some(function(f){return f.size>maxBytes})){setStatus("Each file must be 50 MB or smaller.",true);return}
-   if(mode==="csv-diff-checker"){setStatus(files.length+" file(s) selected. Choose exactly two, then run the diff.");return}
-   readFile(files[0]).then(function(info){currentFiles=[info];if(mode==="csv-encoding-converter"){buildOptions([]);setStatus("Loaded "+files[0].name+". Choose source and output encodings.")}else{var rows=parseCSV(info.text);buildOptions(rows);setStatus("Loaded "+files[0].name+". Set options, then run the tool.")}}).catch(function(e){setStatus(e.message,true)});
+   if(mode==="csv-diff-checker"){
+     if(files.length>2){setStatus("Choose exactly two CSV files to compare.",true);return}
+     if(files.length===2){fileSummary.textContent=files[0].name+"  ↔  "+files[1].name;uploadCard.hidden=true;workspace.hidden=false;setStatus("Both files are ready. Run the diff to review changed cells.")}
+     else setStatus("Choose exactly one more CSV file to compare.");return
+   }
+   if(mode==="csv-query-sql"&&files.length!==1){setStatus("Choose one CSV file to query.",true);return}
+   readFile(files[0]).then(function(info){currentFiles=[info];if(mode==="csv-encoding-converter"){buildOptions([]);setStatus("Loaded "+files[0].name+". Choose source and output encodings.")}else{var rows=parseCSV(info.text);buildOptions(rows);if(mode==="csv-query-sql"||mode==="csv-to-chart"||mode==="csv-graph-generator"){fileSummary.textContent=files[0].name;uploadCard.hidden=true;workspace.hidden=false;setStatus(mode==="csv-query-sql"?"CSV loaded. Enter a query and run it to view the result.":mode==="csv-to-chart"?"CSV loaded. Choose the category and numeric columns, then create a chart.":"CSV loaded. Choose numeric X and Y columns, then create the graph.")}else setStatus("Loaded "+files[0].name+". Set options, then run the tool.")}}).catch(function(e){setStatus(e.message,true)});
  });
+ if(dropzone){
+   document.getElementById("advBrowse").addEventListener("click",function(){input.click()});
+   ["dragenter","dragover"].forEach(function(type){dropzone.addEventListener(type,function(event){event.preventDefault();dropzone.classList.add("drag")})});
+   ["dragleave","drop"].forEach(function(type){dropzone.addEventListener(type,function(event){event.preventDefault();dropzone.classList.remove("drag")})});
+   dropzone.addEventListener("drop",function(event){var files=event.dataTransfer&&event.dataTransfer.files;if(files&&files.length){var transfer=new DataTransfer();Array.from(files).forEach(function(file){transfer.items.add(file)});input.files=transfer.files;input.dispatchEvent(new Event("change"))}});
+ }
  document.getElementById("runAdvanced").addEventListener("click",function(){setStatus("Working…");try{var result=doRun();if(result&&typeof result.then==="function")result.then(function(){setStatus("Done. Review the result below.")}).catch(function(e){setStatus(e.message||"Could not complete this operation.",true)});else setStatus("Done. Review the result below.")}catch(e){setStatus(e.message||"Could not complete this operation.",true)}});
  download.addEventListener("click",function(){if(!resultText&&!resultBytes)return;var blob=new Blob(resultBytes?[resultBytes]:[resultText],{type:resultMime}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=resultName;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000)});
  copy.addEventListener("click",function(){if(!resultText)return;navigator.clipboard.writeText(resultText.replace(/^\uFEFF/,"")).then(function(){setStatus("Result copied to clipboard.")}).catch(function(){setStatus("Clipboard access is unavailable. Download the result instead.",true)})});
- document.getElementById("clearAdvanced").addEventListener("click",function(){input.value="";if(!generator)options.innerHTML="";currentRows=[];currentFiles=[];resultText="";resultBytes=null;output.hidden=true;visual.innerHTML="";visual.hidden=true;preview.hidden=false;download.disabled=true;copy.disabled=true;setStatus("")});
+ document.getElementById("clearAdvanced").addEventListener("click",function(){input.value="";if(!generator)options.innerHTML="";currentRows=[];currentFiles=[];resultText="";resultBytes=null;output.hidden=true;visual.innerHTML="";visual.hidden=true;preview.hidden=false;download.disabled=true;copy.disabled=true;if(uploadCard)uploadCard.hidden=false;if(workspace)workspace.hidden=true;if(fileSummary)fileSummary.textContent="";setStatus("")});
  if(mode==="csv-random-data-generator")options.innerHTML='<div class="adv-grid"><label>Rows to generate<input id="generatedRows" type="number" min="1" max="10000" value="100"></label><label>Fields and types, one per line<textarea id="randomSchema" rows="5">id:integer\nname:name\nemail:email\nage:integer\ncity:city</textarea><small>Types: text, integer, number, email, date, name, city</small></label></div>';
  if(mode==="csv-template-generator")options.innerHTML='<div class="adv-grid"><label>Column headings, one per line<textarea id="templateHeaders" rows="5">Name\nEmail\nDate</textarea></label><label>Blank data rows<input id="templateRows" type="number" min="0" max="10000" value="10"></label></div>';
  if(mode==="csv-sample-data-generator")options.innerHTML='<div class="adv-grid"><label>Sample dataset<select id="sampleType"><option value="customers">Customers</option><option value="products">Products</option><option value="events">Events</option></select></label><label>Rows to generate<input id="generatedRows" type="number" min="1" max="10000" value="100"></label></div>';

@@ -3,67 +3,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CSV Delimiter Detector</title>
-<meta name="description" content="Detect whether a delimited text file uses commas, tabs, semicolons, or pipes between fields.">
+<title>CSV Delimiter Detector Online | Find Your CSV Separator</title>
+<meta name="description" content="Check whether a CSV uses commas, tabs, semicolons, or pipes. Preview the source table and see delimiter counts in your browser.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-delimiter-detector.html">
+<link rel="canonical" href="https://csv.romitjson.com/csv-delimiter-detector.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RomitCSV">
-<meta property="og:title" content="CSV Delimiter Detector">
-<meta property="og:description" content="Detect whether a delimited text file uses commas, tabs, semicolons, or pipes between fields.">
-<meta property="og:url" content="https://romitcsv.com/csv-delimiter-detector.html">
+<meta property="og:title" content="CSV Delimiter Detector Online">
+<meta property="og:description" content="Find the likely separator in your CSV and review the source table and delimiter counts.">
+<meta property="og:url" content="https://csv.romitjson.com/csv-delimiter-detector.html">
 <meta name="theme-color" content="#10b995">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Delimiter Detector","url":"https://romitcsv.com/csv-delimiter-detector.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Detect whether a delimited text file uses commas, tabs, semicolons, or pipes between fields."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Delimiter Detector","url":"https://csv.romitjson.com/csv-delimiter-detector.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Detect whether a CSV uses commas, tabs, semicolons, or pipes and review the source table and delimiter counts in your browser."}
 </script>
 <link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-28">
-<link rel="stylesheet" href="csv-validation-tools.css?v=2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-validator-ui.css?v=3">
+<link rel="stylesheet" href="csv-validation-tools.css?v=3">
 </head>
 <body class="dark" data-validation-tool="csv-delimiter-detector">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-validator.html">CSV Validator</a><a href="csv-viewer.html">CSV Viewer</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-validation-page">
-  <section class="csv-validation-hero">
-    <span class="eyebrow">Free CSV validation tool</span>
-    <h1>CSV Delimiter Detector</h1>
-    <p>Detect whether a delimited text file uses commas, tabs, semicolons, or pipes between fields.</p>
-  </section>
-  <section class="csv-validation-panel" aria-label="CSV validation tool">
-    <label for="validationFile">Choose a CSV or TSV file
-      <input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div class="validation-options"></div>
-    <div class="csv-validation-actions">
-      <button class="viewer-primary" id="runValidation" type="button">Run Check</button>
-      <button class="viewer-download" id="validationDownload" type="button" disabled>Download Report</button>
-      <button class="viewer-download" id="clearValidation" type="button">Clear</button>
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="validatorNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check file structure</small></span></a></li><li role="none"><a href="csv-header-checker.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>CSV Header Checker</strong><small>Find blank or repeated headings</small></span></a></li><li role="none"><a href="csv-delimiter-detector.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-cyan">⫴</span><span><strong>CSV Delimiter Detector</strong><small>Identify the field separator</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">Convert <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON</small></span></a></li><li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export a workbook</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="validatorTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="validatorMenu" type="button" aria-label="Open menu" aria-expanded="false">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner">
+    <div><span class="analysis-kicker">CSV FORMAT TOOL</span><h1>CSV Delimiter Detector</h1><p>Find the separator used between fields in a CSV, TSV, or other delimited text file. Review the original table and the count for each common separator.</p></div>
+    <div class="analysis-upload-card" id="syntaxUploadCard">
+      <div class="analysis-dropzone" id="syntaxDropzone" role="region" aria-label="Drop or browse for a delimited text file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="syntaxBrowse" type="button">Browse File</button><small>Delimited text · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Detect from pasted data</h2><p>Paste the header and a few rows. Quoted separators inside fields are not counted.</p><textarea id="syntaxPaste" rows="5" spellcheck="false" aria-label="Paste delimited data" placeholder="Name;Email;City&#10;Ada;ada@example.com;London&#10;Sam;sam@example.com;Paris"></textarea><button class="viewer-primary" id="syntaxUsePaste" type="button">Detect pasted data</button><button class="analysis-sample-link" id="syntaxLoadSample" type="button">Try a semicolon sample</button></div>
+      <p id="syntaxUploadStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
     </div>
-    <p id="validationStatus" role="status" aria-live="polite"></p>
-    <section id="validationOutput" hidden aria-live="polite">
-      <h2>Analysis report</h2>
-      <p id="validationSummary"></p>
-      <pre id="validationPreview"></pre>
-    </section>
+  </div></section>
+  <section class="analysis-content" id="syntaxWorkspaceSection" hidden>
+    <div class="validator-data-card">
+      <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="syntaxSourceName">Pasted data</strong><small id="syntaxSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="syntaxActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearValidation" type="button">Start over</button></div></header>
+      <section class="validator-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Check the original fields alongside the detected separator.</p></div></div><div id="syntaxSourceTable"></div></section>
+      <button id="runValidation" type="button" hidden>Detect delimiter</button>
+      <div class="validator-stats" aria-label="Delimiter detection summary"><div><strong id="delimiterDetected">—</strong><span>Likely delimiter</span></div><div><strong id="delimiterCount">—</strong><span>Matches on first row</span></div><div><strong id="delimiterCandidates">—</strong><span>Separators found</span></div><div><strong id="delimiterRowsChecked">—</strong><span>Source rows</span></div></div>
+      <section id="validationOutput" class="validator-findings" hidden aria-live="polite"><div class="validator-findings-head"><div><span class="analysis-kicker">DETECTION REPORT</span><h2>Delimiter counts</h2><p id="validationSummary"></p></div><div class="analysis-result-actions"><button class="viewer-edit" id="validationCopy" type="button" disabled>Copy report</button><button class="viewer-primary" id="validationDownload" type="button" disabled>Download report</button></div></div><div id="validationReportTable" class="validator-table-wrap"></div><p id="validationStatus" class="analysis-status" role="status" aria-live="polite"></p><pre id="validationPreview" hidden></pre></section>
+    </div>
   </section>
-  <article class="csv-validation-guide">
-    <h2>What this tool checks</h2>
-    <p>The detector counts common delimiters outside quoted text on the first non-empty line. It reports the counts and the most likely delimiter. Single-column files may have no detectable delimiter.</p>
-    <h2>How to use it</h2>
-    <ol><li>Choose a CSV or TSV file up to 50 MB.</li><li>Set any requested options and run the check.</li><li>Review the report or download it as a CSV file.</li></ol>
-    <p>The file is read and analyzed in your browser. It is not sent to the RomitCSV server. Use the <a href="csv-validator.html">CSV Validator</a> for a general structure check or browse <a href="tool.html">all CSV tools</a>.</p>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content" aria-labelledby="delimiter-guide-title">
+    <h2 id="delimiter-guide-title">Find the separator in your delimited file</h2>
+    <p>A delimiter is the character between fields in a text table. Commas are common in CSV files, while TSV files use tabs; semicolons and pipes are also used by some exports. If an application opens every row in one column, or splits a field at the wrong place, checking the separator is a useful first step.</p>
+    <h2>What the detector measures</h2>
+    <p>The tool checks the first non-empty line and counts commas, tabs, semicolons, and pipes outside quoted text. The separator with the largest count is reported as the likely delimiter, and the report shows the count for each candidate. If counts tie, the detector keeps its candidate order: comma, tab, semicolon, then pipe.</p>
+    <p>This is a quick estimate based on one line, not a full-file consistency check. If the file has one column, irregular rows, or a quoted header that contains separators, inspect the preview and counts before importing it.</p>
+    <h2>Use the delimiter detector</h2>
+    <ol><li>Choose a CSV, TSV, or TXT file up to 50 MB, or paste delimited text.</li><li>Review the source table and the likely separator shown in the summary.</li><li>Compare candidate counts in the report if the result is unexpected.</li><li>Copy or download the count report, then select the matching import option in your spreadsheet or data tool.</li></ol>
+    <p>Your source data is read in the browser and is not changed. The detector supports comma, tab, semicolon, and pipe candidates.</p>
+    <h2>Common questions</h2>
+    <details><summary>Does the detector check every row?</summary><p>No. It counts separators on the first non-empty line. Use the full table preview to inspect your data, and use CSV Validator to check row widths and other structural issues.</p></details>
+    <details><summary>Why does it say no delimiter was found?</summary><p>The first non-empty line may contain only one field, or it may use a separator outside the four supported candidates. Check the source text and the reported counts.</p></details>
+    <details><summary>Are commas inside quoted values counted?</summary><p>No. Characters inside a pair of double quotes are ignored when counting candidate separators.</p></details>
+    <details><summary>Does detecting a delimiter change my file?</summary><p>No. The tool reports the counts and likely separator. It does not rewrite or convert the source data.</p></details>
+    <details><summary>Can I paste data instead of uploading a file?</summary><p>Yes. Paste the header and a few rows, then select Detect pasted data. The table and report appear on the page.</p></details>
+    <h2>Related tools</h2>
+    <p>Use <a href="csv-validator.html">CSV Validator</a> to check common file structure issues, or browse <a href="tool.html">all CSV tools</a>.</p>
   </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
+<script src="nav.js?v=romitjson-theme-2"></script>
 <script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
+var validatorMenu=document.getElementById("validatorMenu"),validatorNav=document.getElementById("validatorNav"),validatorTheme=document.getElementById("validatorTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";
+document.body.classList.toggle("dark",initialDark);validatorTheme.setAttribute("aria-pressed",String(initialDark));
+validatorMenu.addEventListener("click",function(){var isOpen=validatorNav.classList.toggle("open");validatorMenu.setAttribute("aria-expanded",String(isOpen))});
+validatorTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);validatorTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
 </script>
-<script src="csv-validation-tools.js"></script>
+<script src="csv-validation-tools.js?v=7"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column" aria-labelledby="footer-csv-title"><h2 id="footer-csv-title">CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-validator.html">CSV Validator</a><a href="csv-header-checker.html">CSV Header Checker</a><a href="csv-delimiter-detector.html">CSV Delimiter Detector</a><a class="footer-all-link" href="tool.html">All CSV tools <span aria-hidden="true">↗</span></a></section><section class="footer-column" aria-labelledby="footer-convert-title"><h2 id="footer-convert-title">CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-sql.html">CSV to SQL</a></section><section class="footer-column" aria-labelledby="footer-manage-title"><h2 id="footer-manage-title">CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">Remove duplicates</a><a href="csv-validator.html">Check CSV structure</a><a href="csv-header-checker.html">Check column headings</a><a href="csv-delimiter-detector.html">Detect the separator</a></section><section class="footer-column" aria-labelledby="footer-resources-title"><h2 id="footer-resources-title">RESOURCES</h2><a href="index.html#workspace">Quick workspace</a><a href="index.html#faq">Frequently asked questions</a><a href="index.html#resources">CSV guide</a></section><section class="footer-column" aria-labelledby="footer-company-title"><h2 id="footer-company-title">COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open quick workspace <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><p class="footer-copyright"><span id="year">2026</span> RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>

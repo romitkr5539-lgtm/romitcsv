@@ -1,78 +1,57 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Compare Two CSV Files Online | RomitCSV</title>
-<meta name="description" content="Compare CSV files without relying on row order. Find rows that occur only in either file, account for duplicate rows, and download both result lists.">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+
+<link rel="stylesheet" href="style.css?v=romitjson-theme-2"><link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30"><link rel="stylesheet" href="csv-merge-split-tools.css?v=3"><link rel="stylesheet" href="csv-validator-ui.css?v=3">
+<style>.compare-csv-page .analysis-upload-card[hidden],.compare-csv-page .analysis-content[hidden],.compare-csv-page #msOutput[hidden]{display:none!important}.compare-csv-page #msStatus{margin:12px 18px;color:var(--muted);font-size:13px}.compare-csv-page #msStatus.is-error{color:#f08080}.compare-csv-page #msFileSummary{display:block;margin-top:5px;color:var(--muted);font-size:12px}.compare-csv-page .compare-results{padding:20px}.compare-csv-page .compare-results h2{margin:0 0 8px;color:var(--text);font-size:20px}.compare-csv-page #msSummary{margin:0 0 14px;color:var(--muted);font-size:13px}.compare-csv-page #msDownloads{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.compare-csv-page .ms-download-link{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:9px;background:var(--accent);color:#06251a;font-size:12px;font-weight:800;text-decoration:none}.compare-csv-page .ms-table-section{margin-top:18px}.compare-csv-page .ms-table-section h4{margin:0 0 8px;color:var(--text);font-size:14px}.compare-csv-page .ms-result-table-wrap{max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:10px}.compare-csv-page .ms-result-table{width:100%;border-collapse:separate;border-spacing:0;color:var(--text);font-size:12px}.compare-csv-page .ms-result-table th{position:sticky;top:0;background:var(--soft);color:var(--text);text-align:left}.compare-csv-page .ms-result-table th,.compare-csv-page .ms-result-table td{padding:9px 11px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere}.compare-csv-page .ms-result-table tr:nth-child(even) td{background:var(--surface)}.compare-csv-page #msPreview{max-height:360px;overflow:auto;padding:14px;border-radius:10px;background:var(--bg);color:var(--text);font:12px/1.5 ui-monospace,Consolas,monospace;white-space:pre}.compare-csv-page .compare-howto{margin:0;padding:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.compare-csv-page .compare-howto h3{margin:0 0 8px;color:var(--text);font-size:16px}.compare-csv-page .compare-howto p{margin:0 0 8px}</style>
+<title>Compare Two CSV Files Online | Find Differences</title>
+<meta name="description" content="Compare two CSV files and find rows that appear in only one file. Row order does not matter; review and download both result lists.">
+<meta name="author" content="RomitCSV">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/compare-csv-files.html">
+<link rel="canonical" href="https://csv.romitjson.com/compare-csv-files.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RomitCSV">
-<meta property="og:title" content="Compare Two CSV Files Online">
-<meta property="og:description" content="Find rows that occur only in either CSV file, even when row order differs. Review and download both result lists.">
-<meta property="og:url" content="https://romitcsv.com/compare-csv-files.html">
+<meta property="og:title" content="Compare Two CSV Files Online | Find Differences">
+<meta property="og:description" content="Compare two CSV files and find rows that appear in only one file. Row order does not matter; review and download both result lists.">
+<meta property="og:url" content="https://csv.romitjson.com/compare-csv-files.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Compare Two CSV Files Online | Find Differences">
+<meta name="twitter:description" content="Compare two CSV files and find rows that appear in only one file. Row order does not matter; review and download both result lists.">
 <meta name="theme-color" content="#10b995">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Compare Two CSV Files Online","url":"https://romitcsv.com/compare-csv-files.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compare CSV files without relying on row order. Find rows that occur only in either file, account for duplicate rows, and download both result lists."}
-</script>
-<link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
-<link rel="stylesheet" href="csv-merge-split-tools.css?v=2">
-</head>
-<body class="dark" data-merge-split-tool="compare-csv-files">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-ms-page">
-  <section class="csv-ms-hero">
-    <span class="eyebrow">Free CSV file tool</span>
-    <h1>Compare Two CSV Files</h1>
-    <p>Compare two CSV files row by row and download the records found only in each file.</p>
-  </section>
-  <section class="csv-ms-panel" aria-label="CSV tool">
-    <label for="csvFiles">Choose CSV or TSV file(s)
-      <input id="csvFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" multiple>
-    </label>
-    <div id="msOptions"><p>Select two or more files for this operation.</p></div>
-    <div class="csv-ms-actions">
-      <button class="viewer-primary" id="runMsTool" type="button">Run Tool</button>
-      <button class="viewer-download" id="clearMsTool" type="button">Clear</button>
-    </div>
-    <p id="msStatus" role="status" aria-live="polite"></p>
-    <section id="msOutput" hidden aria-live="polite">
-      <h2>Result</h2>
-      <p id="msSummary"></p>
-      <div id="msDownloads"></div>
-      <div id="msPreviewTables"></div>
-      <h3>Preview</h3>
-      <pre id="msPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-ms-guide">
-    <span class="dev-guide-kicker">Comparison guide</span>
-    <h2>Compare CSV records without relying on row order</h2>
-    <p>This tool compares complete data rows in two files and reports which rows occur only in the first file and which occur only in the second. It accounts for repeated rows: if a row appears three times in one file and twice in the other, one occurrence is reported as an extra. Header rows are retained in the result files but are not part of the record matching.</p>
-    <h2>How to compare two files</h2>
-    <ol><li>Choose exactly two CSV or TSV files.</li><li>Select <strong>Run Tool</strong> to compare their data rows.</li><li>Review the counts, then download the two result files: one for rows unique to each input.</li></ol>
-    <h2>Make sure the files are comparable</h2>
-    <p>Rows are matched by their parsed cell values and column order. Files with different column orders can report equivalent records as different, so align columns first when needed. The comparison does not identify records by a chosen ID column or normalize capitalization and whitespace.</p>
-    <h2>Frequently asked questions</h2>
-    <details><summary>Does row order affect the result?</summary><p>No. Complete rows are counted by their values, so the same rows can appear in a different order.</p></details>
-    <details><summary>Are duplicate rows handled?</summary><p>Yes. Repeated rows are counted, and only the unmatched number of occurrences appears in the corresponding output.</p></details>
-    <details><summary>Does it compare columns by their names?</summary><p>No. Matching uses the full sequence of cell values in each row. Put the columns in the same order before comparing files.</p></details>
-    <p>Processing runs locally in your browser. Explore <a href="tool.html">all CSV tools</a>, including <a href="csv-diff-checker.html">CSV Diff Checker</a> for comparing cells by row position.</p>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"url":"https://csv.romitjson.com/","@id":"https://csv.romitjson.com/#website","@type":"WebSite","inLanguage":"en","name":"RomitCSV"},{"name":"Compare Two CSV Files Online | Find Differences","mainEntity":{"@id":"https://csv.romitjson.com/compare-csv-files.html#tool"},"@id":"https://csv.romitjson.com/compare-csv-files.html#webpage","description":"Compare two CSV files and find rows that appear in only one file. Row order does not matter; review and download both result lists.","@type":"WebPage","isPartOf":{"@id":"https://csv.romitjson.com/#website"},"url":"https://csv.romitjson.com/compare-csv-files.html","inLanguage":"en"},{"name":"Compare Two CSV Files Online","@type":"WebApplication","isAccessibleForFree":true,"description":"Compare two CSV files and find rows that appear in only one file. Row order does not matter; review and download both result lists.","browserRequirements":"Requires JavaScript and a modern web browser.","applicationCategory":"UtilitiesApplication","url":"https://csv.romitjson.com/compare-csv-files.html","operatingSystem":"Any","@id":"https://csv.romitjson.com/compare-csv-files.html#tool"}]}</script></head>
+<body class="dark compare-csv-page" data-merge-split-tool="compare-csv-files">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="devNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Compare <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="compare-csv-files.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-violet">↔</span><span><strong>Compare Two CSV Files</strong><small>Find rows unique to either file</small></span></a></li><li role="none"><a href="csv-diff-checker.html" role="menuitem"><span class="ndm-icon ndm-blue">Δ</span><span><strong>CSV Diff Checker</strong><small>Compare cell changes by position</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="devTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="devMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV COMPARISON TOOL</span><h1>Compare Two CSV Files</h1><p>Find complete rows that appear in one CSV but not the other. Row order can differ, and repeated rows are counted. Load both files to see their names and compare.</p></div>
+    <div class="analysis-upload-card" id="msUploadCard"><div class="analysis-dropzone" id="msDropzone" role="region" aria-label="Drop or browse for two CSV files"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop two CSV, TSV, or TXT files</strong><span>or</span><input id="csvFiles" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" multiple hidden><button class="viewer-primary" id="msBrowse" type="button">Choose Two Files</button><small>Compared in your browser · Up to 50 MB per file</small></div><p id="msStatus" role="status" aria-live="polite">Choose exactly two files to begin.</p></div>
+  </div></section>
+  <section class="analysis-content" id="msWorkspace" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong>Files ready to compare</strong><small id="msFileSummary"></small></span></div><div class="analysis-file-actions"><button class="viewer-clear" id="clearMsTool" type="button">Choose different files</button></div></header>
+    <div class="analysis-result-actions dev-convert-actions"><button class="viewer-primary" id="runMsTool" type="button">Compare CSV Files</button></div>
+    <section id="msOutput" class="compare-results" hidden aria-live="polite"><h2>Comparison results</h2><p id="msSummary"></p><div id="msDownloads"></div><div id="msPreviewTables"></div><pre id="msPreview" hidden></pre></section>
+    <div id="msOptions" hidden></div>
+    <div class="compare-howto"><h3>What this comparison checks</h3><p>Rows are matched by their complete sequence of parsed cell values. The tool ignores row order and accounts for duplicates, then provides one CSV containing the unmatched rows from each original file.</p><p>Make sure both files use the same column order. This comparison does not match records by a chosen ID, normalize capitalization, or trim whitespace.</p></div>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content csv-dev-guide" aria-labelledby="compare-guide-title"><span class="dev-guide-kicker">CSV COMPARISON GUIDE</span>
+    <h2 id="compare-guide-title">Compare two CSV files and find rows that differ</h2><p>When two exports contain many records, a row comparison can show which entries were added or removed between them. This tool compares complete parsed rows and reports records found only in the first file and records found only in the second. The output keeps each source file's header row so you can inspect or reuse the results.</p>
+    <h2>How row matching works</h2><p>Row order does not affect the comparison. A row is matched when its cell values and column order are the same. Duplicate rows are counted: if one file has a row three times and the other has it twice, one unmatched occurrence appears in the first file's results. The header is not included in row matching.</p><p>The comparison is exact. Differences in capitalization, spaces, punctuation, or column order can make two otherwise similar rows count as different. If you need to compare records by an ID field or see cell changes at corresponding row positions, prepare the files first or use a diff tool designed for that comparison.</p>
+    <h2>Compare two CSV files</h2><ol><li>Choose exactly two CSV, TSV, or text files, or drop both into the upload area.</li><li>Confirm the two filenames and select <strong>Compare CSV Files</strong>.</li><li>Review the counts and side-by-side result tables.</li><li>Download the rows unique to each input file.</li></ol><p>Files are read locally in your browser and are limited to 50 MB each. The tool does not upload the files to a server.</p>
+    <h2>Frequently asked questions</h2><details><summary>Does the order of rows matter?</summary><p>No. Rows are compared by their cell values, so the same records can appear in a different order.</p></details><details><summary>Are duplicate records included?</summary><p>Yes. Duplicate counts are considered. Only the extra occurrences in either file appear as unmatched rows.</p></details><details><summary>Does it match columns by their headings?</summary><p>No. It compares each row's values in sequence. Put columns in the same order in both files before comparing.</p></details><details><summary>Are spaces and capitalization normalized?</summary><p>No. Matching is exact, so for example <code>North</code> and <code>north</code> are different values, as are cells with different whitespace.</p></details><details><summary>Are headers included in the downloaded results?</summary><p>Yes. Each result file keeps the header from its corresponding original CSV. Headers are excluded from record matching.</p></details><details><summary>Can this show changed cells in matching rows?</summary><p>This tool finds whole rows that are present in only one file. Use the <a href="csv-diff-checker.html">CSV Diff Checker</a> to compare cells by row position.</p></details>
+    <p>Combine files with the <a href="csv-merger.html">CSV Merger</a>, or browse <a href="tool.html">all CSV tools</a>.</p>
   </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-merge-split-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var devMenu=document.getElementById("devMenu"),devNav=document.getElementById("devNav"),devTheme=document.getElementById("devTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);devTheme.setAttribute("aria-pressed",String(initialDark));devMenu.addEventListener("click",function(){var isOpen=devNav.classList.toggle("open");devMenu.setAttribute("aria-expanded",String(isOpen))});devTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);devTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-merge-split-tools.js?v=4"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>MERGE &amp; COMPARE</h2><a href="compare-csv-files.html">Compare Two CSV Files</a><a href="csv-diff-checker.html">CSV Diff Checker</a><a href="csv-merger.html">CSV Merger</a><a href="csv-joiner.html">CSV Joiner</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>

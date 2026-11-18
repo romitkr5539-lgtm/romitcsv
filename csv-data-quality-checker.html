@@ -3,67 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CSV Data Quality Checker</title>
-<meta name="description" content="Check CSV data for missing values, duplicate rows, blank rows, extra whitespace, uneven field counts, and quote errors.">
+<title>CSV Data Quality Checker | Find Common CSV Issues</title>
+<meta name="description" content="Check a CSV for blank rows, missing cells, duplicate records, extra whitespace, uneven row widths, and quote issues. Preview the data and download a findings report.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/csv-data-quality-checker.html">
+<link rel="canonical" href="https://csv.romitjson.com/csv-data-quality-checker.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RomitCSV">
 <meta property="og:title" content="CSV Data Quality Checker">
-<meta property="og:description" content="Check CSV data for missing values, duplicate rows, blank rows, extra whitespace, uneven field counts, and quote errors.">
-<meta property="og:url" content="https://romitcsv.com/csv-data-quality-checker.html">
+<meta property="og:description" content="Review common CSV quality issues by row, including missing values, duplicates, blank lines, and inconsistent field counts.">
+<meta property="og:url" content="https://csv.romitjson.com/csv-data-quality-checker.html">
 <meta name="theme-color" content="#10b995">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Data Quality Checker","url":"https://romitcsv.com/csv-data-quality-checker.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Check CSV data for missing values, duplicate rows, blank rows, extra whitespace, uneven field counts, and quote errors."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"CSV Data Quality Checker","url":"https://csv.romitjson.com/csv-data-quality-checker.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Check a CSV for blank rows, missing cells, duplicate records, extra whitespace, uneven row widths, and quote issues. Preview the data and download a findings report."}
 </script>
 <link rel="stylesheet" href="style.css?v=romitjson-theme-2">
-<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-28">
-<link rel="stylesheet" href="csv-validation-tools.css?v=2">
+<link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-30">
+<link rel="stylesheet" href="csv-validation-tools.css?v=3">
+<link rel="stylesheet" href="csv-validator-ui.css?v=3">
 </head>
-<body class="dark" data-validation-tool="csv-data-quality-checker">
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tool.html" class="active" aria-current="page">All Tools</a><a href="csv-validator.html">CSV Validator</a><a href="csv-viewer.html">CSV Viewer</a><a href="about.html">About</a></nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
-  </div>
-</header>
-<main class="csv-validation-page">
-  <section class="csv-validation-hero">
-    <span class="eyebrow">Free CSV validation tool</span>
-    <h1>CSV Data Quality Checker</h1>
-    <p>Check CSV data for missing values, duplicate rows, blank rows, extra whitespace, uneven field counts, and quote errors.</p>
-  </section>
-  <section class="csv-validation-panel" aria-label="CSV validation tool">
-    <label for="validationFile">Choose a CSV or TSV file
-      <input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain">
-    </label>
-    <div class="validation-options"></div>
-    <div class="csv-validation-actions">
-      <button class="viewer-primary" id="runValidation" type="button">Run Check</button>
-      <button class="viewer-download" id="validationDownload" type="button" disabled>Download Report</button>
-      <button class="viewer-download" id="clearValidation" type="button">Clear</button>
-    </div>
-    <p id="validationStatus" role="status" aria-live="polite"></p>
-    <section id="validationOutput" hidden aria-live="polite">
-      <h2>Analysis report</h2>
-      <p id="validationSummary"></p>
-      <pre id="validationPreview"></pre>
-    </section>
-  </section>
-  <article class="csv-validation-guide">
-    <h2>What this tool checks</h2>
-    <p>The checker reports common data quality findings with row locations, including malformed quote syntax, rows with a different field count, blank rows, missing cells, padded values, and repeated complete rows.</p>
-    <h2>How to use it</h2>
-    <ol><li>Choose a CSV or TSV file up to 50 MB.</li><li>Set any requested options and run the check.</li><li>Review the report or download it as a CSV file.</li></ol>
-    <p>The file is read and analyzed in your browser. It is not sent to the RomitCSV server. Use the <a href="csv-validator.html">CSV Validator</a> for a general structure check or browse <a href="tool.html">all CSV tools</a>.</p>
+<body class="dark csv-data-quality-checker-page" data-validation-tool="csv-data-quality-checker">
+<header class="site-header viewer-header"><div class="nav-wrap">
+  <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
+  <nav id="validatorNav" aria-label="Main navigation"><a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li><li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li></ul></div><div class="nav-dropdown"><button class="nav-drop-btn active" aria-haspopup="true" aria-expanded="false">Analyze &amp; Validate <span class="nav-caret" aria-hidden="true">▾</span></button><ul class="nav-drop-menu" role="menu"><li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li><li role="none"><a href="csv-data-quality-checker.html" class="active" aria-current="page" role="menuitem"><span class="ndm-icon ndm-orange">◈</span><span><strong>CSV Data Quality Checker</strong><small>Find common data issues</small></span></a></li><li role="none"><a href="csv-missing-values-checker.html" role="menuitem"><span class="ndm-icon ndm-cyan">∅</span><span><strong>CSV Missing Values Checker</strong><small>Find blank cells by column</small></span></a></li></ul></div><a href="index.html#resources">Resources</a><a href="index.html#about">About</a></nav>
+  <div class="header-actions"><button class="theme-switch" id="validatorTheme" type="button" aria-label="Toggle theme" aria-pressed="false"><span>☼</span><i></i><span>☾</span></button><button class="menu-btn" id="validatorMenu" type="button" aria-label="Open menu">Menu</button></div>
+</div></header>
+<main class="csv-analysis-page csv-validator-page">
+  <section class="analysis-hero"><div class="analysis-hero-inner"><div><span class="analysis-kicker">CSV QUALITY REVIEW</span><h1>CSV Data Quality Checker</h1><p>Review a CSV for common issues that can interfere with imports and analysis. See blank rows, missing cells, repeated records, extra whitespace, uneven row widths, and quote problems in one report.</p></div>
+    <div class="analysis-upload-card" id="syntaxUploadCard"><div class="analysis-dropzone" id="syntaxDropzone" role="region" aria-label="Drop or browse for a CSV file"><div class="viewer-upload-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 31V8m0 0-8 8m8-8 8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 27v10a4 4 0 0 0 4 4h18a4 4 0 0 0 4-4V27" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><strong>Drop a CSV, TSV, or TXT file</strong><span>or</span><input id="validationFile" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain" hidden><button class="viewer-primary" id="syntaxBrowse" type="button">Browse File</button><small>Processed in your browser · Up to 50 MB</small></div>
+      <div class="analysis-paste-card"><span class="analysis-kicker">PASTE DATA</span><h2>Check pasted CSV data</h2><p>Paste the header row and records to review common quality issues across the file.</p><textarea id="syntaxPaste" rows="5" spellcheck="false" aria-label="Paste CSV data" placeholder="ID,Name,Email,Score&#10;1,Ada,ada@example.com,92&#10;2,Ben,,"></textarea><button class="viewer-primary" id="syntaxUsePaste" type="button">Check data quality</button><button class="analysis-sample-link" id="syntaxLoadSample" type="button">Load a sample with issues</button></div><p id="syntaxUploadStatus" class="analysis-upload-status" role="status" aria-live="polite">Choose a file or paste delimited data to begin.</p>
+    </div></div></section>
+  <section class="analysis-content" id="syntaxWorkspaceSection" hidden><div class="validator-data-card">
+    <header class="validator-filebar analysis-filebar"><div class="analysis-file-info"><span class="analysis-file-icon">CSV</span><span><strong id="syntaxSourceName">Selected file</strong><small id="syntaxSourceDetails"></small></span></div><div class="analysis-file-actions"><span id="syntaxActionStatus" role="status" aria-live="polite"></span><button class="viewer-clear" id="clearValidation" type="button">Start over</button></div></header>
+    <section class="validator-source"><div class="analysis-section-head"><div><span class="analysis-kicker">SOURCE DATA</span><h2>Your CSV table</h2><p>Use the preview to compare reported row numbers with the original data.</p></div></div><div id="syntaxSourceTable"></div></section><button id="runValidation" type="button" hidden>Check data quality</button>
+    <div class="validator-stats" aria-label="Data quality summary"><div><strong id="qualityRows">0</strong><span>Data rows</span></div><div><strong id="qualityFindings">0</strong><span>Findings</span></div><div><strong id="qualityMissing">0</strong><span>Missing cells</span></div><div><strong id="qualityDuplicates">0</strong><span>Duplicate rows</span></div></div>
+    <section id="validationOutput" class="validator-findings" hidden aria-live="polite"><div class="validator-findings-head"><div><span class="analysis-kicker">QUALITY REPORT</span><h2>Findings by row</h2><p id="validationSummary"></p></div><div class="analysis-result-actions"><button class="viewer-edit" id="validationCopy" type="button" disabled>Copy report</button><button class="viewer-primary" id="validationDownload" type="button" disabled>Download report</button></div></div><div id="validationReportTable" class="validator-table-wrap"></div><p id="validationStatus" class="analysis-status" role="status" aria-live="polite"></p><pre id="validationPreview" hidden></pre></section>
+  </div></section>
+  <article class="tool-seo-content viewer-seo-content validator-seo-content" aria-labelledby="quality-guide-title">
+    <h2 id="quality-guide-title">Review common CSV data quality problems</h2><p>A file may open successfully and still contain issues that change results or cause an import to fail. Empty cells, repeated records, inconsistent field counts, stray spaces, and malformed quotes can be hard to notice by scanning a large CSV. This checker brings several common findings into one row-by-row report so you can decide what needs attention.</p>
+    <h2>What the checker looks for</h2><ul><li><strong>CSV quote syntax:</strong> unexpected text after a closing quote and quotes that are not closed.</li><li><strong>Uneven row width:</strong> data records with a different number of fields from the header.</li><li><strong>Blank rows:</strong> records where every field is empty or whitespace.</li><li><strong>Missing cells:</strong> empty or whitespace-only values in individual fields.</li><li><strong>Extra whitespace:</strong> non-empty values with spaces at the beginning or end.</li><li><strong>Duplicate rows:</strong> later records that exactly repeat a previous complete record.</li></ul>
+    <p>Findings are rule-based checks, not a universal quality score. A blank field or repeated row may be intentional in your data. The report identifies what matched each check and where it occurred; review the original context before changing a value.</p>
+    <h2>How to check CSV data quality</h2><ol><li>Choose or drop a CSV, TSV, or plain-text file up to 50 MB, or paste delimited data.</li><li>Review the parsed source table and confirm that the first row contains the headings.</li><li>Scan the summary counts and inspect each finding by row and type.</li><li>Copy or download the report, then make any corrections in your original file.</li></ol>
+    <p>Rows are numbered with the header as row 1 and the first data record as row 2. Some records can have more than one finding, so the total finding count may be higher than the number of affected rows. The checker reports issues but does not edit the CSV. Your file is processed in your browser and is not sent to the RomitCSV server.</p>
+    <h2>Frequently asked questions</h2><details><summary>Does the checker repair the file?</summary><p>No. It creates a report and leaves the original data unchanged. You can review findings and decide how to make corrections.</p></details><details><summary>Why can the finding count exceed the number of rows?</summary><p>A single row can have several issues, such as a missing value and extra whitespace in another cell. Each issue is listed separately.</p></details><details><summary>Are repeated rows always errors?</summary><p>Not necessarily. The tool reports exact repeated complete rows, but you should decide whether a repetition is unwanted in your particular dataset.</p></details><details><summary>How are missing values identified?</summary><p>Empty cells and cells containing only whitespace are flagged. Text markers such as <code>N/A</code> or <code>NULL</code> are treated as values.</p></details><details><summary>How are row numbers counted?</summary><p>The header is row 1, so the first data record is row 2. The report uses those CSV row positions to help locate the record in the preview or original file.</p></details><details><summary>Does it check whether values have the correct business meaning?</summary><p>No. It checks common structural and formatting patterns. It cannot know every rule for your dataset, such as valid ranges, required categories, or whether a blank is allowed.</p></details>
+    <p>For focused checks, use the <a href="csv-validator.html">CSV Validator</a>, <a href="csv-missing-values-checker.html">Missing Values Checker</a>, or <a href="csv-duplicate-checker.html">Duplicate Checker</a>.</p>
   </article>
 </main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav></div></div></footer>
-<script>
-var menuButton=document.getElementById("menuBtn"),mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",function(){var isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen))});
-</script>
-<script src="csv-validation-tools.js"></script>
+<script src="nav.js?v=romitjson-theme-2"></script><script>
+var validatorMenu=document.getElementById("validatorMenu"),validatorNav=document.getElementById("validatorNav"),validatorTheme=document.getElementById("validatorTheme"),initialDark=localStorage.getItem("romitcsv.theme.v2")!=="light";document.body.classList.toggle("dark",initialDark);validatorTheme.setAttribute("aria-pressed",String(initialDark));validatorMenu.addEventListener("click",function(){var isOpen=validatorNav.classList.toggle("open");validatorMenu.setAttribute("aria-expanded",String(isOpen))});validatorTheme.addEventListener("click",function(){var isDark=!document.body.classList.contains("dark");document.body.classList.toggle("dark",isDark);validatorTheme.setAttribute("aria-pressed",String(isDark));localStorage.setItem("romitcsv.theme.v2",isDark?"dark":"light")});
+</script><script src="csv-validation-tools.js?v=15"></script>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-link-grid"><section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-validator.html">CSV Validator</a><a href="csv-data-quality-checker.html">CSV Data Quality Checker</a><a href="csv-missing-values-checker.html">CSV Missing Values Checker</a><a href="csv-duplicate-checker.html">CSV Duplicate Checker</a><a href="csv-data-profiler.html">CSV Data Profiler</a><a href="csv-table-viewer.html">CSV Table Viewer</a><a class="footer-all-link" href="tool.html">All CSV tools ↗</a></section><section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a class="footer-all-link" href="tool.html">All converters ↗</a></section><section class="footer-column"><h2>CLEAN &amp; MANAGE</h2><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-merger.html">CSV Merger</a><a href="csv-splitter.html">CSV Splitter</a><a href="csv-validator.html">Check CSV structure</a></section><section class="footer-column"><h2>RESOURCES</h2><a href="index.html#resources">CSV guide</a><a href="tool.html">All tools</a></section><section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section></div><div class="footer-about"><div><span class="footer-eyebrow">MADE FOR EVERYDAY DATA WORK</span><p>View, edit, clean, and convert CSV files with practical tools that run in your browser.</p></div><div class="footer-actions"><a class="footer-cta" href="tool.html">Explore CSV tools ↗</a></div></div><div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div></div></footer>
 </body>
 </html>
