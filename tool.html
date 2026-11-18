@@ -6,24 +6,71 @@
 <title>All CSV Tools – Online Converters &amp; Editors</title>
 <meta name="description" content="Browse RomitCSV tools for viewing, editing, cleaning, validating, merging, splitting, and converting CSV, TSV, XML, YAML, and JSON data.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<link rel="canonical" href="https://romitcsv.com/tool.html">
+<link rel="canonical" href="https://csv.romitjson.com/tool.html">
 <meta name="theme-color" content="#10b995">
 <link rel="stylesheet" href="style.css?v=romitjson-theme-2">
 <link rel="stylesheet" href="romitjson-theme.css?v=romitjson-theme-7">
 </head>
 <body class="dark">
 <header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="RomitCSV home"><span class="brand-mark" aria-hidden="true"><span>CSV</span></span><span>Romit<span class="brand-accent">CSV</span></span></a>
-    <nav id="mainNav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="index.html#tools">Popular Tools</a>
-      <a class="active" href="tool.html" aria-current="page">All Tools</a>
-      <a href="index.html#resources">Resources</a>
-      <a href="about.html">About</a>
-    </nav>
-    <div class="header-actions"><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button></div>
+<div class="nav-wrap">
+
+  <a class="brand" href="index.html" aria-label="RomitCSV home">
+    <span class="brand-mark" aria-hidden="true"><span>CSV</span></span>
+    <span>Romit<span class="brand-accent">CSV</span></span>
+  </a>
+  <nav id="mainNav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+
+    <!-- View & Edit dropdown -->
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        View &amp; Edit <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-table-viewer.html" role="menuitem"><span class="ndm-icon ndm-green">◉</span><span><strong>CSV Table Viewer</strong><small>Open and browse CSV files</small></span></a></li>
+        <li role="none"><a href="csv-editor.html" role="menuitem"><span class="ndm-icon ndm-blue">✎</span><span><strong>CSV Editor</strong><small>Edit and download CSV data</small></span></a></li>
+      </ul>
+    </div>
+
+    <!-- Clean & Manage dropdown -->
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Clean &amp; Manage <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-cleaner.html" role="menuitem"><span class="ndm-icon ndm-purple">✦</span><span><strong>CSV Cleaner</strong><small>Remove duplicates &amp; fix errors</small></span></a></li>
+        <li role="none"><a href="csv-merger.html" role="menuitem"><span class="ndm-icon ndm-orange">⊞</span><span><strong>CSV Merger</strong><small>Combine multiple CSV files</small></span></a></li>
+        <li role="none"><a href="csv-splitter.html" role="menuitem"><span class="ndm-icon ndm-cyan">⌘</span><span><strong>CSV Splitter</strong><small>Split large CSV into parts</small></span></a></li>
+        <li role="none"><a href="csv-validator.html" role="menuitem"><span class="ndm-icon ndm-red">✓</span><span><strong>CSV Validator</strong><small>Check structure &amp; errors</small></span></a></li>
+      </ul>
+    </div>
+
+    <!-- Convert dropdown -->
+    <div class="nav-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Convert <span class="nav-caret" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-drop-menu" role="menu">
+        <li role="none"><a href="csv-to-json.html" role="menuitem"><span class="ndm-icon ndm-violet">{ }</span><span><strong>CSV → JSON</strong><small>Convert CSV to JSON format</small></span></a></li>
+        <li role="none"><a href="json-to-csv.html" role="menuitem"><span class="ndm-icon ndm-teal">{ }</span><span><strong>JSON → CSV</strong><small>Convert JSON to CSV format</small></span></a></li>
+        <li role="none"><a href="csv-to-excel.html" role="menuitem"><span class="ndm-icon ndm-green">▣</span><span><strong>CSV → Excel</strong><small>Export CSV as Excel file</small></span></a></li>
+        <li role="none"><a href="excel-to-csv.html" role="menuitem"><span class="ndm-icon ndm-blue">▤</span><span><strong>Excel → CSV</strong><small>Convert Excel to CSV</small></span></a></li>
+        <li role="none"><a href="csv-to-pdf.html" role="menuitem"><span class="ndm-icon ndm-red">PDF</span><span><strong>CSV → PDF</strong><small>Export as paginated PDF</small></span></a></li>
+        <li role="none"><a href="csv-to-sql.html" role="menuitem"><span class="ndm-icon ndm-purple">SQL</span><span><strong>CSV → SQL</strong><small>Generate SQL from CSV</small></span></a></li>
+      </ul>
+    </div>
+
+    <a class="active" href="tool.html" aria-current="page">All Tools</a>
+    <a href="#resources">Resources</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-switch" id="themeBtn" aria-label="Toggle theme"><span>☼</span><i></i><b>☾</b></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
   </div>
+
+</div>
 </header>
 
 <main>
@@ -153,20 +200,61 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-link-grid">
-      <section class="footer-column"><h2>CSV TOOLS</h2><a href="csv-table-viewer.html">CSV Table Viewer</a><a href="csv-editor.html">CSV Editor</a><a href="csv-cleaner.html">CSV Cleaner</a><a href="csv-validator.html">CSV Validator</a><a href="tool.html">Browse all tools</a></section>
-      <section class="footer-column"><h2>CONVERTERS</h2><a href="csv-to-excel.html">CSV to Excel</a><a href="excel-to-csv.html">Excel to CSV</a><a href="csv-to-json.html">CSV to JSON</a><a href="json-to-csv.html">JSON to CSV</a><a href="csv-to-xml.html">CSV to XML</a><a href="xml-to-csv.html">XML to CSV</a><a href="csv-to-yaml.html">CSV to YAML</a><a href="yaml-to-csv.html">YAML to CSV</a><a href="csv-to-sql.html">CSV to SQL</a><a href="csv-to-html-table.html">CSV to HTML</a><a href="csv-to-markdown.html">CSV to Markdown</a><a href="csv-to-tsv.html">CSV to TSV</a><a href="tsv-to-csv.html">TSV to CSV</a><a href="csv-to-pdf.html">CSV to PDF</a><a href="csv-to-txt.html">CSV to TXT</a><a class="footer-all-link" href="tool.html">Browse all tools ↗</a></section>
-      <section class="footer-column"><h2>CLEAN &amp; MANAGE</h2><a href="csv-merger.html">Combine CSV files</a><a href="csv-splitter.html">Split large files</a><a href="index.html#workspace">Quick workspace</a></section>
-      <section class="footer-column"><h2>RESOURCES</h2><a href="#csv-guide">CSV workflow guide</a><a href="index.html#faq">Frequently asked questions</a></section>
-      <section class="footer-column"><h2>COMPANY</h2><a href="about.html">About RomitCSV</a><a href="index.html">Home</a></section>
+      <section class="footer-column" aria-labelledby="footer-view-title">
+        <h2 id="footer-view-title">VIEW &amp; EDIT</h2>
+        <a href="csv-table-viewer.html">CSV Table Viewer</a>
+        <a href="csv-viewer.html">CSV Viewer</a>
+        <a href="online-csv-reader.html">Online CSV Reader</a>
+        <a href="large-csv-viewer.html">Large CSV Viewer</a>
+        <a href="csv-preview-tool.html">CSV Preview Tool</a>
+        <a href="csv-editor.html">CSV Editor</a>
+        <a href="csv-spreadsheet-editor.html">Spreadsheet Editor</a>
+      </section>
+      <section class="footer-column" aria-labelledby="footer-data-title">
+        <h2 id="footer-data-title">CLEAN &amp; MANAGE</h2>
+        <a href="csv-cleaner.html">CSV Cleaner</a>
+        <a href="csv-validator.html">CSV Validator</a>
+        <a href="csv-merger.html">CSV Merger</a>
+        <a href="csv-splitter.html">CSV Splitter</a>
+        <a href="csv-column-viewer.html">CSV Column Viewer</a>
+        <a href="csv-row-viewer.html">CSV Row Viewer</a>
+      </section>
+      <section class="footer-column" aria-labelledby="footer-convert-title">
+        <h2 id="footer-convert-title">CONVERT</h2>
+        <a href="csv-to-html-table.html">CSV to HTML Table</a>
+        <a href="csv-to-json.html">CSV to JSON</a>
+        <a href="json-to-csv.html">JSON to CSV</a>
+        <a href="csv-to-excel.html">CSV to Excel</a>
+        <a href="excel-to-csv.html">Excel to CSV</a>
+        <a href="csv-to-pdf.html">CSV to PDF</a>
+        <a href="csv-to-sql.html">CSV to SQL</a>
+      </section>
+      <section class="footer-column" aria-labelledby="footer-workspace-title">
+        <h2 id="footer-workspace-title">WORKSPACE</h2>
+        <a href="index.html#workspace">Quick CSV Workspace</a>
+        <a href="index.html#tools">Popular tools</a>
+        <a href="tool.html">All CSV tools</a>
+        <a href="index.html#faq">CSV questions</a>
+        <a href="index.html#resources">CSV guide</a>
+      </section>
+      <section class="footer-column" aria-labelledby="footer-company-title">
+        <h2 id="footer-company-title">ROMITCSV</h2>
+        <a href="about.html">About RomitCSV</a>
+        <a href="index.html">Home</a>
+      </section>
     </div>
-    <div class="footer-bottom"><p class="footer-copyright">2026 RomitCSV. All rights reserved.</p><p class="footer-note">Made for browser-based CSV work.</p><nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a></nav></div>
+    <div class="footer-about">
+      <div><span class="footer-eyebrow">BROWSER-BASED CSV TOOLS</span><p>Inspect, edit, clean, organize, and convert tabular data with tools that work in your browser.</p></div>
+      <div class="footer-actions"><a class="footer-cta" href="tool.html">Explore all tools <span aria-hidden="true">↗</span></a><a class="footer-cta" href="index.html#workspace">Open Quick Workspace <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© <span id="year">2026</span> RomitCSV. All rights reserved.</p>
+      <p class="footer-note">Your selected CSV data is processed locally by browser tools.</p>
+      <nav class="footer-legal" aria-label="Footer navigation"><a href="index.html">Home</a><a href="tool.html">All tools</a><a href="about.html">About</a></nav>
+    </div>
   </div>
 </footer>
-<script>
-const menuButton=document.getElementById("menuBtn");
-const mainNav=document.getElementById("mainNav");
-menuButton.addEventListener("click",()=>{const isOpen=mainNav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(isOpen));});
-</script>
+<script src="script.js?v=romitjson-theme-2"></script>
 </body>
 </html>
 
